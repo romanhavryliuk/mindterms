@@ -1,0 +1,45 @@
+.form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-2xs);
+  max-width: var(--measure);
+}
+
+.input {
+  padding: var(--space-2xs) var(--space-xs);
+  border: var(--border-width) solid var(--border-strong);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-elevated);
+  font-size: var(--text-base);
+}
+
+.input:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.submit {
+  padding: var(--space-2xs) var(--space-md);
+  border: var(--border-width) solid var(--text-strong);
+  border-radius: var(--radius-md);
+  background-color: var(--text-strong);
+  color: var(--bg);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.submit:hover {
+  background-color: transparent;
+  color: var(--text-strong);
+}
+
+.hint {
+  grid-column: 1 / -1;
+  color: var(--text-faint);
+  font-size: var(--text-xs);
+  line-height: var(--leading-snug);
+}

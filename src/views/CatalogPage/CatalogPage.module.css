@@ -1,0 +1,33 @@
+.page {
+  display: grid;
+  gap: var(--space-md);
+  max-width: var(--wide-width);
+  margin-inline: auto;
+  padding: var(--space-md) var(--page-padding) var(--space-xl);
+}
+
+.header {
+  display: grid;
+  gap: var(--space-2xs);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 300;
+  letter-spacing: var(--tracking-hero);
+}
+
+.lead {
+  max-width: var(--measure);
+  color: var(--text-muted);
+  font-size: var(--text-md);
+  line-height: var(--leading-relaxed);
+}
+
+@media (min-width: 1440px) {
+  .page {
+    gap: var(--space-lg);
+    padding-top: var(--space-lg);
+  }
+}

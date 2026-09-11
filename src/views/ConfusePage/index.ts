@@ -1,0 +1,1 @@
+export { ConfusePage } from './ConfusePage';

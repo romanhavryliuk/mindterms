@@ -1,0 +1,1 @@
+export { ConceptCard } from './ConceptCard';

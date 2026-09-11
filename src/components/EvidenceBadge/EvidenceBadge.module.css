@@ -1,0 +1,65 @@
+/* Бейдж прототипу — три кружечки й підпис кольором рівня, без плашки */
+.badge {
+  display: inline-flex;
+  gap: var(--space-2xs);
+  align-items: center;
+  color: var(--badgeColor);
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.level3 {
+  --badgeColor: var(--ev-3);
+}
+
+.level2 {
+  --badgeColor: var(--ev-2);
+}
+
+.level1 {
+  --badgeColor: var(--ev-1);
+}
+
+.sm {
+  font-size: 8px;
+}
+
+.md {
+  font-size: 9px;
+}
+
+.dots {
+  display: inline-flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--border);
+}
+
+/* Заповнені кружечки показують рівень: 1, 2 або 3 з трьох */
+.level3 .dot,
+.level2 .dot:nth-child(-n + 2),
+.level1 .dot:nth-child(1) {
+  background-color: currentcolor;
+}
+
+.label {
+  letter-spacing: inherit;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

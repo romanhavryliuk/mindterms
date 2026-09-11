@@ -1,0 +1,84 @@
+.filter {
+  display: grid;
+  gap: var(--space-2xs);
+}
+
+.title {
+  color: var(--text-faint);
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3xs);
+}
+
+.option {
+  display: inline-flex;
+  gap: var(--space-3xs);
+  align-items: center;
+  padding: var(--space-3xs) var(--space-2xs);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius-pill);
+  background-color: var(--bg-elevated);
+  color: var(--text-muted);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.option:hover {
+  border-color: var(--border-strong);
+  color: var(--text-body);
+}
+
+.option[aria-pressed='true'] {
+  border-color: var(--optionColor, var(--text-strong));
+  background-color: var(--optionBg, var(--bg-inset));
+  color: var(--optionColor, var(--text-strong));
+}
+
+.level3 {
+  --optionColor: var(--ev-3);
+  --optionBg: var(--ev-3-bg);
+}
+
+.level2 {
+  --optionColor: var(--ev-2);
+  --optionBg: var(--ev-2-bg);
+}
+
+.level1 {
+  --optionColor: var(--ev-1);
+  --optionBg: var(--ev-1-bg);
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border: 1px solid currentcolor;
+  border-radius: 50%;
+}
+
+.option[aria-pressed='true'] .dot {
+  background-color: currentcolor;
+}
+
+.count {
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+.option[aria-pressed='true'] .count {
+  color: inherit;
+  opacity: 0.7;
+}

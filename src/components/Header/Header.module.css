@@ -1,0 +1,131 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: var(--border-width) solid var(--border);
+  background-color: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+.bar {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  max-width: var(--wide-width);
+  margin-inline: auto;
+  padding-inline: var(--page-padding);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  font-weight: 700;
+  letter-spacing: var(--tracking-tight);
+  text-decoration: none;
+}
+
+/* Горизонтальна навігація зʼявляється з планшета */
+.nav {
+  display: none;
+}
+
+.navList {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.navLink {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.navLink:hover {
+  color: var(--text-strong);
+}
+
+.navLink[aria-current='page'] {
+  color: var(--text-strong);
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-3xs);
+  align-items: center;
+}
+
+.iconButton {
+  display: inline-flex;
+  gap: var(--space-3xs);
+  align-items: center;
+  min-height: 2.25rem;
+  padding: var(--space-3xs) var(--space-2xs);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius-pill);
+  background-color: var(--bg-elevated);
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition:
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.iconButton:hover {
+  border-color: var(--border-strong);
+  color: var(--text-strong);
+}
+
+.iconLabel {
+  display: none;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.searchPanel {
+  max-width: var(--wide-width);
+  margin-inline: auto;
+  padding: var(--space-2xs) var(--page-padding) var(--space-sm);
+  border-top: var(--border-width) solid var(--border);
+}
+
+.mobileNav {
+  padding: var(--space-2xs) var(--page-padding) var(--space-sm);
+  border-top: var(--border-width) solid var(--border);
+}
+
+.mobileLink {
+  display: block;
+  padding: var(--space-2xs) 0;
+  font-size: var(--text-md);
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: block;
+  }
+
+  .menuButton {
+    display: none;
+  }
+
+  .mobileNav {
+    display: none;
+  }
+
+  .iconLabel {
+    display: inline;
+  }
+}
