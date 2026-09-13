@@ -1,57 +1,25 @@
 import clsx from 'clsx';
 
+import type { Messages } from '@/i18n';
+
 import css from './AlphabetNav.module.css';
 
 type AlphabetNavProps = {
   /** Літери, для яких у покажчику є якорі */
   letters: string[];
+  messages: Messages;
 };
 
-/** Українська абетка — показуємо всю, щоб було видно, яких літер немає */
-const UKRAINIAN_ALPHABET = [
-  'А',
-  'Б',
-  'В',
-  'Г',
-  'Ґ',
-  'Д',
-  'Е',
-  'Є',
-  'Ж',
-  'З',
-  'И',
-  'І',
-  'Ї',
-  'Й',
-  'К',
-  'Л',
-  'М',
-  'Н',
-  'О',
-  'П',
-  'Р',
-  'С',
-  'Т',
-  'У',
-  'Ф',
-  'Х',
-  'Ц',
-  'Ч',
-  'Ш',
-  'Щ',
-  'Ю',
-  'Я',
-];
-
-export const AlphabetNav = ({ letters }: AlphabetNavProps) => {
+export const AlphabetNav = ({ letters, messages }: AlphabetNavProps) => {
   const available = new Set(letters);
-  // Літери поза українською абеткою (латиниця, цифри) додаємо в кінець
-  const extras = letters.filter((letter) => !UKRAINIAN_ALPHABET.includes(letter));
+  const alphabet = [...messages.alphabet];
+  // Літери поза абеткою локалі (латиниця, цифри) додаємо в кінець
+  const extras = letters.filter((letter) => !alphabet.includes(letter));
 
   return (
-    <nav className={css.nav} aria-label="Перехід за літерою">
+    <nav className={css.nav} aria-label={messages.index.alphabetLabel}>
       <ul className={css.list}>
-        {[...UKRAINIAN_ALPHABET, ...extras].map((letter) => {
+        {[...alphabet, ...extras].map((letter) => {
           const isAvailable = available.has(letter);
 
           return (

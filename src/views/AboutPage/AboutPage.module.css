@@ -195,9 +195,11 @@
 }
 
 .collections {
+  /* Без align-items: start — інакше сітка тисне картку до її вмісту,
+     і в рядку вони виходять різної висоти. Самі картки вже мають
+     height: 100% і рядок, що розтягується. */
   display: grid;
   gap: var(--space-sm);
-  align-items: start;
 }
 
 /* --- Підвал --------------------------------------------------------- */
@@ -215,12 +217,12 @@
 @media (min-width: 768px) {
   .limitations,
   .collections {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (min-width: 1440px) {
   .collections {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }

@@ -1,0 +1,39 @@
+.switcher {
+  flex: none;
+}
+
+.list {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  padding: 2px;
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius-pill);
+  background-color: var(--bg-elevated);
+}
+
+.option {
+  display: grid;
+  place-items: center;
+  min-width: 30px;
+  min-height: 26px;
+  padding-inline: var(--space-3xs);
+  border-radius: var(--radius-pill);
+  color: var(--text-faint);
+  font-family: var(--font-display);
+  font-size: 9px;
+  letter-spacing: var(--tracking-wide);
+  text-decoration: none;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.option:hover {
+  color: var(--text-strong);
+}
+
+.current {
+  background-color: var(--bg-inset);
+  color: var(--text-strong);
+}

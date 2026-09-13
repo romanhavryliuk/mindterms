@@ -1,52 +1,27 @@
-/** Три форми множини українською: 1 поняття, 2 поняття, 5 понять */
-export type PluralForms = readonly [one: string, few: string, many: string];
+import type { Locale } from '@/i18n';
 
-export function plural(count: number, forms: PluralForms): string {
-  const abs = Math.abs(count);
-  const mod10 = abs % 10;
-  const mod100 = abs % 100;
-
-  if (mod10 === 1 && mod100 !== 11) return forms[0];
-  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return forms[1];
-  return forms[2];
-}
-
-/** «48 понять», «12 тем», «9 пар» */
-export function formatCount(count: number, forms: PluralForms): string {
-  return `${count} ${plural(count, forms)}`;
-}
-
-export const CONCEPT_FORMS: PluralForms = ['поняття', 'поняття', 'понять'];
-export const CATEGORY_FORMS: PluralForms = ['тема', 'теми', 'тем'];
-export const PAIR_FORMS: PluralForms = ['пара', 'пари', 'пар'];
-
-const MONTHS = [
-  'січень',
-  'лютий',
-  'березень',
-  'квітень',
-  'травень',
-  'червень',
-  'липень',
-  'серпень',
-  'вересень',
-  'жовтень',
-  'листопад',
-  'грудень',
-];
-
-/** «2026-09» → «вересень 2026»; невідомий формат повертаємо як є */
-export function formatMonth(value: string): string {
+/** «2026-09» + назви місяців локалі → «вересень 2026» */
+export function formatMonth(value: string, months: string[]): string {
   const [year, month] = value.split('-');
-  const name = MONTHS[Number(month) - 1];
+  const name = months[Number(month) - 1];
 
   if (year === undefined || name === undefined) return value;
   return `${name} ${year}`;
 }
 
 /** Перша літера назви для покажчика за абеткою */
-export function getFirstLetter(title: string): string {
-  return (title.trim()[0] ?? '#').toLocaleUpperCase('uk');
+export function getFirstLetter(title: string, locale: Locale): string {
+  return (title.trim()[0] ?? '#').toLocaleUpperCase(locale);
+}
+
+/**
+ * Оригінальний англійський термін під назвою — підказка для пошуку джерел.
+ * В англійській версії назва статті часто дослівно збігається з ним
+ * («Burnout» / «Burnout»), і підпис перетворюється на повтор заголовка,
+ * тому в такому разі його не показуємо.
+ */
+export function originalTerm(title: string, original: string): string | null {
+  return title.trim().toLowerCase() === original.trim().toLowerCase() ? null : original;
 }
 
 /** Обрізає визначення до картки, не ріжучи слово навпіл */

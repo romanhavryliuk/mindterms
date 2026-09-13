@@ -78,6 +78,9 @@
   font-variant-numeric: tabular-nums;
   letter-spacing: var(--tracking-tight);
   text-decoration: none;
+  /* Тут не лише номери: в англійській версії стоїть адреса довідника
+     ліній, і на найвужчих екранах її треба дозволити перенести */
+  overflow-wrap: anywhere;
 }
 
 .phone:hover {
@@ -125,9 +128,11 @@
 
 .cards,
 .related {
+  /* Без align-items: start — інакше сітка тисне картку до її вмісту,
+     і в рядку вони виходять різної висоти. Самі картки вже мають
+     height: 100% і рядок, що розтягується. */
   display: grid;
   gap: var(--space-sm);
-  align-items: start;
 }
 
 .card {
@@ -176,12 +181,18 @@
 
 @media (min-width: 768px) {
   .hotlines {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Ліній може бути дві або три залежно від країни: непарну останню
+     розтягуємо на обидві колонки, щоб вона не лишалась сиротою */
+  .hotline:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
   }
 
   .cards,
   .related {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .crisis {

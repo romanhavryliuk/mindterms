@@ -1,19 +1,21 @@
 import type { CSSProperties } from 'react';
 import Link from 'next/link';
 
+import { formatCount, localePath, type Locale, type Messages } from '@/i18n';
 import type { CategoryWithCount } from '@/services/contentService';
-import { FILTER_PARAM_CATEGORY, localePath } from '@/utils/constants';
-import { CONCEPT_FORMS, formatCount } from '@/utils/formatters';
+import { FILTER_PARAM_CATEGORY } from '@/utils/constants';
 
 import css from './CategoryCard.module.css';
 
 type CategoryCardProps = {
   category: CategoryWithCount;
+  locale: Locale;
+  messages: Messages;
 };
 
-export const CategoryCard = ({ category }: CategoryCardProps) => {
+export const CategoryCard = ({ category, locale, messages }: CategoryCardProps) => {
   const accentStyle = { '--accent': `var(--c-${category.color})` } as CSSProperties;
-  const href = `${localePath('/catalog')}?${FILTER_PARAM_CATEGORY}=${category.id}`;
+  const href = `${localePath('/catalog', locale)}?${FILTER_PARAM_CATEGORY}=${category.id}`;
 
   return (
     <article className={css.card} style={accentStyle}>
@@ -23,7 +25,9 @@ export const CategoryCard = ({ category }: CategoryCardProps) => {
         </Link>
       </h3>
       <p className={css.sub}>{category.sub}</p>
-      <p className={css.count}>{formatCount(category.conceptCount, CONCEPT_FORMS)}</p>
+      <p className={css.count}>
+        {formatCount(category.conceptCount, messages.plural.concept, locale)}
+      </p>
     </article>
   );
 };

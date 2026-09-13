@@ -6,19 +6,21 @@ import Link from 'next/link';
 import { SearchBox } from '@/components/SearchBox';
 import { SearchResults } from '@/components/SearchResults';
 import { useSearch } from '@/hooks/useSearch';
+import { format, formatCount, localePath, type Locale, type Messages } from '@/i18n';
 import type { SearchEntry } from '@/services/searchService';
-import { localePath, SEARCH_PARAM_QUERY } from '@/utils/constants';
-import { CONCEPT_FORMS, formatCount } from '@/utils/formatters';
+import { SEARCH_PARAM_QUERY } from '@/utils/constants';
 
 import { SearchParamsSync } from './SearchParamsSync';
 import css from './SearchPage.module.css';
 
 type SearchBrowserProps = {
   index: SearchEntry[];
+  locale: Locale;
+  messages: Messages;
 };
 
 /** Запит живе в адресі, тому результатом пошуку можна поділитись посиланням */
-export const SearchBrowser = ({ index }: SearchBrowserProps) => {
+export const SearchBrowser = ({ index, locale, messages }: SearchBrowserProps) => {
   const [query, setQuery] = useState('');
   const { results, isTooShort, isEmpty } = useSearch(index, query);
 
@@ -44,26 +46,23 @@ export const SearchBrowser = ({ index }: SearchBrowserProps) => {
         <SearchParamsSync onChange={handleSync} />
       </Suspense>
 
-      <SearchBox value={query} onSubmit={handleSubmit} autoFocus />
+      <SearchBox value={query} messages={messages} onSubmit={handleSubmit} autoFocus />
 
       {isTooShort && (
         <p className={css.state}>
-          Введіть щонайменше два символи. Якщо не знаєте, що шукати, —{' '}
-          <Link className={css.stateLink} href={localePath('/index')}>
-            покажчик за абеткою
-          </Link>{' '}
-          показує всі поняття одразу.
+          {messages.search.tooShortBefore}
+          <Link className={css.stateLink} href={localePath('/index', locale)}>
+            {messages.search.tooShortLink}
+          </Link>
+          {messages.search.tooShortAfter}
         </p>
       )}
 
       {isEmpty && (
         <div className={css.state}>
-          <p>
-            За запитом «{query}» нічого не знайшлося. Спробуйте іншу форму слова — пошук
-            шукає точний збіг, не основу.
-          </p>
-          <Link className={css.stateLink} href={localePath('/index')}>
-            Відкрити покажчик
+          <p>{format(messages.search.emptyText, { query })}</p>
+          <Link className={css.stateLink} href={localePath('/index', locale)}>
+            {messages.search.emptyLink}
           </Link>
         </div>
       )}
@@ -71,10 +70,16 @@ export const SearchBrowser = ({ index }: SearchBrowserProps) => {
       {results.length > 0 && (
         <>
           <p className={css.count} aria-live="polite">
-            {formatCount(results.length, CONCEPT_FORMS)}. Спершу збіги в назві, далі — у
-            визначенні й тексті статей.
+            {format(messages.search.count, {
+              count: formatCount(results.length, messages.plural.concept, locale),
+            })}
           </p>
-          <SearchResults results={results} query={query} />
+          <SearchResults
+            results={results}
+            query={query}
+            locale={locale}
+            messages={messages}
+          />
         </>
       )}
     </div>

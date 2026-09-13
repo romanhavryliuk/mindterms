@@ -91,7 +91,7 @@
 
 @media (min-width: 768px) {
   .item {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: minmax(0, 1fr) auto;
     gap: var(--space-sm);
     align-items: center;
   }

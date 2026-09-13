@@ -8,8 +8,11 @@
 
   /* --- Типографіка ------------------------------------------------- */
   /* Literata — основний текст усього сайту, Unbounded — заголовки й мітки */
-  --font-serif: var(--font-serif-face), Georgia, 'Times New Roman', serif;
-  --font-display: var(--font-display-face), 'Unbounded', system-ui, sans-serif;
+  /* Запасне значення всередині var() обовʼязкове: --font-*-face задають
+     класи next/font, і на сторінці 404 вони висять не на <html>, а нижче.
+     Без нього значення стає недійсним просто тут і таким успадковується. */
+  --font-serif: var(--font-serif-face, Literata), Georgia, 'Times New Roman', serif;
+  --font-display: var(--font-display-face, Unbounded), system-ui, sans-serif;
 
   --text-xs: 0.7647rem; /* 13px */
   --text-sm: 0.8235rem; /* 14px */
@@ -81,7 +84,7 @@
   --text-strong: #11161a;
   --text-body: #11161a;
   --text-muted: #4b5559;
-  --text-faint: #6a7b80;
+  --text-faint: #627176;
 
   --border: #d2d8d2;
   --border-subtle: #e3e8e2;
@@ -95,7 +98,7 @@
 
   /* --- Кольори рівнів доказовості ---------------------------------- */
   --ev-3: #3f7a57;
-  --ev-2: #96762a;
+  --ev-2: #876a26;
   --ev-1: #a34a2e;
 
   /* --- Акцентні кольори категорій ----------------------------------- */
@@ -110,8 +113,8 @@
   --c-emo: #a3407a;
   --c-anx: #6e6b24;
   --c-cog: #4a5b9e;
-  --c-mot: #b07a22;
-  --c-soc: #5d7a2e;
+  --c-mot: #93661c;
+  --c-soc: #5b782d;
 
   /* Колір-заглушка, якщо акцент не заданий контекстом */
   --accent: #5b4a8c;

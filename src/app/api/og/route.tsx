@@ -3,14 +3,10 @@ import { join } from 'node:path';
 
 import { ImageResponse } from 'next/og';
 
+import { DEFAULT_LOCALE, getMessages, isLocale, type Locale } from '@/i18n';
 import { getCategoryById, getConceptBySlug } from '@/services/contentService';
-import {
-  CATEGORY_HEX,
-  EVIDENCE_HEX,
-  EVIDENCE_META,
-  OG_HEX,
-  SITE_NAME,
-} from '@/utils/constants';
+import { CATEGORY_HEX, EVIDENCE_HEX, OG_HEX, SITE_NAME } from '@/utils/constants';
+import { originalTerm } from '@/utils/formatters';
 
 /**
  * Єдиний серверний код проєкту: OG-зображення не можна відрендерити наперед
@@ -43,17 +39,22 @@ async function loadFonts(): Promise<LoadedFonts> {
 }
 
 export async function GET(request: Request): Promise<Response> {
-  const slug = new URL(request.url).searchParams.get('slug');
-  const concept = slug === null ? undefined : getConceptBySlug(slug);
+  const params = new URL(request.url).searchParams;
+  const slug = params.get('slug');
+  const rawLocale = params.get('locale') ?? DEFAULT_LOCALE;
+  const locale: Locale = isLocale(rawLocale) ? rawLocale : DEFAULT_LOCALE;
+  const messages = getMessages(locale);
+  const concept = slug === null ? undefined : getConceptBySlug(locale, slug);
 
   if (concept === undefined) {
-    return new Response('Поняття не знайдено', { status: 404 });
+    return new Response(messages.metadata.conceptNotFound, { status: 404 });
   }
 
-  const category = getCategoryById(concept.category);
+  const category = getCategoryById(locale, concept.category);
   const accent = category === undefined ? OG_HEX.accent : CATEGORY_HEX[category.color];
   const evidenceColor = EVIDENCE_HEX[concept.evidence];
-  const evidenceLabel = EVIDENCE_META[concept.evidence].label;
+  const evidenceLabel = messages.evidence.levels[concept.evidence].label;
+  const original = originalTerm(concept.title, concept.original);
   const fonts = await loadFonts();
 
   return new ImageResponse(
@@ -90,7 +91,7 @@ export async function GET(request: Request): Promise<Response> {
               textTransform: 'uppercase',
             }}
           >
-            {category?.name ?? 'Поняття'}
+            {category?.name ?? ''}
           </div>
         </div>
 
@@ -107,15 +108,17 @@ export async function GET(request: Request): Promise<Response> {
           {concept.title}
         </div>
 
-        <div
-          style={{
-            marginTop: 20,
-            color: OG_HEX.echo,
-            fontSize: 32,
-          }}
-        >
-          {concept.original}
-        </div>
+        {original !== null && (
+          <div
+            style={{
+              marginTop: 20,
+              color: OG_HEX.echo,
+              fontSize: 32,
+            }}
+          >
+            {original}
+          </div>
+        )}
       </div>
 
       <div
@@ -151,7 +154,7 @@ export async function GET(request: Request): Promise<Response> {
           ))}
           {/* satori вимагає рівно один дочірній вузол без display: flex */}
           <div style={{ marginLeft: 4 }}>
-            {`${evidenceLabel} · ${concept.evidence} з 3`}
+            {`${evidenceLabel} · ${concept.evidence} ${messages.common.evidenceScale}`}
           </div>
         </div>
 

@@ -1,7 +1,11 @@
 import type { ZodError } from 'zod';
 
-import rawContent from '../../content/content.json';
+import rawEn from '../../content/content.en.json';
+import rawPl from '../../content/content.pl.json';
+import rawUk from '../../content/content.json';
 import { contentSchema } from '../../content/schema';
+import { DEFAULT_LOCALE, type Locale } from '@/i18n';
+import type { SearchEntry } from '@/services/searchService';
 import type {
   Category,
   Collection,
@@ -11,86 +15,93 @@ import type {
   ContentMeta,
   HelpCard,
 } from '@/types';
-import type { SearchEntry } from '@/services/searchService';
 import { getFirstLetter, truncate } from '@/utils/formatters';
 
 /**
- * Читання і валідація content.json. Виклик відбувається під час збірки,
- * тож будь-яка невідповідність схемі валить build, а не потрапляє в прод.
+ * Читання і валідація content.json кожної мови. Виклик відбувається під час
+ * збірки, тож будь-яка невідповідність схемі валить build, а не потрапляє в прод.
  */
 
+const RAW: Record<Locale, unknown> = { uk: rawUk, en: rawEn, pl: rawPl };
+
 /** Людиночитний опис помилок Zod: шлях у JSON + що саме не так */
-function formatValidationError(error: ZodError): string {
+function formatValidationError(locale: Locale, error: ZodError): string {
   const lines = error.issues.map((issue) => {
     const path = issue.path.length > 0 ? issue.path.join('.') : '(корінь)';
     return `  • ${path}: ${issue.message}`;
   });
 
   return [
-    'content/content.json не відповідає схемі content/schema.ts.',
+    `content/content${locale === DEFAULT_LOCALE ? '' : `.${locale}`}.json ` +
+      'не відповідає схемі content/schema.ts.',
     `Знайдено проблем: ${error.issues.length}`,
     ...lines,
   ].join('\n');
 }
 
-let cache: Content | null = null;
+const cache = new Map<Locale, Content>();
 
-function getContent(): Content {
-  if (cache !== null) return cache;
+function getContent(locale: Locale): Content {
+  const cached = cache.get(locale);
+  if (cached !== undefined) return cached;
 
-  const result = contentSchema.safeParse(rawContent);
+  const result = contentSchema.safeParse(RAW[locale]);
   if (!result.success) {
-    throw new Error(formatValidationError(result.error));
+    throw new Error(formatValidationError(locale, result.error));
   }
 
-  cache = result.data;
-  return cache;
+  cache.set(locale, result.data);
+  return result.data;
 }
 
-export function getMeta(): ContentMeta {
-  return getContent().meta;
+export function getMeta(locale: Locale): ContentMeta {
+  return getContent(locale).meta;
 }
 
-export function getAllConcepts(): Concept[] {
-  return getContent().concepts;
+export function getAllConcepts(locale: Locale): Concept[] {
+  return getContent(locale).concepts;
 }
 
-export function getAllCategories(): Category[] {
-  return getContent().categories;
+export function getAllCategories(locale: Locale): Category[] {
+  return getContent(locale).categories;
 }
 
-export function getAllCollections(): Collection[] {
-  return getContent().collections;
+export function getAllCollections(locale: Locale): Collection[] {
+  return getContent(locale).collections;
 }
 
-export function getAllConfusions(): Confusion[] {
-  return getContent().confusions;
+export function getAllConfusions(locale: Locale): Confusion[] {
+  return getContent(locale).confusions;
 }
 
-export function getAllHelpCards(): HelpCard[] {
-  return getContent().helpCards;
+export function getAllHelpCards(locale: Locale): HelpCard[] {
+  return getContent(locale).helpCards;
 }
 
-export function getBibliography(): string[] {
-  return getContent().bibliography;
+export function getBibliography(locale: Locale): string[] {
+  return getContent(locale).bibliography;
 }
 
-/** Слаг поняття — це його id */
-export function getConceptBySlug(slug: string): Concept | undefined {
-  return getAllConcepts().find((concept) => concept.id === slug);
+/** Слаг поняття — це його id, однаковий у всіх мовах */
+export function getConceptBySlug(locale: Locale, slug: string): Concept | undefined {
+  return getAllConcepts(locale).find((concept) => concept.id === slug);
 }
 
-export function getCategoryById(id: string): Category | undefined {
-  return getAllCategories().find((category) => category.id === id);
+export function getCategoryById(locale: Locale, id: string): Category | undefined {
+  return getAllCategories(locale).find((category) => category.id === id);
+}
+
+export function getCollectionById(locale: Locale, id: string): Collection | undefined {
+  return getAllCollections(locale).find((collection) => collection.id === id);
 }
 
 /** Поняття однієї теми в порядку, заданому content.json */
-export function getConceptsByCategory(categoryId: string): Concept[] {
-  return getAllConcepts().filter((concept) => concept.category === categoryId);
+export function getConceptsByCategory(locale: Locale, categoryId: string): Concept[] {
+  return getAllConcepts(locale).filter((concept) => concept.category === categoryId);
 }
 
-export function getConceptsByIds(ids: string[]): Concept[] {
-  const byId = new Map(getAllConcepts().map((concept) => [concept.id, concept]));
+export function getConceptsByIds(locale: Locale, ids: string[]): Concept[] {
+  const byId = new Map(getAllConcepts(locale).map((concept) => [concept.id, concept]));
 
   return ids
     .map((id) => byId.get(id))
@@ -98,8 +109,8 @@ export function getConceptsByIds(ids: string[]): Concept[] {
 }
 
 /** Пов'язані поняття в порядку, заданому полем related */
-export function getRelatedConcepts(concept: Concept): Concept[] {
-  return getConceptsByIds(concept.related);
+export function getRelatedConcepts(locale: Locale, concept: Concept): Concept[] {
+  return getConceptsByIds(locale, concept.related);
 }
 
 /**
@@ -111,8 +122,8 @@ export type ConceptSummary = Pick<
   'id' | 'title' | 'original' | 'evidence' | 'category' | 'definition'
 >;
 
-export function getConceptSummaries(): ConceptSummary[] {
-  return getAllConcepts().map((concept) => ({
+export function getConceptSummaries(locale: Locale): ConceptSummary[] {
+  return getAllConcepts(locale).map((concept) => ({
     id: concept.id,
     title: concept.title,
     original: concept.original,
@@ -122,17 +133,13 @@ export function getConceptSummaries(): ConceptSummary[] {
   }));
 }
 
-export function getCollectionById(id: string): Collection | undefined {
-  return getAllCollections().find((collection) => collection.id === id);
-}
-
 /** Індекс для сторінки пошуку: тіло статті склеєне й переведене в нижній регістр */
-export function getSearchIndex(): SearchEntry[] {
+export function getSearchIndex(locale: Locale): SearchEntry[] {
   const categoryNames = new Map(
-    getAllCategories().map((category) => [category.id, category.name])
+    getAllCategories(locale).map((category) => [category.id, category.name])
   );
 
-  return getAllConcepts().map((concept) => ({
+  return getAllConcepts(locale).map((concept) => ({
     id: concept.id,
     title: concept.title,
     original: concept.original,
@@ -148,16 +155,16 @@ export function getSearchIndex(): SearchEntry[] {
       concept.evidenceNote,
     ]
       .join(' ')
-      .toLocaleLowerCase('uk'),
+      .toLocaleLowerCase(locale),
   }));
 }
 
 export type CategoryWithCount = Category & { conceptCount: number };
 
-export function getCategoriesWithCounts(): CategoryWithCount[] {
-  return getAllCategories().map((category) => ({
+export function getCategoriesWithCounts(locale: Locale): CategoryWithCount[] {
+  return getAllCategories(locale).map((category) => ({
     ...category,
-    conceptCount: getConceptsByCategory(category.id).length,
+    conceptCount: getConceptsByCategory(locale, category.id).length,
   }));
 }
 
@@ -167,8 +174,8 @@ export type AdjacentConcepts = {
   next: Concept | null;
 };
 
-export function getAdjacentConcepts(concept: Concept): AdjacentConcepts {
-  const siblings = getConceptsByCategory(concept.category);
+export function getAdjacentConcepts(locale: Locale, concept: Concept): AdjacentConcepts {
+  const siblings = getConceptsByCategory(locale, concept.category);
   const index = siblings.findIndex((item) => item.id === concept.id);
 
   if (index === -1) return { previous: null, next: null };
@@ -179,18 +186,18 @@ export function getAdjacentConcepts(concept: Concept): AdjacentConcepts {
   };
 }
 
-/** Групи покажчика за першою літерою, відсортовані українською абеткою */
+/** Групи покажчика за першою літерою, відсортовані абеткою локалі */
 export type LetterGroup = {
   letter: string;
   concepts: Concept[];
 };
 
-export function getAlphabetGroups(): LetterGroup[] {
-  const collator = new Intl.Collator('uk');
+export function getAlphabetGroups(locale: Locale): LetterGroup[] {
+  const collator = new Intl.Collator(locale);
   const groups = new Map<string, Concept[]>();
 
-  for (const concept of getAllConcepts()) {
-    const letter = getFirstLetter(concept.title);
+  for (const concept of getAllConcepts(locale)) {
+    const letter = getFirstLetter(concept.title, locale);
     const bucket = groups.get(letter);
 
     if (bucket === undefined) {

@@ -1,0 +1,1830 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "updated": "2026-09",
+    "locale": "pl",
+    "note": "Poradnik edukacyjny. Nie jest poradą medyczną i nie służy do diagnozowania."
+  },
+  "categories": [
+    {
+      "id": "traits",
+      "name": "Cechy i temperament",
+      "sub": "Z czego składa się charakter i co jest w nim naprawdę trwałe",
+      "intro": "Współczesna psychologia opisuje osobowość nie typami, lecz wymiarami: człowiek nie jest „introwertykiem albo ekstrawertykiem”, tylko znajduje się gdzieś na skali. Typologie są popularniejsze, bo prostsze, ale płacą za to dokładnością.",
+      "color": "trait"
+    },
+    {
+      "id": "attach",
+      "name": "Style przywiązania",
+      "sub": "Jak człowiek zachowuje się w bliskich relacjach, kiedy robi się strasznie",
+      "intro": "Styl przywiązania to nie charakter w ogóle, lecz scenariusz zachowania właśnie w bliskich relacjach. Kształtuje się w dzieciństwie i ujawnia przede wszystkim w chwilach niepokoju. To nie wyrok: zmienia się, choć powoli.",
+      "color": "attach"
+    },
+    {
+      "id": "dark",
+      "name": "Mroczna triada",
+      "sub": "Cechy, przez które człowiek systematycznie wykorzystuje innych",
+      "intro": "To cechy, a nie diagnozy. Każdy ma je w jakimś stopniu i mierzy się je skalą, a nie obecnością. Zaburzenie kliniczne to osobna historia i rozpoznaje je wyłącznie specjalista.",
+      "color": "dark"
+    },
+    {
+      "id": "bias",
+      "name": "Zniekształcenia poznawcze",
+      "sub": "Systematyczne błędy myślenia, niemal takie same u wszystkich",
+      "intro": "Zniekształcenia nie są błędami ludzi niemądrych. To skutek tego, jak mózg oszczędza zasoby. Wiedza o nich nie ratuje automatycznie, ale daje moment, w którym można się zatrzymać.",
+      "color": "bias"
+    },
+    {
+      "id": "defense",
+      "name": "Mechanizmy obronne",
+      "sub": "Automatyczne sposoby, by nie czuć tego, co jest nie do zniesienia",
+      "intro": "Mechanizmy obronne działają bez udziału świadomości i dlatego nie są kłamstwem. Same w sobie nie są złe: część z nich jest dojrzała i pożyteczna. Problem pojawia się wtedy, gdy ta sama obrona włącza się zawsze.",
+      "color": "def"
+    },
+    {
+      "id": "talk",
+      "name": "Style komunikacji",
+      "sub": "Cztery sposoby zachowania, gdy wasze interesy się rozchodzą",
+      "intro": "To nie cechy charakteru, lecz wyuczone strategie. Można je zmieniać celowo i właśnie tutaj trening daje najszybszy widoczny efekt.",
+      "color": "talk"
+    },
+    {
+      "id": "rel",
+      "name": "Wzorce w relacjach",
+      "sub": "Powtarzalne scenariusze, które niszczą bliskość",
+      "intro": "Te pojęcia najbardziej cierpią dziś z powodu potocznego użycia: nazywa się nimi każde nieprzyjemne zachowanie. Liczy się tu nie pojedynczy epizod, lecz system.",
+      "color": "rel"
+    },
+    {
+      "id": "emo",
+      "name": "Emocje i ich regulacja",
+      "sub": "Jak zbudowane są uczucia i co naprawdę można z nimi zrobić",
+      "intro": "Emocje nie są przeszkodą dla myślenia — są częścią tego, jak mózg ocenia sytuację. Pytanie nie brzmi, jak się ich pozbyć, lecz które sposoby obchodzenia się z nimi działają, a które tylko tak wyglądają.",
+      "color": "emo"
+    },
+    {
+      "id": "stress",
+      "name": "Lęk, stres i trauma",
+      "sub": "Co robi organizm, gdy robi się niebezpiecznie, i dlaczego to się przeciąga",
+      "intro": "Lęk sam w sobie nie jest zaburzeniem — to system wczesnego ostrzegania. Problemy zaczynają się, gdy włącza się bez zagrożenia albo gdy sposoby radzenia sobie z nim zaczynają go podtrzymywać.",
+      "color": "anx"
+    },
+    {
+      "id": "mind",
+      "name": "Pamięć, uwaga, myślenie",
+      "sub": "Jak mózg przetwarza informacje i gdzie systematycznie się myli",
+      "intro": "Pamięć nie jest zapisem, a uwaga nie jest reflektorem, który da się dowolnie poszerzyć. Większość potocznych wyobrażeń o tych procesach jest błędna i właśnie dlatego tak drogo to kosztuje.",
+      "color": "cog"
+    },
+    {
+      "id": "motiv",
+      "name": "Motywacja i wola",
+      "sub": "Dlaczego zaczynamy, dlaczego rzucamy i co na to działa",
+      "intro": "Większość porad o motywacji opiera się na założeniu, że brakuje chęci. Badania wskazują na co innego: częściej brakuje nie chęci, lecz zrozumiałej struktury i sposobu poradzenia sobie z nieprzyjemnymi emocjami, jakie budzi samo zadanie.",
+      "color": "mot"
+    },
+    {
+      "id": "social",
+      "name": "Ludzie w grupach",
+      "sub": "Co robi z człowiekiem obecność innych ludzi",
+      "intro": "Najmocniejsze wyniki psychologii społecznej dotyczą nie charakteru, lecz sytuacji. Pokazują, że zachowanie dobrze przewiduje nie pytanie „co to za człowiek”, lecz pytanie „jak urządzony jest pokój”.",
+      "color": "soc"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "introext",
+      "category": "traits",
+      "title": "Ekstrawersja i introwersja",
+      "original": "Extraversion / Introversion",
+      "evidence": 3,
+      "definition": "Nie o nieśmiałości, lecz o tym, skąd bierze się energia i jak silnej stymulacji zewnętrznej potrzebuje układ nerwowy.",
+      "manifestations": [
+        "Ekstrawertyk regeneruje się w kontakcie z ludźmi, introwertyk — w samotności",
+        "Introwertyk może być świetnym mówcą: to umiejętność, a nie temperament",
+        "Nieśmiałość to osobna sprawa: to strach przed oceną i zdarza się u obu",
+        "Większość ludzi jest w środku skali, czystych biegunów jest niewiele"
+      ],
+      "example": "Po dniu spotkań ekstrawertyk idzie z kolegami do baru i wraca rześki. Introwertyk idzie do domu i milczy przez godzinę — nie dlatego, że się obraził, tylko dlatego, że tak się ładuje.",
+      "commonMistake": "„Introwertyk to ktoś, kto nie lubi ludzi”. W rzeczywistości introwertycy często mają głębokie relacje, tyle że mniej liczne i bardziej wybrane. Mylenie tego z fobią społeczną to najczęstszy błąd przy tym pojęciu.",
+      "figures": [
+        {
+          "value": "r≈0,70",
+          "label": "korelacja skali MBTI E/I z ekstrawersją Wielkiej Piątki"
+        }
+      ],
+      "evidenceNote": "Najlepiej potwierdzona cecha ze wszystkich. Stabilna w czasie, odtwarzalna w różnych kulturach, ma korelaty neurofizjologiczne.",
+      "related": ["bigfive", "hsp"],
+      "sources": [
+        {
+          "title": "Costa & McCrae (1992). Revised NEO Personality Inventory manual",
+          "url": "https://scholar.google.com/scholar?q=Costa+McCrae+1992+NEO+PI-R+professional+manual"
+        },
+        {
+          "title": "APA Dictionary: extraversion",
+          "url": "https://dictionary.apa.org/extraversion"
+        }
+      ]
+    },
+    {
+      "id": "bigfive",
+      "category": "traits",
+      "title": "Wielka Piątka",
+      "original": "Big Five / OCEAN",
+      "evidence": 3,
+      "definition": "Pięć wymiarów, do których sprowadza się większość opisów charakteru: otwartość, sumienność, ekstrawersja, ugodowość, neurotyczność.",
+      "manifestations": [
+        "Otwartość — ciekawość nowego, idei, sztuki, nietypowego",
+        "Sumienność — zorganizowanie, rzetelność, zdolność doprowadzania do końca",
+        "Ekstrawersja — potrzeba stymulacji i kontaktu społecznego",
+        "Ugodowość — skłonność do ufania, ustępowania, współpracy",
+        "Neurotyczność — jak łatwo włącza się niepokój i emocje negatywne"
+      ],
+      "example": "Dwoje ludzi „nie lubi zmian”. Jedno ma niską otwartość — nowe go po prostu nie interesuje. Drugie ma wysoką neurotyczność — niepewność budzi w nim lęk. Zachowanie podobne, przyczyna inna i pracować trzeba z tym inaczej.",
+      "commonMistake": "„To po prostu kolejny test w rodzaju MBTI”. Nie: Wielka Piątka wyrosła nie z teorii, lecz z analizy języka — badacze wzięli wszystkie słowa, którymi ludzie opisują siebie nawzajem, i sprawdzili, w ile grup się układają. Wyszło pięć.",
+      "figures": [
+        {
+          "value": "0,80–0,90",
+          "label": "powtarzalność wyniku po kilku tygodniach"
+        },
+        {
+          "value": "r=0,31",
+          "label": "sumienność jako predyktor efektywności w pracy"
+        }
+      ],
+      "evidenceNote": "Standard akademickiej psychologii osobowości. Struktura odtwarza się w różnych kulturach i dekadach.",
+      "related": ["introext", "mbti"],
+      "sources": [
+        {
+          "title": "Goldberg (1990). An alternative description of personality",
+          "url": "https://scholar.google.com/scholar?q=Goldberg+1990+alternative+description+of+personality+Big-Five+factor+structure"
+        },
+        {
+          "title": "Barrick & Mount (1991). The Big Five and job performance",
+          "url": "https://scholar.google.com/scholar?q=Barrick+Mount+1991+Big+Five+personality+dimensions+job+performance+meta-analysis"
+        }
+      ]
+    },
+    {
+      "id": "mbti",
+      "category": "traits",
+      "title": "MBTI i 16 typów",
+      "original": "Myers-Briggs Type Indicator",
+      "evidence": 1,
+      "definition": "Popularna typologia dzieląca ludzi na 16 typów według czterech dychotomii. Wygodna do rozmowy o sobie, słaba jako narzędzie pomiarowe.",
+      "manifestations": [
+        "Dzieli ciągłe skale na „albo–albo”, choć większość ludzi jest pośrodku",
+        "Daje opisy pasujące niemal do każdego — to efekt Barnuma",
+        "Nie przewiduje efektywności w pracy i prawie nie jest używana w badaniach",
+        "Jej najsolidniejsza część to skala E/I, bo niemal powiela ekstrawersję"
+      ],
+      "example": "Osoba z wynikiem 51% do 49% dostaje tę samą literę co osoba z wynikiem 90%. Miesiąc później z łatwością dostaje przeciwną — i to nie jest zmiana osobowości, tylko artefakt przecięcia skali na pół.",
+      "commonMistake": "Główna pułapka nie tkwi w samym MBTI, lecz w tym, co się z nim robi: rekrutuje się ludzi, przydziela role, tłumaczy konflikty. Do decyzji o konkretnym człowieku się nie nadaje.",
+      "figures": [
+        {
+          "value": "~50%",
+          "label": "dostaje inny typ przy powtórnym wypełnieniu"
+        },
+        {
+          "value": "1991",
+          "label": "wniosek Narodowej Akademii Nauk USA o braku podstaw do doradztwa zawodowego"
+        }
+      ],
+      "evidenceNote": "Słaba powtarzalność, niepotwierdzona struktura czynnikowa. Jako pretekst do myślenia o sobie — w porządku. Jako podstawa decyzji — nie.",
+      "related": ["bigfive", "introext"],
+      "sources": [
+        {
+          "title": "Pittenger (2005). Cautionary comments regarding the MBTI",
+          "url": "https://scholar.google.com/scholar?q=Pittenger+2005+cautionary+comments+regarding+the+Myers-Briggs+Type+Indicator"
+        },
+        {
+          "title": "Druckman & Bjork (1991). In the Mind’s Eye. National Academy of Sciences",
+          "url": "https://scholar.google.com/scholar?q=Druckman+Bjork+1991+In+the+Mind+Eye+enhancing+human+performance"
+        }
+      ]
+    },
+    {
+      "id": "hsp",
+      "category": "traits",
+      "title": "Wysoka wrażliwość",
+      "original": "Sensory Processing Sensitivity",
+      "evidence": 2,
+      "definition": "Podwyższona wrażliwość układu nerwowego na bodźce: dźwięki, światło, cudze emocje, zmiany w otoczeniu.",
+      "manifestations": [
+        "Przeciążenie następuje szybciej w głośnych i zatłoczonych miejscach",
+        "Głębsze przetwarzanie informacji, dłuższe rozważanie",
+        "Silniejsza reakcja i na to, co nieprzyjemne, i na to, co piękne",
+        "Widoczna w potrzebie regeneracyjnej pauzy po intensywnym dniu"
+      ],
+      "example": "Na firmowej imprezie ta osoba wychodzi po dwóch godzinach nie dlatego, że się nudzi, tylko dlatego, że muzyka, światło i dwadzieścia równoległych rozmów wyczerpały jej zasoby wcześniej niż u innych.",
+      "commonMistake": "To nie diagnoza ani supermoc. I to nie to samo co introwersja: mniej więcej jedna trzecia osób wysoko wrażliwych to ekstrawertycy.",
+      "figures": [
+        {
+          "value": "15–20%",
+          "label": "szacowana częstość w populacji"
+        }
+      ],
+      "evidenceNote": "Konstrukt ma potwierdzenie empiryczne, ale część badaczy uważa, że w dużym stopniu pokrywa się z neurotycznością i introwersją.",
+      "related": ["introext", "bigfive"],
+      "sources": [
+        {
+          "title": "Aron & Aron (1997). Sensory-processing sensitivity",
+          "url": "https://scholar.google.com/scholar?q=Aron+Aron+1997+sensory-processing+sensitivity+and+its+relation+to+introversion+emotionality"
+        },
+        {
+          "title": "Greven et al. (2019). Sensory processing sensitivity: review",
+          "url": "https://scholar.google.com/scholar?q=Greven+2019+sensory+processing+sensitivity+review+of+research+and+agenda"
+        }
+      ]
+    },
+    {
+      "id": "secure",
+      "category": "attach",
+      "title": "Bezpieczne przywiązanie",
+      "original": "Secure",
+      "evidence": 3,
+      "definition": "Podstawowe oczekiwanie, że bliska osoba będzie obok, a jeśli odejdzie — wróci. Pozwala i zbliżać się, i być osobno.",
+      "manifestations": [
+        "Potrafi wprost powiedzieć, czego potrzebuje, bez aluzji i sprawdzianów",
+        "Konflikt nie jest odbierany jako zagrożenie dla relacji",
+        "Spokojnie znosi czas osobno",
+        "Ufa, ale nie ślepo: zauważa, gdy coś jest nie tak"
+      ],
+      "example": "Partner nie odpowiada przez trzy godziny. Osoba z bezpiecznym przywiązaniem myśli „zajęty, napisze”, zajmuje się swoimi sprawami i nie buduje w tym czasie żadnych teorii.",
+      "commonMistake": "„To wrodzone: albo się ma, albo nie”. Przywiązanie kształtuje się w relacjach i w relacjach się zmienia — między innymi w terapii albo w długim, pewnym związku.",
+      "figures": [
+        {
+          "value": "56–59%",
+          "label": "dorosłych w próbach reprezentatywnych"
+        },
+        {
+          "value": "58%",
+          "label": "według wywiadu klinicznego AAI, ponad 10 000 przypadków"
+        }
+      ],
+      "evidenceNote": "Jedna z najlepiej potwierdzonych koncepcji w psychologii relacji. Dane z kwestionariuszy i z wywiadów są zgodne.",
+      "related": ["anxious", "avoidant"],
+      "sources": [
+        {
+          "title": "Hazan & Shaver (1987). Romantic love as an attachment process",
+          "url": "https://scholar.google.com/scholar?q=Hazan+Shaver+1987+romantic+love+conceptualized+as+an+attachment+process"
+        },
+        {
+          "title": "Mickelson, Kessler & Shaver (1997). Attachment in a national sample",
+          "url": "https://scholar.google.com/scholar?q=Mickelson+Kessler+Shaver+1997+adult+attachment+in+a+nationally+representative+sample"
+        }
+      ]
+    },
+    {
+      "id": "anxious",
+      "category": "attach",
+      "title": "Lękowe przywiązanie",
+      "original": "Anxious / Preoccupied",
+      "evidence": 3,
+      "definition": "Stały lęk w tle, że bliska osoba się oddali, i potrzeba potwierdzeń, których nigdy nie jest dosyć.",
+      "manifestations": [
+        "Ostra reakcja na przerwę w odpowiedziach, zmianę tonu, krótką wiadomość",
+        "Skłonność do odczytywania rozmów od nowa w poszukiwaniu ukrytego sensu",
+        "Zachowanie protestacyjne: obraza, demonstracyjne milczenie, prowokowanie kłótni",
+        "Szybkie zbliżenie na początku związku"
+      ],
+      "example": "Partner odpowiada „ok” zamiast zwykłego „okej, do wieczora”. Potem godzina rekonstrukcji: co powiedziałam wczoraj, czy się obraził, czy to koniec. Kiedy okazuje się, że prowadził auto, niepokój nie znika, tylko zostaje odroczony.",
+      "commonMistake": "„To przez brak pewności siebie”. Związek istnieje, ale mechanizm jest inny: nie chodzi o samoocenę w ogóle, tylko o konkretne oczekiwanie, że bliskość jest niestabilna.",
+      "figures": [
+        {
+          "value": "11%",
+          "label": "w ogólnokrajowej próbie w USA"
+        },
+        {
+          "value": "19%",
+          "label": "według wywiadu AAI"
+        }
+      ],
+      "evidenceNote": "Dobrze potwierdzony wzorzec, konsekwentnie powiązany z trudnościami w regulacji emocji.",
+      "related": ["secure", "avoidant", "four"],
+      "sources": [
+        {
+          "title": "Mikulincer & Shaver (2007). Attachment in Adulthood",
+          "url": "https://scholar.google.com/scholar?q=Mikulincer+Shaver+attachment+in+adulthood+structure+dynamics+and+change"
+        },
+        {
+          "title": "APA Dictionary: attachment style",
+          "url": "https://dictionary.apa.org/attachment-style"
+        }
+      ]
+    },
+    {
+      "id": "avoidant",
+      "category": "attach",
+      "title": "Unikające przywiązanie",
+      "original": "Avoidant / Dismissive",
+      "evidence": 3,
+      "definition": "Automatyczne zwiększanie dystansu, gdy relacja staje się zbyt bliska. Niezależność jako sposób na bezpieczeństwo.",
+      "manifestations": [
+        "Dyskomfort przy rozmowach o uczuciach i przy „poważnych rozmowach” w ogóle",
+        "Potrzeba pobycia samemu dokładnie wtedy, gdy partner potrzebuje bliskości",
+        "Idealizowanie dawnych związków albo wyobrażonego przyszłego partnera",
+        "Zewnętrzny spokój w konflikcie, za którym często stoi wysokie pobudzenie fizjologiczne"
+      ],
+      "example": "Po wyjątkowo ciepłym weekendzie osoba nagle na tydzień staje się chłodna i zajęta. To nie gra ani manipulacja — to reakcja na bliskość, która przekroczyła komfortowy próg.",
+      "commonMistake": "„Po prostu go to nie obchodzi”. Pomiary pokazują coś przeciwnego: zewnętrznie spokojna osoba unikająca ma w konflikcie często wyższe tętno i poziom stresu niż ta, która płacze.",
+      "figures": [
+        {
+          "value": "23–25%",
+          "label": "dorosłych"
+        }
+      ],
+      "evidenceNote": "Trwały wzorzec z dobrze opisaną fizjologią: zewnętrzne odsunięcie przy wewnętrznym pobudzeniu.",
+      "related": ["anxious", "stonewall"],
+      "sources": [
+        {
+          "title": "Diamond, Hicks & Otter-Henderson (2006). Physiological evidence",
+          "url": "https://scholar.google.com/scholar?q=Diamond+Hicks+Otter-Henderson+2006+physiological+evidence+avoidant+attachment"
+        },
+        {
+          "title": "Bakermans-Kranenburg & van IJzendoorn (2009). AAI meta-analysis",
+          "url": "https://scholar.google.com/scholar?q=Bakermans-Kranenburg+van+IJzendoorn+2009+first+10000+Adult+Attachment+Interviews"
+        }
+      ]
+    },
+    {
+      "id": "disorg",
+      "category": "attach",
+      "title": "Zdezorganizowane przywiązanie",
+      "original": "Disorganized / Fearful-avoidant",
+      "evidence": 2,
+      "definition": "Jednoczesna potrzeba bliskości i strach przed nią. Człowieka ciągnie do partnera i od niego na przemian.",
+      "manifestations": [
+        "Gwałtowne wahania: przed chwilą było bardzo blisko — i nagle pełny dystans",
+        "Relacje są odbierane jako coś zarazem koniecznego i niebezpiecznego",
+        "Często wiąże się z doświadczeniem traumatycznym we wczesnych relacjach",
+        "Ze wszystkich stylów najsilniej powiązane z trudnościami w regulacji emocji"
+      ],
+      "example": "Ktoś przez miesiąc zabiega o zbliżenie, a gdy tylko partner odwzajemnia uczucie, zaczyna dostrzegać w nim wady i szukać powodu, żeby odejść pierwszy.",
+      "commonMistake": "Ten styl często mylony jest z „trudnym charakterem” albo przypisuje mu się diagnozę. To wzorzec zachowania w relacjach, a nie zaburzenie osobowości.",
+      "figures": [
+        {
+          "value": "5–8%",
+          "label": "według różnych szacunków"
+        },
+        {
+          "value": "ρ=0,44",
+          "label": "związek z PTSD — najsilniejszy spośród stylów"
+        }
+      ],
+      "evidenceNote": "Kategoria dodana później niż trzy podstawowe i mierzona mniej rzetelnie, zwłaszcza u dorosłych.",
+      "related": ["anxious", "avoidant"],
+      "sources": [
+        {
+          "title": "Main & Solomon (1990). Disorganized/disoriented attachment",
+          "url": "https://scholar.google.com/scholar?q=Main+Solomon+1990+procedures+for+identifying+infants+as+disorganized+disoriented"
+        },
+        {
+          "title": "Woodhouse et al. Attachment and PTSD meta-analysis",
+          "url": "https://scholar.google.com/scholar?q=attachment+style+PTSD+meta-analysis+disorganized+fearful+avoidant"
+        }
+      ]
+    },
+    {
+      "id": "narc",
+      "category": "dark",
+      "title": "Narcyzm",
+      "original": "Narcissism",
+      "evidence": 3,
+      "definition": "Potrzeba potwierdzania własnej ważności, która kształtuje zachowanie silniej niż realne relacje z ludźmi.",
+      "manifestations": [
+        "Typ wielkościowy: demonstracyjność, poczucie szczególnych praw, dominacja",
+        "Typ wrażliwy: to samo skupienie na sobie, ale przez urazę i nadwrażliwość na krytykę",
+        "Reakcja na krytykę nieproporcjonalna do jej treści",
+        "Relacje ocenia się po tym, co dodają do obrazu siebie"
+      ],
+      "example": "We wspólnym projekcie człowiek szczerze pamięta swój wkład jako większy, niż był. To nie zawsze kłamstwo: pamięć naprawdę przebudowuje się tak, by podtrzymać potrzebny obraz.",
+      "commonMistake": "Najczęstszy błąd internetu to nazywanie narcyzem każdego, kto zachował się egoistycznie albo sprawił ból. Egoizm, zakochanie w sobie i narcystyczne zaburzenie osobowości to trzy różne rzeczy, a dystans między nimi jest ogromny.",
+      "figures": [
+        {
+          "value": "1–2%",
+          "label": "częstość zaburzenia (NPD) w populacji ogólnej"
+        },
+        {
+          "value": "2",
+          "label": "podstawowe typy: wielkościowy i wrażliwy"
+        }
+      ],
+      "evidenceNote": "Cecha jest dobrze mierzalna. Podział na typ wielkościowy i wrażliwy został potwierdzony: przy niskich poziomach są niezależne, przy wysokich się zlewają.",
+      "related": ["mach", "psycho", "gaslight"],
+      "sources": [
+        {
+          "title": "Paulhus & Williams (2002). The Dark Triad of personality",
+          "url": "https://scholar.google.com/scholar?q=Paulhus+Williams+2002+dark+triad+of+personality+narcissism+Machiavellianism+psychopathy"
+        },
+        {
+          "title": "Miller et al. Grandiose and vulnerable narcissism",
+          "url": "https://scholar.google.com/scholar?q=Miller+grandiose+vulnerable+narcissism+nomological+network+comparison"
+        }
+      ]
+    },
+    {
+      "id": "mach",
+      "category": "dark",
+      "title": "Makiawelizm",
+      "original": "Machiavellianism",
+      "evidence": 3,
+      "definition": "Strategiczne traktowanie ludzi jak środka: zimna kalkulacja, gotowość do manipulacji dla osiągnięcia celu.",
+      "manifestations": [
+        "Planowanie z wyprzedzeniem, długa gra, cierpliwość",
+        "Cyniczne spojrzenie na motywy innych — „wszyscy tak robią”",
+        "Elastyczna moralność: reguły stosuje się wybiórczo",
+        "W odróżnieniu od narcyzmu nie potrzebuje zachwytu — potrzebuje wyniku"
+      ],
+      "example": "Kolega popiera cię na naradzie nie dlatego, że się zgadza, tylko dlatego, że za miesiąc będzie potrzebował twojego głosu. I naprawdę pamięta o tym po miesiącu.",
+      "commonMistake": "To nie to samo co bycie strategicznym czy ambitnym. Kluczowa różnica to obojętność wobec tego, czym płacą za to inni.",
+      "figures": [],
+      "evidenceNote": "Cecha mierzona stabilnie, z całej triady najsilniej związana z długofalowym planowaniem szkody.",
+      "related": ["narc", "psycho"],
+      "sources": [
+        {
+          "title": "Christie & Geis (1970). Studies in Machiavellianism",
+          "url": "https://scholar.google.com/scholar?q=Christie+Geis+1970+studies+in+Machiavellianism"
+        },
+        {
+          "title": "APA Dictionary: Machiavellianism",
+          "url": "https://dictionary.apa.org/machiavellianism"
+        }
+      ]
+    },
+    {
+      "id": "psycho",
+      "category": "dark",
+      "title": "Psychopatia subkliniczna",
+      "original": "Psychopathy",
+      "evidence": 3,
+      "definition": "Połączenie niskiej empatii, impulsywności i słabej reakcji na strach oraz karę.",
+      "manifestations": [
+        "Słaby niepokój wobec ryzyka i konsekwencji",
+        "Powierzchowny urok przy braku głębokiego przywiązania",
+        "Szybka nuda i potrzeba silnych wrażeń",
+        "Skrucha wyrażana słowami, ale niezmieniająca zachowania"
+      ],
+      "example": "Człowiek szczerze przeprasza, brzmi przekonująco — a dwa tygodnie później robi to samo. Przeprosiny nie były kłamstwem: po prostu nie miały tej wagi, którą wkłada w nie rozmówca.",
+      "commonMistake": "Kino zrobiło z psychopaty mordercę. Skala cechy mówi o czymś innym: większość osób z wysokimi wynikami nie łamie prawa — pracują obok ciebie.",
+      "figures": [],
+      "evidenceNote": "Rdzeń triady pod względem bezduszności i manipulacyjności. Cecha subkliniczna i diagnoza kliniczna to różne rzeczy.",
+      "related": ["narc", "mach"],
+      "sources": [
+        {
+          "title": "Hare (1991/2003). Psychopathy Checklist–Revised",
+          "url": "https://scholar.google.com/scholar?q=Hare+psychopathy+checklist+revised+PCL-R+manual"
+        },
+        {
+          "title": "Paulhus & Williams (2002). The Dark Triad of personality",
+          "url": "https://scholar.google.com/scholar?q=Paulhus+Williams+2002+dark+triad+of+personality"
+        }
+      ]
+    },
+    {
+      "id": "fae",
+      "category": "bias",
+      "title": "Podstawowy błąd atrybucji",
+      "original": "Fundamental attribution error",
+      "evidence": 3,
+      "definition": "Cudze zachowanie tłumaczymy charakterem, własne — okolicznościami.",
+      "manifestations": [
+        "On się spóźnił — niezorganizowany. Ja się spóźniłem — były korki",
+        "Szczególnie silny wobec osób nieznajomych",
+        "Słabnie, gdy znamy kontekst cudzego życia",
+        "W kulturach kolektywistycznych wyrażony słabiej"
+      ],
+      "example": "Sprzedawczyni odpowiedziała ostro — „chamka”. To, że jest dwunasta godzina jej zmiany i przed chwilą była awantura, do wyjaśnienia nie wchodzi, bo tego nie widać.",
+      "commonMistake": "To nie jest uprzedzenie wobec konkretnych grup. To podstawowe skrzywienie, które działa wobec każdego, czyich okoliczności nie widzimy.",
+      "figures": [],
+      "evidenceNote": "Jeden z najstabilniejszych efektów psychologii społecznej, o znanych granicach kulturowych.",
+      "related": ["confirm", "proj"],
+      "sources": [
+        {
+          "title": "Ross (1977). The intuitive psychologist and his shortcomings",
+          "url": "https://scholar.google.com/scholar?q=Ross+1977+intuitive+psychologist+and+his+shortcomings+distortions+attribution"
+        },
+        {
+          "title": "Choi, Nisbett & Norenzayan (1999). Causal attribution across cultures",
+          "url": "https://scholar.google.com/scholar?q=Choi+Nisbett+Norenzayan+1999+causal+attribution+across+cultures+variation+universality"
+        }
+      ]
+    },
+    {
+      "id": "confirm",
+      "category": "bias",
+      "title": "Efekt potwierdzenia",
+      "original": "Confirmation bias",
+      "evidence": 3,
+      "definition": "Zauważamy i zapamiętujemy to, co potwierdza już posiadane zdanie, a to, co mu przeczy, przepuszczamy.",
+      "manifestations": [
+        "Wybiórcze czytanie: argumenty „za” się studiuje, „przeciw” przegląda",
+        "Dane niejednoznaczne interpretuje się na korzyść zajętego stanowiska",
+        "Pamięć dopowiada: przypominają się głównie epizody potwierdzające",
+        "Nasila się, gdy stanowisko wiąże się z tożsamością"
+      ],
+      "example": "Uznawszy, że kolega cię nie lubi, zaczynasz zauważać każde jego powściągliwe skinienie — i nie zauważasz, że tak samo wita się ze wszystkimi.",
+      "commonMistake": "„Ja po prostu opieram się na faktach”. Zniekształcenie działa właśnie na etapie doboru faktów i dlatego od środka odczuwa się je jako obiektywizm.",
+      "figures": [],
+      "evidenceNote": "Wielokrotnie odtworzone w różnych zadaniach i dziedzinach.",
+      "related": ["fae", "dk"],
+      "sources": [
+        {
+          "title": "Nickerson (1998). Confirmation bias: a ubiquitous phenomenon",
+          "url": "https://scholar.google.com/scholar?q=Nickerson+1998+confirmation+bias+ubiquitous+phenomenon+in+many+guises"
+        },
+        {
+          "title": "APA Dictionary: confirmation bias",
+          "url": "https://dictionary.apa.org/confirmation-bias"
+        }
+      ]
+    },
+    {
+      "id": "dk",
+      "category": "bias",
+      "title": "Efekt Dunninga–Krugera",
+      "original": "Dunning–Kruger effect",
+      "evidence": 2,
+      "definition": "Osobom o niskich kompetencjach brakuje dokładnie tej wiedzy, która jest potrzebna, by dostrzec własną niekompetencję.",
+      "manifestations": [
+        "Największa rozbieżność między samooceną a wynikiem jest na dole skali",
+        "Kompetentni często zaniżają własne kompetencje, bo widzą granice własnej wiedzy",
+        "Efekt znika, gdy człowiek dostaje informację zwrotną i się uczy"
+      ],
+      "example": "Po dwóch tygodniach kursu człowiek jest pewien, że ogarnął temat. Po roku praktyki mówi ostrożniej — nie dlatego, że wie mniej, tylko dlatego, że widzi już, czego nie wie.",
+      "commonMistake": "Najczęściej używa się tego jako obelgi — „to typowy Dunning–Kruger”. W rzeczywistości efekt opisuje wszystkich na początku każdej nowej rzeczy, w tym tego, kto go przywołuje.",
+      "figures": [],
+      "evidenceNote": "Efekt jest realny, ale część pierwotnego obrazu tłumaczą artefakty statystyczne. Dzisiejsze oszacowania są skromniejsze niż popularne opowieści.",
+      "related": ["confirm", "fae"],
+      "sources": [
+        {
+          "title": "Kruger & Dunning (1999). Unskilled and unaware of it",
+          "url": "https://scholar.google.com/scholar?q=Kruger+Dunning+1999+unskilled+and+unaware+of+it+difficulties+recognizing+incompetence"
+        },
+        {
+          "title": "Nuhfer et al. (2017). Critique of the Dunning-Kruger effect",
+          "url": "https://scholar.google.com/scholar?q=Nuhfer+2017+random+number+simulations+reveal+Dunning-Kruger+effect+critique"
+        }
+      ]
+    },
+    {
+      "id": "sunk",
+      "category": "bias",
+      "title": "Pułapka kosztów utopionych",
+      "original": "Sunk cost fallacy",
+      "evidence": 3,
+      "definition": "Inwestujemy dalej w coś bez perspektyw, bo już dużo włożyliśmy — choć tego, co włożone, i tak się nie odzyska.",
+      "manifestations": [
+        "„Szkoda rzucić, tyle czasu poszło”",
+        "Im więcej włożone, tym trudniej wyjść",
+        "Działa tak samo na pieniądze, czas i relacje",
+        "Wzmacnia się, gdy decyzja była publiczna"
+      ],
+      "example": "Czwarty rok w zawodzie, który nie podoba się od pierwszego roku. Argument „przecież tyle się uczyłem” dotyczy przeszłości, a decyzja dotyczy następnych czterdziestu lat.",
+      "commonMistake": "Wyjście z takiej sytuacji często nazywa się słabością. W rzeczywistości to zatrzymanie straty. Pomaga pytanie: gdybym trafił tu dziś po raz pierwszy, wybrałbym to teraz?",
+      "figures": [],
+      "evidenceNote": "Rzetelnie odtwarzane w eksperymentach ekonomicznych i psychologicznych.",
+      "related": ["ration", "confirm"],
+      "sources": [
+        {
+          "title": "Arkes & Blumer (1985). The psychology of sunk cost",
+          "url": "https://scholar.google.com/scholar?q=Arkes+Blumer+1985+the+psychology+of+sunk+cost"
+        },
+        {
+          "title": "APA Dictionary: sunk cost fallacy",
+          "url": "https://dictionary.apa.org/sunk-cost-fallacy"
+        }
+      ]
+    },
+    {
+      "id": "denial",
+      "category": "defense",
+      "title": "Zaprzeczanie",
+      "original": "Denial",
+      "evidence": 2,
+      "definition": "Odmowa uznania faktu, który już się wydarzył, bo jego uznanie jest nie do zniesienia.",
+      "manifestations": [
+        "„To nie jest aż tak poważne”, „lekarze przesadzają”",
+        "Często pierwsza reakcja na stratę albo diagnozę",
+        "Krótkotrwale chroni psychikę przed przeciążeniem",
+        "Szkodzi, gdy trwa i blokuje potrzebne działania"
+      ],
+      "example": "Człowiek odkłada powtórne badanie przez kilka miesięcy. Nie zapomniał — za każdym razem znajduje powód, a każdy powód brzmi rozsądnie.",
+      "commonMistake": "Zaprzeczanie to nie upór ani głupota. To reakcja automatyczna i spieranie się z nią faktami zwykle nie działa.",
+      "figures": [],
+      "evidenceNote": "Klinicznie dobrze opisane, ale mechanizmy obronne trudno mierzyć: z definicji są nieświadome.",
+      "related": ["ration", "proj"],
+      "sources": [
+        {
+          "title": "Vaillant (1992). Ego Mechanisms of Defense",
+          "url": "https://scholar.google.com/scholar?q=Vaillant+1992+ego+mechanisms+of+defense+a+guide+for+clinicians+and+researchers"
+        },
+        {
+          "title": "APA Dictionary: denial",
+          "url": "https://dictionary.apa.org/denial"
+        }
+      ]
+    },
+    {
+      "id": "proj",
+      "category": "defense",
+      "title": "Projekcja",
+      "original": "Projection",
+      "evidence": 2,
+      "definition": "Przypisywanie innym własnych uczuć albo zamiarów — tych, których nie da się przyjąć u siebie.",
+      "manifestations": [
+        "Ten, kto sam rozważa zdradę, najbardziej podejrzewa partnera",
+        "Rozdrażnienie przenosi się na tego, kto „się irytuje”",
+        "Często rozpoznawalna po nieproporcjonalności reakcji"
+      ],
+      "example": "Osoba, która sama zmęczyła się związkiem, nagle zaczyna bez przerwy pytać partnera, czy ją jeszcze kocha.",
+      "commonMistake": "Słowo weszło do mowy potocznej i służy do unieważniania cudzej pretensji: „ty po prostu projektujesz”. To wygodny chwyt w sporze, ale z samym mechanizmem nie ma nic wspólnego.",
+      "figures": [],
+      "evidenceNote": "Pojęcie z tradycji psychoanalitycznej. Potwierdzenia eksperymentalne istnieją, ale są słabsze niż w przypadku efektów poznawczych.",
+      "related": ["denial", "fae"],
+      "sources": [
+        {
+          "title": "Baumeister, Dale & Sommer (1998). Freudian defense mechanisms",
+          "url": "https://scholar.google.com/scholar?q=Baumeister+Dale+Sommer+1998+freudian+defense+mechanisms+empirical+findings+social+psychology"
+        },
+        {
+          "title": "Newman, Duff & Baumeister (1997). Projection and suppression",
+          "url": "https://scholar.google.com/scholar?q=Newman+Duff+Baumeister+1997+new+look+at+defensive+projection"
+        }
+      ]
+    },
+    {
+      "id": "ration",
+      "category": "defense",
+      "title": "Racjonalizacja",
+      "original": "Rationalization",
+      "evidence": 2,
+      "definition": "Budowanie rozsądnego wyjaśnienia dla czynu, którego prawdziwa przyczyna była emocjonalna.",
+      "manifestations": [
+        "Wyjaśnienie powstaje po czynie, a nie przed nim",
+        "Argumenty są logiczne i przekonujące, także dla samego człowieka",
+        "Szczególnie widoczna tam, gdzie decyzja była impulsywna"
+      ],
+      "example": "Człowiek nie wytrzymuje i kupuje drogą rzecz, a potem w ciągu dnia znajduje cztery przekonujące powody, dlaczego to był korzystny i dawno potrzebny zakup.",
+      "commonMistake": "Racjonalizacja nie znaczy, że argumenty są fałszywe. Mogą być całkiem słuszne — po prostu nie one rozstrzygnęły.",
+      "figures": [],
+      "evidenceNote": "Zgodna z badaniami pokazującymi, że ludzie często tłumaczą własne decyzje po fakcie.",
+      "related": ["sunk", "denial"],
+      "sources": [
+        {
+          "title": "Nisbett & Wilson (1977). Telling more than we can know",
+          "url": "https://scholar.google.com/scholar?q=Nisbett+Wilson+1977+telling+more+than+we+can+know+verbal+reports+on+mental+processes"
+        },
+        {
+          "title": "APA Dictionary: rationalization",
+          "url": "https://dictionary.apa.org/rationalization"
+        }
+      ]
+    },
+    {
+      "id": "subl",
+      "category": "defense",
+      "title": "Sublimacja",
+      "original": "Sublimation",
+      "evidence": 2,
+      "definition": "Przekierowanie silnego impulsu w działanie akceptowalne społecznie i produktywne.",
+      "manifestations": [
+        "Agresja — w sport albo pracę opartą na rywalizacji",
+        "Niepokój — w staranność i mistrzostwo",
+        "Ból — w twórczość",
+        "Uznawana za najdojrzalszy z mechanizmów obronnych"
+      ],
+      "example": "Po trudnym rozstaniu człowiek zaczyna biegać co rano i po pół roku przebiega maraton. Uczucia nigdzie nie znikły — dostały formę.",
+      "commonMistake": "To nie jest „po prostu oderwanie się”. Różnica polega na tym, że energia zostaje realnie wydana, a nie odłożona.",
+      "figures": [],
+      "evidenceNote": "Klinicznie opisana jako dojrzała obrona; bezpośrednich danych eksperymentalnych jest niewiele.",
+      "related": ["ration", "denial"],
+      "sources": [
+        {
+          "title": "Vaillant (1992). Ego Mechanisms of Defense",
+          "url": "https://scholar.google.com/scholar?q=Vaillant+ego+mechanisms+of+defense+mature+defenses+sublimation"
+        },
+        {
+          "title": "APA Dictionary: sublimation",
+          "url": "https://dictionary.apa.org/sublimation"
+        }
+      ]
+    },
+    {
+      "id": "assert",
+      "category": "talk",
+      "title": "Asertywny",
+      "original": "Assertive",
+      "evidence": 3,
+      "definition": "Mówić wprost o swojej potrzebie, nie naruszając cudzych granic. Najskuteczniejszy i najrzadszy styl.",
+      "manifestations": [
+        "Mówi od siebie: „to dla mnie ważne”, a nie „ty zawsze”",
+        "Nazywa konkretne zachowanie, a nie charakter człowieka",
+        "Wytrzymuje pauzę i cudze niezadowolenie bez wycofania i bez ataku",
+        "Dopuszcza „nie” w odpowiedzi"
+      ],
+      "example": "„Kiedy przesuwasz spotkanie na godzinę przed nim, nie zdążę przestawić dnia. Potrzebuję uprzedzenia przynajmniej dzień wcześniej”. Bez oskarżenia i bez przepraszania za samą prośbę.",
+      "commonMistake": "Asertywność często myli się z naciskiem albo twardością. Kluczowa cecha jest odwrotna: zostawia drugiej osobie prawo do odmowy.",
+      "figures": [],
+      "evidenceNote": "Trening asertywności to jedna z najlepiej sprawdzonych metod behawioralnych.",
+      "related": ["passive", "aggr"],
+      "sources": [
+        {
+          "title": "Alberti & Emmons. Your Perfect Right (assertiveness training)",
+          "url": "https://scholar.google.com/scholar?q=Alberti+Emmons+your+perfect+right+assertiveness+training+effectiveness"
+        },
+        {
+          "title": "Speed, Goldstein & Goldfried (2018). Assertiveness training review",
+          "url": "https://scholar.google.com/scholar?q=Speed+Goldstein+Goldfried+2018+assertiveness+training+forgotten+evidence-based+treatment"
+        }
+      ]
+    },
+    {
+      "id": "passive",
+      "category": "talk",
+      "title": "Pasywny",
+      "original": "Passive",
+      "evidence": 3,
+      "definition": "Własna potrzeba w ogóle nie zostaje wypowiedziana, żeby uniknąć konfliktu.",
+      "manifestations": [
+        "Zgoda na głos przy niezgodzie w środku",
+        "Aluzje zamiast wprost wyrażonej prośby",
+        "Narastanie urazy, która potem wybucha nieproporcjonalnie",
+        "Często towarzyszy temu tłumaczenie się z samego faktu prośby"
+      ],
+      "example": "Człowiek przez trzy miesiące w milczeniu bierze na siebie cudzą pracę, a potem odchodzi z uzasadnieniem „nie doceniają mnie tutaj” — ani razu tego nie powiedziawszy.",
+      "commonMistake": "To nie dobroć ani bezkonfliktowość. Konflikt nigdzie nie zniknął, został tylko przeniesiony do środka i odroczony.",
+      "figures": [],
+      "evidenceNote": "Trwale powiązany z niższą satysfakcją z relacji i wyższym poziomem wypalenia.",
+      "related": ["assert", "pa"],
+      "sources": [
+        {
+          "title": "Speed, Goldstein & Goldfried (2018). Assertiveness training",
+          "url": "https://scholar.google.com/scholar?q=assertiveness+training+forgotten+evidence+based+treatment+passive+communication"
+        },
+        {
+          "title": "APA Dictionary: assertiveness training",
+          "url": "https://dictionary.apa.org/assertiveness-training"
+        }
+      ]
+    },
+    {
+      "id": "aggr",
+      "category": "talk",
+      "title": "Agresywny",
+      "original": "Aggressive",
+      "evidence": 3,
+      "definition": "Własnej potrzeby broni się kosztem cudzych granic.",
+      "manifestations": [
+        "Uogólnienia: „ty nigdy”, „ty zawsze”",
+        "Przejście od działania do osoby",
+        "Podniesienie głosu albo tempa jako sposób na dociśnięcie",
+        "Daje szybki wynik i niszczy zaufanie"
+      ],
+      "example": "„Jesteś nieodpowiedzialny” zamiast „dwa razy nie oddałeś na czas”. Pierwsze nie zostawia rozmówcy żadnego ruchu poza obroną.",
+      "commonMistake": "Agresja nie zawsze jest głośna. Zimny sarkazm i publiczne upokorzenie działają tak samo, a często bolą bardziej.",
+      "figures": [],
+      "evidenceNote": "Jeden z najlepiej udokumentowanych predyktorów rozpadu relacji.",
+      "related": ["assert", "four"],
+      "sources": [
+        {
+          "title": "Gottman & Levenson (1992). Marital processes predictive of dissolution",
+          "url": "https://scholar.google.com/scholar?q=Gottman+Levenson+1992+marital+processes+predictive+of+later+dissolution"
+        },
+        {
+          "title": "APA Dictionary: verbal aggression",
+          "url": "https://dictionary.apa.org/verbal-aggression"
+        }
+      ]
+    },
+    {
+      "id": "pa",
+      "category": "talk",
+      "title": "Pasywno-agresywny",
+      "original": "Passive-aggressive",
+      "evidence": 3,
+      "definition": "Niezadowolenie wyraża się pośrednio, z możliwością wycofania się z powiedzianego w każdej chwili.",
+      "manifestations": [
+        "Sarkazm, a po nim „przecież żartuję”",
+        "Demonstracyjne milczenie, ignorowanie, zapominanie ustaleń",
+        "Formalne wykonanie tak, by na pewno wyszło źle",
+        "Komplement z drugim dnem"
+      ],
+      "example": "„No przecież ty jesteś tu najmądrzejszy, ty wiesz lepiej”. Pretensja została wyrażona w całości, ale formalnie nic nie powiedziano i nie ma się czego uchwycić.",
+      "commonMistake": "To nie osobny typ osobowości. To strategia i powstaje zwykle tam, gdzie wyrażenie niezadowolenia wprost jest niebezpieczne — w sztywnej hierarchii albo w relacji z ostrą reakcją na konflikt.",
+      "figures": [],
+      "evidenceNote": "Jako wzorzec zachowania opisany rzetelnie; jako „typ osobowości” usunięty z klasyfikacji.",
+      "related": ["passive", "aggr"],
+      "sources": [
+        {
+          "title": "Wetzler & Jose. Passive-aggressive personality: history and status",
+          "url": "https://scholar.google.com/scholar?q=Wetzler+passive+aggressive+personality+disorder+history+controversy"
+        },
+        {
+          "title": "APA Dictionary: passive-aggressive",
+          "url": "https://dictionary.apa.org/passive-aggressive-personality-disorder"
+        }
+      ]
+    },
+    {
+      "id": "gaslight",
+      "category": "rel",
+      "title": "Gaslighting",
+      "original": "Gaslighting",
+      "evidence": 2,
+      "definition": "Systematyczne przekonywanie człowieka, że jego postrzeganie rzeczywistości jest błędne, aż przestanie sobie ufać.",
+      "manifestations": [
+        "Zaprzeczanie powiedzianemu: „nic takiego nie mówiłem”, „wymyśliłaś to”",
+        "Deprecjonowanie reakcji: „jesteś przewrażliwiona”, „wszystko dramatyzujesz”",
+        "Odwracanie ról: ten, kto się skarży, staje się winnym",
+        "Główna oznaka to narastająca z czasem wątpliwość co do własnej pamięci"
+      ],
+      "example": "Po każdej sprzeczce człowiek nie pamięta, od czego się zaczęło, i zaczyna robić notatki — nie na dowód, tylko żeby sprawdzać samego siebie.",
+      "commonMistake": "To nie jest każda niezgoda z twoją wersją wydarzeń. Ludzie naprawdę pamiętają inaczej, a uczciwy spór o fakty to nie gaslighting. Oznaką jest systematyczność i skutek: utrata zaufania do własnego postrzegania.",
+      "figures": [],
+      "evidenceNote": "Termin opisany klinicznie i socjologicznie, ale nie jest diagnozą i mierzy się go słabo.",
+      "related": ["narc", "lovebomb"],
+      "sources": [
+        {
+          "title": "Sweet (2019). The sociology of gaslighting",
+          "url": "https://scholar.google.com/scholar?q=Sweet+2019+the+sociology+of+gaslighting+American+Sociological+Review"
+        },
+        {
+          "title": "Stern (2007). The Gaslight Effect",
+          "url": "https://scholar.google.com/scholar?q=Stern+2007+the+gaslight+effect+how+to+spot+and+survive+manipulation"
+        }
+      ]
+    },
+    {
+      "id": "lovebomb",
+      "category": "rel",
+      "title": "Bombardowanie miłością",
+      "original": "Love bombing",
+      "evidence": 2,
+      "definition": "Niezwykle intensywna uwaga na początku związku, która tworzy szybkie uzależnienie, po czym uwaga zostaje gwałtownie odebrana.",
+      "manifestations": [
+        "Bardzo szybkie zbliżenie: „jesteś moim przeznaczeniem” po dwóch tygodniach",
+        "Stały kontakt, prezenty, plany na wspólną przyszłość od razu",
+        "Izolowanie od innych kontaktów pod pozorem chęci bycia razem",
+        "Kluczowa oznaka to kontrast: gwałtowne ochłodzenie po szczycie"
+      ],
+      "example": "Pierwszy miesiąc — kwiaty codziennie i wiadomości co godzinę. Drugi — odpowiedzi co drugi dzień i pretensja, że partnerka stała się wymagająca. Porównanie idzie już nie do normy, lecz do tamtego pierwszego miesiąca.",
+      "commonMistake": "Silne zakochanie na początku to nie bombardowanie. Różnica tkwi nie w intensywności, lecz w tym, czy następuje potem gwałtowne zniknięcie i czy kontrast jest używany jako dźwignia.",
+      "figures": [],
+      "evidenceNote": "Zjawisko jest opisane, ale zbadane słabiej niż przywiązanie. Termin bywa używany zbyt szeroko.",
+      "related": ["gaslight", "narc"],
+      "sources": [
+        {
+          "title": "Strutzenberg et al. (2017). Love-bombing: a narcissistic approach",
+          "url": "https://scholar.google.com/scholar?q=Strutzenberg+2017+love+bombing+narcissistic+approach+to+relationship+formation"
+        },
+        {
+          "title": "Archer-Kuhn & de Villiers. Love bombing in coercive control",
+          "url": "https://scholar.google.com/scholar?q=love+bombing+coercive+control+intimate+partner+research"
+        }
+      ]
+    },
+    {
+      "id": "four",
+      "category": "rel",
+      "title": "Czterej jeźdźcy",
+      "original": "Four Horsemen (Gottman)",
+      "evidence": 3,
+      "definition": "Cztery sposoby prowadzenia konfliktu, które najlepiej przewidują rozpad związku: krytyka, pogarda, obrona, wycofanie.",
+      "manifestations": [
+        "Krytyka — atak na osobę zamiast skargi na działanie",
+        "Pogarda — sarkazm, przewracanie oczami, poniżanie; najsilniejszy predyktor",
+        "Obrona — kontroskarżenie zamiast odpowiedzi",
+        "Wycofanie — wyjście z kontaktu, kamienny mur"
+      ],
+      "example": "„Znowu zapomniałeś” przeradza się w „ty w ogóle o niczym nie myślisz”, dalej „a ty sama wczoraj”, a kończy się tym, że jedno milczy wpatrzone w telefon, a drugie mówi do ściany.",
+      "commonMistake": "Kłótnie same w sobie nie niszczą związków. Gottman pokazywał, że rozpad przewiduje nie obecność konfliktu, lecz sposób jego prowadzenia — a przede wszystkim pogarda.",
+      "figures": [
+        {
+          "value": "4",
+          "label": "wzorce"
+        },
+        {
+          "value": "pogarda",
+          "label": "najsilniejszy predyktor z czterech"
+        }
+      ],
+      "evidenceNote": "Zbudowane na długich obserwacjach realnych par. Trafność pojedynczych prognoz krytykowano, ale sam zestaw wzorców się potwierdza.",
+      "related": ["stonewall", "aggr"],
+      "sources": [
+        {
+          "title": "Gottman & Levenson (1992). Marital processes predictive of dissolution",
+          "url": "https://scholar.google.com/scholar?q=Gottman+Levenson+1992+marital+processes+predictive+of+later+dissolution+behavior"
+        },
+        {
+          "title": "Gottman & Silver. The Seven Principles for Making Marriage Work",
+          "url": "https://scholar.google.com/scholar?q=Gottman+seven+principles+for+making+marriage+work+four+horsemen"
+        }
+      ]
+    },
+    {
+      "id": "stonewall",
+      "category": "rel",
+      "title": "Stonewalling",
+      "original": "Stonewalling",
+      "evidence": 3,
+      "definition": "Całkowite wyjście z interakcji w trakcie konfliktu: człowiek jest fizycznie obecny, ale kontakt został przerwany.",
+      "manifestations": [
+        "Brak odpowiedzi, odwrócony wzrok, kamienna twarz",
+        "Często skutek przeciążenia fizjologicznego, a nie obojętności",
+        "Partner zwykle zwiększa nacisk, co pogarsza przeciążenie",
+        "Najskuteczniej działa umówienie się na pauzę z góry, z czasem powrotu"
+      ],
+      "example": "W środku rozmowy człowiek milknie i patrzy w podłogę. Od środka to nie upór: tętno powyżej stu i żadne zdanie się po prostu nie układa.",
+      "commonMistake": "To nie zawsze karanie milczeniem. Świadome ignorowanie i przeciążenie wyglądają z zewnątrz tak samo, ale wymagają przeciwnych reakcji.",
+      "figures": [],
+      "evidenceNote": "Jeden z czterech wzorców Gottmana, z opisaną podstawą fizjologiczną.",
+      "related": ["four", "avoidant"],
+      "sources": [
+        {
+          "title": "Gottman & Levenson (1992). Physiological arousal and withdrawal",
+          "url": "https://scholar.google.com/scholar?q=Gottman+Levenson+physiological+arousal+stonewalling+marital+conflict+flooding"
+        },
+        {
+          "title": "Eldridge & Christensen. Demand-withdraw communication",
+          "url": "https://scholar.google.com/scholar?q=Eldridge+Christensen+demand+withdraw+communication+during+couple+conflict+review"
+        }
+      ]
+    },
+    {
+      "id": "regul",
+      "category": "emo",
+      "title": "Przewartościowanie i tłumienie",
+      "original": "Reappraisal / Suppression",
+      "evidence": 3,
+      "definition": "Dwie główne strategie pracy z emocją: zmienić interpretację sytuacji albo ukryć zewnętrzny przejaw. Ich skutki są przeciwne.",
+      "manifestations": [
+        "Przewartościowanie zmienia samą emocję: inna interpretacja — inne uczucie",
+        "Tłumienie usuwa wyraz, ale nie przeżycie",
+        "Tłumienie podnosi obciążenie fizjologiczne i pogarsza pamięć o zdarzeniu",
+        "Przewartościowanie działa lepiej zastosowane wcześnie, przed szczytem emocji"
+      ],
+      "example": "Przed wystąpieniem można powiedzieć sobie „jestem spokojny” i zacisnąć szczęki — to tłumienie i tętno od tego nie spada. Można też przeinterpretować to samo pobudzenie jako gotowość, a wtedy ciało wykonuje tę samą pracę, ale tym razem pracuje dla ciebie.",
+      "commonMistake": "„Trzeba po prostu nie pokazywać emocji — to opanowanie”. Badania pokazują coś przeciwnego: ludzie, którzy regularnie tłumią wyraz, zużywają więcej zasobów, gorzej pamiętają rozmowy i są odbierani jako mniej ciepli.",
+      "figures": [],
+      "evidenceNote": "Model Jamesa Grossa to jeden z najlepiej sprawdzonych w psychologii emocji, z potwierdzeniami fizjologicznymi i behawioralnymi.",
+      "related": ["alexi", "burnout", "avoidance"],
+      "sources": [
+        {
+          "title": "Gross (1998, 2015). Emotion regulation: process model",
+          "url": "https://scholar.google.com/scholar?q=Gross+2015+emotion+regulation+current+status+and+future+prospects+process+model"
+        },
+        {
+          "title": "Gross & John (2003). Individual differences in emotion regulation",
+          "url": "https://scholar.google.com/scholar?q=Gross+John+2003+individual+differences+in+two+emotion+regulation+processes"
+        }
+      ]
+    },
+    {
+      "id": "shame",
+      "category": "emo",
+      "title": "Wstyd i poczucie winy",
+      "original": "Shame / Guilt",
+      "evidence": 3,
+      "definition": "Dwie z zewnątrz podobne emocje o przeciwnych skutkach: wina dotyczy czynu, wstyd — siebie samego.",
+      "manifestations": [
+        "Wina: „zrobiłem złą rzecz” — prowadzi do naprawy",
+        "Wstyd: „jestem złym człowiekiem” — prowadzi do ucieczki, ukrywania, obrony",
+        "Wstyd silniej wiąże się z agresją w odpowiedzi na krytykę",
+        "Wina zakłada empatię, wstyd częściej ją blokuje"
+      ],
+      "example": "Dziecku, które stłukło wazon, mówi się „jesteś niezdara” zamiast „wazon się stłukł, posprzątajmy”. Pierwsze buduje wstyd i chęć ukrycia następnego błędu. Drugie zostawia możliwość naprawienia go.",
+      "commonMistake": "Wstyd bywa uważany za użyteczne narzędzie wychowania i samodyscypliny. Dane mówią coś przeciwnego: prawie nie zmienia zachowania na lepsze, za to niezawodnie uczy ukrywania.",
+      "figures": [],
+      "evidenceNote": "Rozróżnienie potwierdzone dużą liczbą badań June Tangney i współpracowników.",
+      "related": ["regul", "narc"],
+      "sources": [
+        {
+          "title": "Tangney & Dearing (2002). Shame and Guilt",
+          "url": "https://scholar.google.com/scholar?q=Tangney+Dearing+2002+shame+and+guilt+emotions+and+social+behavior"
+        },
+        {
+          "title": "Tangney, Stuewig & Mashek (2007). Moral emotions and behavior",
+          "url": "https://scholar.google.com/scholar?q=Tangney+Stuewig+Mashek+2007+moral+emotions+and+moral+behavior+annual+review"
+        }
+      ]
+    },
+    {
+      "id": "alexi",
+      "category": "emo",
+      "title": "Aleksytymia",
+      "original": "Alexithymia",
+      "evidence": 2,
+      "definition": "Trudność w rozpoznawaniu i nazywaniu własnych emocji, a nie ich brak.",
+      "manifestations": [
+        "Pytanie „co teraz czujesz” wywołuje zagubienie",
+        "Emocje zauważa się przez ciało: ciężar, napięcie, brak powietrza",
+        "Uboga wyobraźnia i dosłowność w rozmowie o uczuciach",
+        "Często towarzyszy zaburzeniom lękowym i następstwom traumy"
+      ],
+      "example": "Człowiek cały dzień irytuje się drobiazgami i dopiero wieczorem rozumie, że od rana boi się jutrzejszej rozmowy. Emocja była przez cały czas, nie miała tylko nazwy.",
+      "commonMistake": "To nie „chłód” ani obojętność. Osoba z aleksytymią często przeżywa silnie — po prostu nie ma dostępu do nazwy, a bez nazwy emocją nie da się kierować.",
+      "figures": [
+        {
+          "value": "~10%",
+          "label": "szacowana częstość wyraźnych przejawów"
+        }
+      ],
+      "evidenceNote": "Konstrukt mierzony kwestionariuszami o dobrych właściwościach psychometrycznych, ale jego granice są rozmyte.",
+      "related": ["regul", "shame"],
+      "sources": [
+        {
+          "title": "Taylor, Bagby & Parker. Toronto Alexithymia Scale",
+          "url": "https://scholar.google.com/scholar?q=Taylor+Bagby+Parker+twenty-item+Toronto+Alexithymia+Scale+validity"
+        },
+        {
+          "title": "APA Dictionary: alexithymia",
+          "url": "https://dictionary.apa.org/alexithymia"
+        }
+      ]
+    },
+    {
+      "id": "basic",
+      "category": "emo",
+      "title": "Emocje podstawowe",
+      "original": "Basic emotions",
+      "evidence": 2,
+      "definition": "Idea, że istnieje niewielki zestaw wrodzonych, uniwersalnych emocji o rozpoznawalnych wyrazach twarzy.",
+      "manifestations": [
+        "Klasyczny zestaw: radość, smutek, gniew, strach, wstręt, zdziwienie",
+        "Idea legła u podstaw szkoleń z „czytania twarzy” i detektorów emocji",
+        "Współczesna krytyka: wyraz twarzy mocno zależy od kontekstu i kultury",
+        "Alternatywa to teoria emocji konstruowanych: emocję składa mózg z doznań i pojęć"
+      ],
+      "example": "Twarz z szeroko otwartymi oczami odczytuje się jako strach. Ta sama twarz w kadrze, gdzie człowiek wygrywa mecz, czyta się jako zachwyt. Bez kontekstu wyraz znaczy znacznie mniej, niż się przyjmuje.",
+      "commonMistake": "„Po twarzy można rozpoznać emocję”. Duży przegląd z 2019 roku pokazał, że związek między wyrazem a przeżyciem jest o wiele słabszy, niż zakładają systemy rozpoznawania emocji.",
+      "figures": [
+        {
+          "value": "6",
+          "label": "emocji w klasycznym zestawie"
+        }
+      ],
+      "evidenceNote": "Model historycznie wpływowy, który współczesne dane istotnie osłabiły. Spór między nim a teorią emocji konstruowanych trwa.",
+      "related": ["regul", "alexi"],
+      "sources": [
+        {
+          "title": "Ekman (1992). An argument for basic emotions",
+          "url": "https://scholar.google.com/scholar?q=Ekman+1992+an+argument+for+basic+emotions"
+        },
+        {
+          "title": "Barrett et al. (2019). Emotional expressions reconsidered",
+          "url": "https://scholar.google.com/scholar?q=Barrett+2019+emotional+expressions+reconsidered+challenges+to+inferring+emotion+from+human+facial+movements"
+        }
+      ]
+    },
+    {
+      "id": "fff",
+      "category": "stress",
+      "title": "Walcz, uciekaj, zastygnij",
+      "original": "Fight / Flight / Freeze",
+      "evidence": 3,
+      "definition": "Automatyczna reakcja organizmu na zagrożenie, uruchamiana szybciej, niż zdąży wtrącić się myślenie.",
+      "manifestations": [
+        "Układ współczulny daje przyspieszone tętno, napięcie mięśni, zawężoną uwagę",
+        "Zastygnięcie to też pełnoprawna reakcja, a nie „nic nie robił”",
+        "Mowa i złożone myślenie działają w tym momencie gorzej",
+        "Powrót do normy wymaga czasu, a nie decyzji o uspokojeniu się"
+      ],
+      "example": "Podczas ostrej kłótni człowiek nie potrafi sformułować tego, co świetnie formułował wczoraj. To nie utrata argumentów: zasoby zostały przerzucone na mięśnie i na uwagę wobec zagrożenia.",
+      "commonMistake": "„Trzeba było się po prostu pozbierać”. Reakcja uruchamia się w ułamku sekundy i przed świadomą decyzją. Wpływać na nią można wcześniej i później, ale nie w chwili szczytu.",
+      "figures": [],
+      "evidenceNote": "Jedna z najlepiej opisanych reakcji fizjologicznych, o wyraźnych mierzalnych wskaźnikach.",
+      "related": ["anxiety_fear", "stonewall", "ptsd"],
+      "sources": [
+        {
+          "title": "Cannon (1929). Bodily Changes in Pain, Hunger, Fear and Rage",
+          "url": "https://scholar.google.com/scholar?q=Cannon+1929+bodily+changes+in+pain+hunger+fear+and+rage"
+        },
+        {
+          "title": "Schauer & Elbert (2010). Dissociation following traumatic stress",
+          "url": "https://scholar.google.com/scholar?q=Schauer+Elbert+2010+dissociation+following+traumatic+stress+defense+cascade"
+        }
+      ]
+    },
+    {
+      "id": "anxiety_fear",
+      "category": "stress",
+      "title": "Lęk i strach",
+      "original": "Anxiety / Fear",
+      "evidence": 3,
+      "definition": "Strach to reakcja na konkretne obecne zagrożenie. Lęk to reakcja na możliwe przyszłe.",
+      "manifestations": [
+        "Strach ma przedmiot, lęk ma scenariusz",
+        "Strach mija, gdy znika zagrożenie; lęk może trwać latami",
+        "Lęk żywi się niepewnością, dlatego „a co jeśli” go wzmacnia",
+        "Oba angażują tę samą fizjologię, dlatego czuje się je podobnie"
+      ],
+      "example": "Zobaczyć węża na ścieżce to strach, skończy się w minutę. Sprawdzać co wieczór, czy nie przyszedł mail z pracy, to lęk — nie kończy się, bo zagrożenia jeszcze nie ma.",
+      "commonMistake": "Tych słów używa się jak synonimów i przez to ludzie próbują walczyć z lękiem metodami na strach — usunąć źródło. Źródła nie ma, więc walka staje się nieskończona.",
+      "figures": [],
+      "evidenceNote": "Rozróżnienie utrwalone i w klasyfikacjach klinicznych, i w badaniach neurobiologicznych.",
+      "related": ["fff", "avoidance"],
+      "sources": [
+        {
+          "title": "Barlow (2002). Anxiety and Its Disorders",
+          "url": "https://scholar.google.com/scholar?q=Barlow+2002+anxiety+and+its+disorders+nature+and+treatment+of+anxiety+and+panic"
+        },
+        {
+          "title": "APA Dictionary: anxiety",
+          "url": "https://dictionary.apa.org/anxiety"
+        }
+      ]
+    },
+    {
+      "id": "avoidance",
+      "category": "stress",
+      "title": "Unikanie jako pułapka",
+      "original": "Avoidance / Negative reinforcement",
+      "evidence": 3,
+      "definition": "Uniknięcie budzącej lęk sytuacji natychmiast obniża lęk — i właśnie przez to wzmacnia go na następny raz.",
+      "manifestations": [
+        "Ulga przychodzi w ciągu sekund, więc zachowanie utrwala się mocno",
+        "Każde uniknięcie potwierdza przekonanie, że sytuacja jest nie do zniesienia",
+        "Krąg się zawęża: najpierw unika się wystąpienia, potem narad, potem pracy",
+        "Przerwanie kręgu wymaga czegoś przeciwnego — stopniowego zbliżania"
+      ],
+      "example": "Człowiek odwołuje spotkanie i tego samego wieczoru czuje ulgę. Po miesiącu odwołać drugie jest już łatwiej, a pójść na nie — trudniej niż na początku.",
+      "commonMistake": "Unikanie wygląda jak troska o siebie i często tak bywa przedstawiane. Odróżnić je łatwo: odpoczynek po nim regeneruje, a unikanie zostawia ulgę razem z tym samym strachem.",
+      "figures": [],
+      "evidenceNote": "Mechanizm wzmocnienia negatywnego to fundament terapii behawioralnej zaburzeń lękowych, potwierdzony dekadami praktyki.",
+      "related": ["anxiety_fear", "sunk", "passive"],
+      "sources": [
+        {
+          "title": "Mowrer (1960). Two-factor theory of avoidance learning",
+          "url": "https://scholar.google.com/scholar?q=Mowrer+two+factor+theory+avoidance+learning+negative+reinforcement+anxiety"
+        },
+        {
+          "title": "Craske et al. (2014). Maximizing exposure therapy",
+          "url": "https://scholar.google.com/scholar?q=Craske+2014+maximizing+exposure+therapy+an+inhibitory+learning+approach"
+        }
+      ]
+    },
+    {
+      "id": "burnout",
+      "category": "stress",
+      "title": "Wypalenie zawodowe",
+      "original": "Burnout",
+      "evidence": 3,
+      "definition": "Stan wyczerpania wskutek przewlekłego stresu w pracy, złożony z trzech składników: zmęczenie, cynizm, poczucie nieskuteczności.",
+      "manifestations": [
+        "Wyczerpanie, które nie mija po weekendzie",
+        "Dystansowanie się: ludzie i zadania stają się drażniące albo obojętne",
+        "Spadek poczucia własnych kompetencji przy niezmienionych wynikach",
+        "WHO określa je jako zjawisko zawodowe, a nie diagnozę medyczną"
+      ],
+      "example": "Człowiek wykonuje tę samą pracę co rok temu, z tym samym wynikiem, ale za każdym razem jest przekonany, że zrobił ją źle. I łapie się na rozdrażnieniu wiadomością od koleżanki, z którą wcześniej przyjemnie mu się pracowało.",
+      "commonMistake": "„Wypalenie to po prostu zmęczenie”. Zmęczenie mija po odpoczynku. Wypalenie po urlopie wraca w tydzień, bo przyczyną nie jest liczba godzin, lecz połączenie obciążenia z brakiem kontroli i sensu.",
+      "figures": [
+        {
+          "value": "3",
+          "label": "składniki według modelu Maslach"
+        }
+      ],
+      "evidenceNote": "Mierzone zwalidowanym narzędziem (MBI), ujęte w ICD-11 jako zjawisko zawodowe.",
+      "related": ["regul", "avoidance", "learned"],
+      "sources": [
+        {
+          "title": "Maslach & Leiter (2016). Understanding the burnout experience",
+          "url": "https://scholar.google.com/scholar?q=Maslach+Leiter+2016+understanding+the+burnout+experience+recent+research+implications+for+psychiatry"
+        },
+        {
+          "title": "WHO: wypalenie zawodowe w ICD-11",
+          "url": "https://www.who.int/news/item/28-05-2019-burn-out-an-occupational-phenomenon-international-classification-of-diseases"
+        }
+      ]
+    },
+    {
+      "id": "ptsd",
+      "category": "stress",
+      "title": "Trauma i wzrost potraumatyczny",
+      "original": "PTSD / Post-traumatic growth",
+      "evidence": 2,
+      "definition": "Reakcja na zdarzenie, które przekroczyło zdolność psychiki do jego przetworzenia, oraz sporne zjawisko pozytywnych zmian po nim.",
+      "manifestations": [
+        "Natrętne wspomnienia, unikanie przypomnień, wzmożona czujność",
+        "Pamięć o zdarzeniu jest fragmentaryczna: wyraziste szczegóły bez kolejności",
+        "Większość ludzi po ciężkim zdarzeniu nie rozwija PTSD — typowy jest powrót do zdrowia",
+        "Wzrost potraumatyczny bywa opisywany często, ale mierzy się go problematycznie"
+      ],
+      "example": "Człowiek nie potrafi przypomnieć sobie kolejności zdarzeń tamtego wieczoru, za to pamięta zapach i dźwięk z dokładnością, która sama go przeraża. To nie zmyślenie ani wyparcie — tak działa kodowanie pamięci pod wysokim stresem.",
+      "commonMistake": "„Co cię nie zabije, to cię wzmocni”. Badania nad wzrostem po traumie opierają się w dużej mierze na samoopisach tego, jak bardzo człowiek się zmienił, a te słabo zgadzają się z realnymi pomiarami zmiany.",
+      "figures": [],
+      "evidenceNote": "PTSD jest opisane i mierzone rzetelnie. Wzrost potraumatyczny jako konstrukt jest znacznie słabszy: metodologia samoopisów budzi uzasadnioną krytykę.",
+      "related": ["fff", "disorg"],
+      "sources": [
+        {
+          "title": "Bonanno (2004). Loss, trauma, and human resilience",
+          "url": "https://scholar.google.com/scholar?q=Bonanno+2004+loss+trauma+and+human+resilience+underestimated+capacity+to+thrive"
+        },
+        {
+          "title": "Frazier et al. (2009). Does self-reported posttraumatic growth reflect real change?",
+          "url": "https://scholar.google.com/scholar?q=Frazier+2009+does+self-reported+posttraumatic+growth+reflect+genuine+positive+change"
+        }
+      ]
+    },
+    {
+      "id": "recon",
+      "category": "mind",
+      "title": "Pamięć rekonstrukcyjna",
+      "original": "Reconstructive memory",
+      "evidence": 3,
+      "definition": "Wspomnienia nie odczytuje się, lecz składa na nowo za każdym razem — i przy każdym składaniu trochę się zmienia.",
+      "manifestations": [
+        "Każde przypomnienie może zmienić samo wspomnienie",
+        "Luki wypełnia się tym, co prawdopodobne, i nie czuje się tego jako dopowiadania",
+        "Pewność co do wspomnienia słabo wiąże się z jego dokładnością",
+        "Wspomnienia nacechowane emocjonalnie wydają się pewniejsze, ale podlegają tym samym zniekształceniom"
+      ],
+      "example": "Dwoje ludzi z przekonaniem pamięta tę samą kłótnię inaczej i żadne z nich nie kłamie. Każde zachowało swoją wersję, a po dziesięciu opowiedzeniach stała się jeszcze wyrazistsza.",
+      "commonMistake": "„Pamiętam dokładnie, przecież tam byłem”. Pewność bierze się z częstości przypominania, a nie z dokładności. Kto opowiadał historię dwadzieścia razy, jest pewniejszy — i jednocześnie dalszy od oryginału.",
+      "figures": [],
+      "evidenceNote": "Wielokrotnie potwierdzone, między innymi w badaniach nad zeznaniami świadków.",
+      "related": ["confirm", "falsemem"],
+      "sources": [
+        {
+          "title": "Bartlett (1932). Remembering: A Study in Experimental Psychology",
+          "url": "https://scholar.google.com/scholar?q=Bartlett+1932+remembering+a+study+in+experimental+and+social+psychology"
+        },
+        {
+          "title": "Loftus & Palmer (1974). Reconstruction of automobile destruction",
+          "url": "https://scholar.google.com/scholar?q=Loftus+Palmer+1974+reconstruction+of+automobile+destruction+eyewitness"
+        }
+      ]
+    },
+    {
+      "id": "falsemem",
+      "category": "mind",
+      "title": "Fałszywe wspomnienia",
+      "original": "False memories",
+      "evidence": 3,
+      "definition": "Wspomnienia zdarzeń, których nie było, przeżywane jako prawdziwe.",
+      "manifestations": [
+        "Powstają pod wpływem pytań sugerujących i powtarzanych rozmów",
+        "Wyobrażenie zdarzenia z czasem staje się nie do odróżnienia od wspomnienia",
+        "Towarzyszą im szczegóły i emocje, tak jak prawdziwym",
+        "Człowiek nie ma wewnętrznego sposobu, by odróżnić je od prawdziwych"
+      ],
+      "example": "W eksperymentach część uczestników po kilku rozmowach przypominała sobie, jak w dzieciństwie zgubiła się w centrum handlowym. Tego nie było: epizod wymyślili badacze.",
+      "commonMistake": "„Czegoś takiego nie da się wymyślić”. Da się, i bez złej woli. Właśnie dlatego w pracy ze świadkami i w terapii unika się sformułowań sugerujących.",
+      "figures": [],
+      "evidenceNote": "Klasyczne eksperymenty Elizabeth Loftus zostały wielokrotnie odtworzone.",
+      "related": ["recon", "confirm"],
+      "sources": [
+        {
+          "title": "Loftus (1997). Creating false memories",
+          "url": "https://scholar.google.com/scholar?q=Loftus+1997+creating+false+memories+scientific+american"
+        },
+        {
+          "title": "Loftus & Pickrell (1995). The formation of false memories",
+          "url": "https://scholar.google.com/scholar?q=Loftus+Pickrell+1995+the+formation+of+false+memories+lost+in+the+mall"
+        }
+      ]
+    },
+    {
+      "id": "wm",
+      "category": "mind",
+      "title": "Pamięć robocza",
+      "original": "Working memory",
+      "evidence": 3,
+      "definition": "Ilość informacji, którą człowiek jest w stanie utrzymać i przetwarzać właśnie teraz. Jest bardzo mała.",
+      "manifestations": [
+        "Utrzymują się mniej więcej cztery jednostki, a nie siedem, jak pisano dawniej",
+        "Łączenie w sensowne bloki zwiększa efektywną pojemność",
+        "Niepokój zajmuje część pojemności i dlatego realnie obniża wydajność",
+        "To najsilniejszy pojedynczy korelat inteligencji ogólnej"
+      ],
+      "example": "Podyktowany numer telefonu trzyma się w głowie, dopóki go wybierasz. Jedno pytanie z boku — i numeru nie ma. To nie nieuwaga, to wyczerpana pojemność.",
+      "commonMistake": "„Trzeba trenować pamięć programami”. Trenażery pamięci roboczej poprawiają wynik w samym trenażerze i prawie nie przenoszą się na inne zadania.",
+      "figures": [
+        {
+          "value": "≈4",
+          "label": "jednostki we współczesnych szacunkach pojemności"
+        }
+      ],
+      "evidenceNote": "Jeden z najlepiej mierzalnych konstruktów poznawczych.",
+      "related": ["multitask", "recon"],
+      "sources": [
+        {
+          "title": "Cowan (2001). The magical number four in short-term memory",
+          "url": "https://scholar.google.com/scholar?q=Cowan+2001+the+magical+number+4+in+short-term+memory+reconsideration+mental+storage+capacity"
+        },
+        {
+          "title": "Melby-Lervåg & Hulme (2013). Working memory training meta-analysis",
+          "url": "https://scholar.google.com/scholar?q=Melby-Lervag+Hulme+2013+is+working+memory+training+effective+meta-analytic+review"
+        }
+      ]
+    },
+    {
+      "id": "multitask",
+      "category": "mind",
+      "title": "Wielozadaniowość",
+      "original": "Multitasking / Task switching",
+      "evidence": 3,
+      "definition": "Jednoczesne wykonywanie kilku świadomych zadań jest niemożliwe: mózg szybko się przełącza, a każde przełączenie kosztuje.",
+      "manifestations": [
+        "Traci się czas na ponowne wczytanie kontekstu",
+        "Rośnie liczba błędów przy niezmienionej subiektywnej pewności",
+        "Ci, którzy uważają się za dobrych w wielozadaniowości, zwykle radzą sobie gorzej",
+        "Czynności automatyczne łączą się normalnie: można chodzić i rozmawiać"
+      ],
+      "example": "Praca z otwartym komunikatorem wygląda na efektywną, ale każdy powrót do tekstu zabiera czas na przypomnienie, gdzie się skończyło. W ciągu dnia składa się to na godziny.",
+      "commonMistake": "„Mnie to wychodzi”. Subiektywne poczucie produktywności przy przełączaniu rośnie, a obiektywna produktywność spada — to jeden z najstabilniejszych wyników w tym temacie.",
+      "figures": [],
+      "evidenceNote": "Koszt przełączania mierzy się bezpośrednio i odtwarza rzetelnie.",
+      "related": ["wm", "procrast"],
+      "sources": [
+        {
+          "title": "Rubinstein, Meyer & Evans (2001). Executive control of task switching",
+          "url": "https://scholar.google.com/scholar?q=Rubinstein+Meyer+Evans+2001+executive+control+of+cognitive+processes+in+task+switching"
+        },
+        {
+          "title": "Ophir, Nass & Wagner (2009). Cognitive control in media multitaskers",
+          "url": "https://scholar.google.com/scholar?q=Ophir+Nass+Wagner+2009+cognitive+control+in+media+multitaskers"
+        }
+      ]
+    },
+    {
+      "id": "intr",
+      "category": "motiv",
+      "title": "Motywacja wewnętrzna i zewnętrzna",
+      "original": "Intrinsic / Extrinsic motivation",
+      "evidence": 3,
+      "definition": "Robić coś dla samej czynności albo dla zewnętrznej nagrody. To drugie w pewnych warunkach wypiera pierwsze.",
+      "manifestations": [
+        "Trzy filary motywacji wewnętrznej: autonomia, kompetencja, więź z innymi",
+        "Nagroda za to, co i tak się podobało, może obniżyć zainteresowanie",
+        "Efekt jest najsilniejszy, gdy nagroda jest oczekiwana i przypisana do samego faktu działania",
+        "Bodźce zewnętrzne działają dobrze przy zadaniach nudnych i źle przy twórczych"
+      ],
+      "example": "Dziecko rysuje z przyjemnością. Zaczyna dostawać zapłatę za każdy rysunek. Kiedy zapłata się kończy, rysowanie też się kończy — czynność została już przekodowana na pracę.",
+      "commonMistake": "„Najważniejsze to dobrze zmotywować nagrodą”. Przy rutynie to działa. Przy tym, co człowiek robi z zainteresowania, nagroda zewnętrzna to najszybszy sposób, by zainteresowanie zepsuć.",
+      "figures": [
+        {
+          "value": "3",
+          "label": "potrzeby podstawowe w teorii autodeterminacji"
+        }
+      ],
+      "evidenceNote": "Teoria autodeterminacji Deciego i Ryana ma szeroką bazę dowodową w edukacji, pracy i sporcie.",
+      "related": ["learned", "procrast"],
+      "sources": [
+        {
+          "title": "Deci & Ryan (2000). Self-determination theory",
+          "url": "https://scholar.google.com/scholar?q=Deci+Ryan+2000+the+what+and+why+of+goal+pursuits+human+needs+self-determination"
+        },
+        {
+          "title": "Deci, Koestner & Ryan (1999). Undermining effect meta-analysis",
+          "url": "https://scholar.google.com/scholar?q=Deci+Koestner+Ryan+1999+meta-analytic+review+of+experiments+examining+effects+of+extrinsic+rewards"
+        }
+      ]
+    },
+    {
+      "id": "learned",
+      "category": "motiv",
+      "title": "Wyuczona bezradność",
+      "original": "Learned helplessness",
+      "evidence": 3,
+      "definition": "Po serii sytuacji, w których działania nie wpływały na wynik, człowiek przestaje działać nawet wtedy, gdy wpływ się pojawił.",
+      "manifestations": [
+        "Próby ustają, mimo że okoliczności się zmieniły",
+        "Powstaje uogólnienie: „nic tu ode mnie nie zależy”",
+        "Ściśle powiązana ze stanami depresyjnymi",
+        "Współczesne doprecyzowanie: bierność jest reakcją domyślną, a uczy się właśnie kontroli"
+      ],
+      "example": "Pracownik przez rok zgłaszał propozycje, które ignorowano. Przychodzi nowy kierownik i szczerze pyta o pomysły — a pomysłów nie ma. Nie dlatego, że nie myśli, tylko dlatego, że już sprawdził: nie działa.",
+      "commonMistake": "„Po prostu lenistwo i brak inicjatywy”. Różnica tkwi w historii: lenistwo nie ma za sobą serii bezowocnych prób, a bezradność bez niej nie powstaje.",
+      "figures": [],
+      "evidenceNote": "Klasyczny efekt, potwierdzony i przemyślany na nowo przez samych autorów w 2016 roku z uwzględnieniem danych neurobiologicznych.",
+      "related": ["intr", "burnout", "fff"],
+      "sources": [
+        {
+          "title": "Maier & Seligman (2016). Learned helplessness at fifty",
+          "url": "https://scholar.google.com/scholar?q=Maier+Seligman+2016+learned+helplessness+at+fifty+insights+from+neuroscience"
+        },
+        {
+          "title": "APA Dictionary: learned helplessness",
+          "url": "https://dictionary.apa.org/learned-helplessness"
+        }
+      ]
+    },
+    {
+      "id": "procrast",
+      "category": "motiv",
+      "title": "Prokrastynacja",
+      "original": "Procrastination",
+      "evidence": 3,
+      "definition": "Odkładanie nie z braku czasu czy dyscypliny, lecz z próby uniknięcia nieprzyjemnej emocji związanej z zadaniem.",
+      "manifestations": [
+        "Odkłada się dokładnie to, co budzi lęk, nudę albo strach przed porażką",
+        "Ulga przychodzi natychmiast, więc zachowanie się utrwala",
+        "Powiązana z perfekcjonizmem: lepiej nie zacząć, niż zrobić niedoskonale",
+        "Najskuteczniej działa obniżenie emocjonalnej ceny pierwszego kroku, a nie zwiększenie nacisku"
+      ],
+      "example": "Człowiek przez trzy dni nie otwiera maila od klienta. Kiedy w końcu otwiera, okazuje się, że to podziękowanie. Odkładany był nie mail, lecz oczekiwanie czegoś złego.",
+      "commonMistake": "„To problem zarządzania czasem”. Plany i minutniki nie działają właśnie dlatego, że przyczyną nie jest organizacja czasu. Samokrytyka przy tym pogarsza sytuację, a współczucie dla siebie — poprawia.",
+      "figures": [],
+      "evidenceNote": "Rozumienie prokrastynacji jako regulacji emocji ma solidne wsparcie we współczesnych badaniach.",
+      "related": ["avoidance", "multitask", "intr"],
+      "sources": [
+        {
+          "title": "Sirois & Pychyl (2013). Procrastination and mood repair",
+          "url": "https://scholar.google.com/scholar?q=Sirois+Pychyl+2013+procrastination+and+the+priority+of+short-term+mood+regulation"
+        },
+        {
+          "title": "Steel (2007). The nature of procrastination",
+          "url": "https://scholar.google.com/scholar?q=Steel+2007+the+nature+of+procrastination+meta-analytic+and+theoretical+review"
+        }
+      ]
+    },
+    {
+      "id": "growth",
+      "category": "motiv",
+      "title": "Nastawienie na rozwój",
+      "original": "Growth mindset",
+      "evidence": 1,
+      "definition": "Przekonanie, że zdolności da się rozwinąć, w opozycji do przekonania, że są dane z góry. Popularna idea o znacznie skromniejszych realnych efektach.",
+      "manifestations": [
+        "Idea legła u podstaw programów szkolnych i szkoleń korporacyjnych na całym świecie",
+        "Korelacja z wynikami w nauce istnieje, ale jest bardzo mała",
+        "Efekt interwencji jest bliski zeru po poprawce na błąd publikacyjny",
+        "Możliwy wyjątek to uczniowie z grup ryzyka i o niskim statusie społeczno-ekonomicznym"
+      ],
+      "example": "Szkoła wdraża program o „sile jeszcze nie umiem”. Po roku średnie wyniki się nie zmieniają. To nie znaczy, że idea szkodzi — znaczy, że robi znacznie mniej, niż obiecywano.",
+      "commonMistake": "Najczęstsze wypaczenie to obwinianie człowieka o „niewłaściwe myślenie”. Przerzuca to systemowe problemy nauczania na jego przekonania, czego sama teoria nie przewidywała.",
+      "figures": [
+        {
+          "value": "r≈0,10",
+          "label": "korelacja z wynikami w nauce, około 1% wariancji"
+        },
+        {
+          "value": "d≈0,05",
+          "label": "efekt interwencji, nieistotny po poprawce"
+        }
+      ],
+      "evidenceNote": "Klasyczny przypadek kryzysu replikacji. Efekt istnieje, ale jest mniej więcej dziesięciokrotnie mniejszy niż w wersji popularnej, a spór między zespołami badawczymi trwa.",
+      "related": ["learned", "intr"],
+      "sources": [
+        {
+          "title": "Sisk et al. (2018). Growth mind-sets: two meta-analyses",
+          "url": "https://scholar.google.com/scholar?q=Sisk+2018+to+what+extent+and+under+which+circumstances+are+growth+mindsets+important+to+academic+achievement"
+        },
+        {
+          "title": "Macnamara & Burgoyne (2023). Growth mindset interventions meta-analysis",
+          "url": "https://scholar.google.com/scholar?q=Macnamara+Burgoyne+do+growth+mindset+interventions+impact+students+academic+achievement+systematic+review"
+        }
+      ]
+    },
+    {
+      "id": "conform",
+      "category": "social",
+      "title": "Konformizm",
+      "original": "Conformity (Asch)",
+      "evidence": 3,
+      "definition": "Gotowość do powtórzenia oczywiście błędnej odpowiedzi grupy, jeśli grupa jest jednomyślna, a odpowiadać trzeba na głos.",
+      "manifestations": [
+        "Około 37% odpowiedzi w próbach krytycznych pokrywało się z błędną większością",
+        "Około 75% uległo przynajmniej raz, 25% nie uległo ani razu",
+        "Jeden niezgadzający się w grupie zbija efekt mniej więcej do 5%",
+        "Przy odpowiedziach pisemnych konformizm spada niemal do zera"
+      ],
+      "example": "Uczestnik widzi, że linia jest krótsza. Siedmiu przed nim mówi, że dłuższa. On mówi to samo — a potem nie zawsze potrafi wyjaśnić dlaczego.",
+      "commonMistake": "„Ludzie zawsze idą za tłumem”. Wynik jest warunkowy: opiera się na jawności odpowiedzi i jednomyślności grupy, a znika, gdy tylko usunąć którykolwiek z tych warunków.",
+      "figures": [
+        {
+          "value": "37%",
+          "label": "odpowiedzi konformistycznych"
+        },
+        {
+          "value": "5%",
+          "label": "przy obecności jednego sojusznika"
+        }
+      ],
+      "evidenceNote": "Klasyczny wynik, potwierdzony metaanalizą 133 badań w 17 krajach.",
+      "related": ["obed", "bystand", "groupthink"],
+      "sources": [
+        {
+          "title": "Asch (1955). Opinions and social pressure",
+          "url": "https://scholar.google.com/scholar?q=Asch+1955+opinions+and+social+pressure+scientific+american"
+        },
+        {
+          "title": "Bond & Smith (1996). Culture and conformity meta-analysis",
+          "url": "https://scholar.google.com/scholar?q=Bond+Smith+1996+culture+and+conformity+meta-analysis+of+studies+using+Asch+line+judgment+task"
+        }
+      ]
+    },
+    {
+      "id": "obed",
+      "category": "social",
+      "title": "Posłuszeństwo wobec autorytetu",
+      "original": "Obedience (Milgram)",
+      "evidence": 3,
+      "definition": "Gotowość do wykonywania szkodliwych poleceń, gdy wydaje je ktoś postrzegany jako prawomocny autorytet.",
+      "manifestations": [
+        "Pytanie „czy to słuszne” zostaje zastąpione pytaniem „czy dobrze wykonuję”",
+        "Liczba zmienia się gwałtownie wraz z układem sytuacji, a nie z charakterem",
+        "Dystans od autorytetu obniża posłuszeństwo trzykrotnie",
+        "Obecność dwóch nieposłusznych uczestników obok obniża je najmocniej"
+      ],
+      "example": "Uczestnicy pocili się, śmiali z napięcia, prosili o przerwanie — i kontynuowali. Żaden z nich nie chciał szkody; niemal nikt nie miał sposobu, by wyjść z roli.",
+      "commonMistake": "„Ja bym tak nie postąpił”. Psychiatrzy przed eksperymentem przewidywali, że do końca dojdzie około jednego procenta. Doszło 65%. Błąd w tej prognozie to główny wynik tego badania.",
+      "figures": [
+        {
+          "value": "65%",
+          "label": "doszło do maksymalnego wstrząsu"
+        },
+        {
+          "value": "~1%",
+          "label": "prognoza psychiatrów przed eksperymentem"
+        },
+        {
+          "value": "20,5%",
+          "label": "gdy polecenia wydawano przez telefon"
+        }
+      ],
+      "evidenceNote": "Metodologię i etykę słusznie krytykowano, ale współczesne powtórzenia w różnych kulturach dają od 65 do 90 procent posłuszeństwa.",
+      "related": ["conform", "groupthink", "fae"],
+      "sources": [
+        {
+          "title": "Milgram (1963). Behavioral study of obedience",
+          "url": "https://scholar.google.com/scholar?q=Milgram+1963+behavioral+study+of+obedience+journal+abnormal+social+psychology"
+        },
+        {
+          "title": "Perry (2013). Behind the Shock Machine",
+          "url": "https://scholar.google.com/scholar?q=Perry+2013+behind+the+shock+machine+untold+story+of+notorious+Milgram+psychology+experiments"
+        }
+      ]
+    },
+    {
+      "id": "bystand",
+      "category": "social",
+      "title": "Efekt widza",
+      "original": "Bystander effect",
+      "evidence": 3,
+      "definition": "Im więcej świadków, tym mniejsze prawdopodobieństwo, że konkretna osoba pomoże.",
+      "manifestations": [
+        "Odpowiedzialność dzieli się między obecnych i każdemu przypada jej za mało",
+        "Pluralistyczna ignorancja: spokój innych czyta się jako dowód, że wszystko jest w porządku",
+        "Najskuteczniej działa zwrócenie się do jednej konkretnej osoby, a nie do wszystkich",
+        "W realnych konfliktach ulicznych ktoś interweniuje znacznie częściej niż w laboratorium"
+      ],
+      "example": "Sam na sam o napaści zawiadomiło 85% uczestników. Ci sami ludzie, przekonani, że słyszy to jeszcze czworo — tylko 31%.",
+      "commonMistake": "Historia o 38 świadkach zabójstwa Kitty Genovese, od której zaczął się cały ten nurt, okazała się mocno wyolbrzymiona przez gazetę. Eksperymenty na niej zbudowane okazały się jednak solidne.",
+      "figures": [
+        {
+          "value": "85%",
+          "label": "pomogło sam na sam"
+        },
+        {
+          "value": "31%",
+          "label": "przy czterech wyobrażonych świadkach"
+        },
+        {
+          "value": "~9 na 10",
+          "label": "realnych konfliktów na nagraniach, gdzie ktoś interweniuje"
+        }
+      ],
+      "evidenceNote": "Efekt potwierdzony metaanalizą na ponad 7700 uczestnikach, ale umiarkowany co do wielkości, a dane terenowe wnoszą istotną poprawkę.",
+      "related": ["conform", "obed"],
+      "sources": [
+        {
+          "title": "Darley & Latané (1968). Bystander intervention in emergencies",
+          "url": "https://scholar.google.com/scholar?q=Darley+Latane+1968+bystander+intervention+in+emergencies+diffusion+of+responsibility"
+        },
+        {
+          "title": "Philpot et al. (2020). CCTV evidence of bystander intervention",
+          "url": "https://scholar.google.com/scholar?q=Philpot+2020+would+I+be+helped+cross-national+CCTV+footage+shows+bystander+intervention"
+        }
+      ]
+    },
+    {
+      "id": "groupthink",
+      "category": "social",
+      "title": "Myślenie grupowe",
+      "original": "Groupthink",
+      "evidence": 2,
+      "definition": "Zgrana grupa zaczyna cenić zgodę wyżej niż jakość decyzji i sama odcina niewygodne zastrzeżenia.",
+      "manifestations": [
+        "Złudzenie jednomyślności: milczenie czyta się jako zgodę",
+        "Autocenzura: wątpliwości nie są wypowiadane, żeby nie psuć nastroju",
+        "Pojawienie się nieformalnych „strażników” przed niewygodną informacją",
+        "Złudzenie nietykalności i nadmierny optymizm wobec planu"
+      ],
+      "example": "Na naradzie wszyscy kiwają głowami. Po naradzie dwoje osobno mówi sobie nawzajem, że plan jest zły. Oboje milczeli, bo wydawało im się, że jako jedyni mają wątpliwości.",
+      "commonMistake": "Pojęcie stało się modne i stosuje się je do każdej złej decyzji grupy. Oryginalny model wymaga konkretnych warunków: wysoka spójność, izolacja, dyrektywny lider, stres.",
+      "figures": [],
+      "evidenceNote": "Model Irvinga Janisa jest wpływowy i opisowo użyteczny, ale sprawdziany eksperymentalne dają sprzeczne wyniki.",
+      "related": ["conform", "confirm", "obed"],
+      "sources": [
+        {
+          "title": "Janis (1972). Victims of Groupthink",
+          "url": "https://scholar.google.com/scholar?q=Janis+1972+victims+of+groupthink+psychological+study+of+foreign+policy+decisions"
+        },
+        {
+          "title": "Esser (1998). Alive and well after 25 years: review of groupthink research",
+          "url": "https://scholar.google.com/scholar?q=Esser+1998+alive+and+well+after+25+years+review+of+groupthink+research"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "id": "relationships",
+      "title": "Trudno mi w relacjach",
+      "description": "Dlaczego bliskość bywa straszna i co zapowiada rozstanie",
+      "concepts": ["anxious", "avoidant", "four", "stonewall", "gaslight", "lovebomb"]
+    },
+    {
+      "id": "reactions",
+      "title": "Nie rozumiem własnej reakcji",
+      "description": "Dlaczego postąpiłem właśnie tak i wytłumaczyłem to właśnie tym",
+      "concepts": ["ration", "proj", "denial", "sunk", "fae", "shame"]
+    },
+    {
+      "id": "identity",
+      "title": "Kim ja w ogóle jestem",
+      "description": "Co w charakterze jest trwałe, a co popularnym wymysłem",
+      "concepts": ["bigfive", "introext", "hsp", "mbti"]
+    },
+    {
+      "id": "difficult-people",
+      "title": "Obok mnie trudna osoba",
+      "description": "Jak odróżnić cechę od diagnozy i nie przykleić etykiety",
+      "concepts": ["narc", "mach", "psycho", "pa", "gaslight"]
+    },
+    {
+      "id": "anxiety",
+      "title": "Niespokojnie i bez sił",
+      "description": "Co robi organizm pod stresem i dlaczego to się przeciąga",
+      "concepts": ["fff", "anxiety_fear", "avoidance", "burnout", "regul"]
+    },
+    {
+      "id": "motivation",
+      "title": "Nie mogę zabrać się do pracy",
+      "description": "Motywacja, prokrastynacja i to, co na nie działa",
+      "concepts": ["procrast", "intr", "learned", "multitask", "growth"]
+    }
+  ],
+  "confusions": [
+    {
+      "a": "Lęk",
+      "b": "Strach",
+      "paragraphs": [
+        "<b>Strach</b> ma przedmiot: jest tu i teraz, i mija razem z zagrożeniem.",
+        "<b>Lęk</b> ma scenariusz: zagrożenia jeszcze nie ma, więc nie ma się czym skończyć i może trwać latami.",
+        "Różnica praktyczna: strach usuwa się, usuwając źródło. Z lękiem to nie działa — źródła nie ma, więc walka staje się nieskończona."
+      ],
+      "concepts": ["anxiety_fear", "fff"]
+    },
+    {
+      "a": "Smutek",
+      "b": "Depresja",
+      "paragraphs": [
+        "<b>Smutek</b> ma przyczynę, zmienia się w ciągu dnia i nie odbiera zdolności cieszenia się czymś innym.",
+        "<b>Depresja</b> to trwały stan utrzymujący się co najmniej dwa tygodnie, z utratą zdolności odczuwania przyjemności, zmianami snu i apetytu, często bez zrozumiałej przyczyny zewnętrznej.",
+        "Różnica nie leży w sile przeżycia, lecz w czasie trwania i w tym, że znika sama zdolność reagowania na dobre rzeczy."
+      ],
+      "concepts": ["regul", "burnout"]
+    },
+    {
+      "a": "Introwersja",
+      "b": "Fobia społeczna",
+      "paragraphs": [
+        "<b>Introwersja</b> dotyczy zasobów: kontakt z ludźmi zużywa energię, samotność ją zwraca.",
+        "<b>Lęk społeczny</b> dotyczy strachu przed oceną: człowiek może bardzo chcieć kontaktu i jednocześnie bać się, że się ośmieszy.",
+        "Introwertyk wychodzi z imprezy zadowolony i zmęczony. Osoba z lękiem społecznym po imprezie odtwarza w głowie wszystko, co powiedziała nie tak."
+      ],
+      "concepts": ["introext", "anxiety_fear"]
+    },
+    {
+      "a": "Egoizm",
+      "b": "Narcyzm",
+      "paragraphs": [
+        "<b>Egoizm</b> to zachowanie: w konkretnej sytuacji człowiek postawił swój interes ponad cudzy.",
+        "<b>Narcyzm</b> to trwała cecha, a narcystyczne zaburzenie osobowości to diagnoza kliniczna, którą ma 1–2% ludzi.",
+        "Nazywanie narcyzem każdego, kto sprawił ból, to najczęstszy błąd psychologii popularnej. Między jednorazowym egoizmem a zaburzeniem leży ogromny dystans."
+      ],
+      "concepts": ["narc", "fae"]
+    },
+    {
+      "a": "Niezgoda",
+      "b": "Gaslighting",
+      "paragraphs": [
+        "<b>Różne wspomnienia</b> to norma: pamięć jest rekonstrukcyjna i dwoje uczciwych ludzi naprawdę pamięta inaczej.",
+        "<b>Gaslighting</b> to system, który ma swój efekt: człowiek stopniowo przestaje ufać własnemu postrzeganiu.",
+        "Oznaką nie jest pojedynczy spór o fakty, lecz to, że z czasem zaczynasz sprawdzać samego siebie."
+      ],
+      "concepts": ["gaslight", "recon"]
+    },
+    {
+      "a": "Pauza",
+      "b": "Stonewalling",
+      "paragraphs": [
+        "<b>Pauza</b> jest ogłoszona: „potrzebuję dwudziestu minut, potem wrócimy”.",
+        "<b>Stonewalling</b> to wyjście bez słowa i bez powrotu, po którym temat po prostu znika.",
+        "Fizjologicznie mogą wyglądać tak samo — człowieka przeciążyło. Różnica polega na tym, czy jest umowa o powrocie."
+      ],
+      "concepts": ["stonewall", "avoidant"]
+    },
+    {
+      "a": "Zmęczenie",
+      "b": "Wypalenie",
+      "paragraphs": [
+        "<b>Zmęczenie</b> mija po odpoczynku — to jego cecha rozstrzygająca.",
+        "<b>Wypalenie</b> po urlopie wraca w tydzień, bo przyczyną nie jest liczba godzin, lecz połączenie obciążenia z brakiem kontroli i sensu.",
+        "Dochodzi to, czego przy zmęczeniu nie ma: cynizm wobec pracy i ludzi oraz spadek poczucia własnych kompetencji przy niezmienionych wynikach."
+      ],
+      "concepts": ["burnout", "learned"]
+    },
+    {
+      "a": "Empatia",
+      "b": "Współczucie",
+      "paragraphs": [
+        "<b>Empatia</b> to czuć to samo, co druga osoba. Wyczerpuje i to właśnie z niej wyrasta wypalenie w zawodach pomocowych.",
+        "<b>Współczucie</b> to troska o drugiego bez zlewania się z jego stanem. Badania pokazują, że uruchamia inne sieci mózgowe i nie prowadzi do wyczerpania.",
+        "Dlatego radę „bardziej współodczuwaj” warto doprecyzować: pomaga troszczyć się, a nie tonąć razem."
+      ],
+      "concepts": ["shame", "regul"]
+    },
+    {
+      "a": "Lenistwo",
+      "b": "Prokrastynacja",
+      "paragraphs": [
+        "<b>Lenistwo</b> to brak chęci do działania i nie towarzyszy mu napięcie.",
+        "<b>Prokrastynacja</b> to odkładanie mimo obecnej chęci: człowiek chce zrobić, wie, że trzeba, i źle się czuje z tym, że nie robi.",
+        "Plany i minutniki nie działają właśnie dlatego, że przyczyną nie jest organizacja czasu, lecz próba uniknięcia nieprzyjemnej emocji związanej z zadaniem."
+      ],
+      "concepts": ["procrast", "learned"]
+    }
+  ],
+  "helpCards": [
+    {
+      "title": "Kiedy warto się zgłosić",
+      "points": [
+        "Stan trwa dłużej niż dwa tygodnie i nie zmienia się po odpoczynku",
+        "Cierpi codzienne funkcjonowanie: praca, sen, jedzenie, relacje",
+        "Sposoby radzenia sobie samemu zostały już wypróbowane i nie działają",
+        "Bliscy zauważają zmiany wcześniej niż ty",
+        "Unikasz coraz szerszego kręgu sytuacji"
+      ]
+    },
+    {
+      "title": "Do kogo dokładnie",
+      "points": [
+        "<b>Psycholog, psychoterapeuta</b> — praca oparta na rozmowie o stanie i zachowaniu",
+        "<b>Psychiatra</b> — lekarz, stawia diagnozę i przepisuje leki",
+        "<b>Neurolog, internista</b> — gdy są objawy somatyczne, które trzeba najpierw wykluczyć",
+        "Psycholog i psychiatra nie są konkurentami: często pracują razem"
+      ]
+    },
+    {
+      "title": "Co sprawia, że terapia działa",
+      "points": [
+        "Metoda z bazą dowodową dopasowana do twojego problemu",
+        "Sojusz roboczy: ze specjalistą musi być można się nie zgodzić",
+        "Zrozumiałe cele i zauważalny postęp po kilku miesiącach",
+        "Prawo do zmiany specjalisty, jeśli to nie działa — to normalne, a nie zdrada"
+      ]
+    },
+    {
+      "title": "Niepokojące sygnały w samej pomocy",
+      "points": [
+        "Obietnice szybkiego i gwarantowanego rezultatu",
+        "Diagnozy po jednym spotkaniu albo z wpisu w mediach społecznościowych",
+        "Presja, poczucie winy, deprecjonowanie wątpliwości klienta",
+        "Zakaz omawiania procesu lub zwracania się do innych specjalistów"
+      ]
+    }
+  ],
+  "bibliography": [
+    "Costa, P. & McCrae, R. (1992). NEO PI-R Professional Manual",
+    "Goldberg, L. (1990). An alternative description of personality: the Big-Five factor structure",
+    "Pittenger, D. (2005). Cautionary comments regarding the Myers-Briggs Type Indicator",
+    "Druckman, D. & Bjork, R. (1991). In the Mind’s Eye. National Academy of Sciences",
+    "Hazan, C. & Shaver, P. (1987). Romantic love conceptualized as an attachment process",
+    "Mickelson, K., Kessler, R. & Shaver, P. (1997). Adult attachment in a nationally representative sample",
+    "Bakermans-Kranenburg, M. & van IJzendoorn, M. (2009). Metaanaliza ponad 10 000 wywiadów AAI",
+    "Paulhus, D. & Williams, K. (2002). The Dark Triad of personality",
+    "Gottman, J. & Levenson, R. (1992). Marital processes predictive of later dissolution",
+    "Ross, L. (1977). The intuitive psychologist and his shortcomings",
+    "Nickerson, R. (1998). Confirmation bias: a ubiquitous phenomenon in many guises",
+    "Aron, E. & Aron, A. (1997). Sensory-processing sensitivity",
+    "Gross, J. (1998, 2015). Emotion regulation: process model and its extensions",
+    "Tangney, J. & Dearing, R. (2002). Shame and Guilt",
+    "Barrett, L. F. et al. (2019). Emotional expressions reconsidered",
+    "Maslach, C. & Leiter, M. (2016). Understanding the burnout experience",
+    "Loftus, E. (1997). Creating false memories",
+    "Cowan, N. (2001). The magical number four in short-term memory",
+    "Deci, E. & Ryan, R. (2000). Self-determination theory",
+    "Maier, S. & Seligman, M. (2016). Learned helplessness at fifty",
+    "Sirois, F. & Pychyl, T. (2013). Procrastination and priority of short-term mood repair",
+    "Sisk, V. et al. (2018); Macnamara, B. & Burgoyne, A. (2023). Metaanalizy growth mindset",
+    "Asch, S. (1955); Bond, R. & Smith, P. (1996)",
+    "Milgram, S. (1963, 1974); Perry, G. (2013)",
+    "Darley, J. & Latané, B. (1968); Manning, R. et al. (2007); Philpot, R. et al. (2020)",
+    "Janis, I. (1972). Victims of Groupthink"
+  ]
+}

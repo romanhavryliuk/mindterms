@@ -2,9 +2,9 @@ import type { CSSProperties } from 'react';
 import Link from 'next/link';
 
 import { EvidenceBadge } from '@/components/EvidenceBadge';
+import { localePath, type Locale, type Messages } from '@/i18n';
 import type { CategoryColor, Concept } from '@/types';
-import { localePath } from '@/utils/constants';
-import { truncate } from '@/utils/formatters';
+import { originalTerm, truncate } from '@/utils/formatters';
 
 import css from './ConceptCard.module.css';
 
@@ -16,13 +16,22 @@ type ConceptCardData = Pick<
 
 type ConceptCardProps = {
   concept: ConceptCardData;
+  locale: Locale;
+  messages: Messages;
   /** Акцент теми; якщо не передати, картка успадкує --accent від контейнера */
   color?: CategoryColor;
   /** Назва теми під заголовком — потрібна там, де картки різних тем поруч */
   categoryName?: string;
 };
 
-export const ConceptCard = ({ concept, color, categoryName }: ConceptCardProps) => {
+export const ConceptCard = ({
+  concept,
+  locale,
+  messages,
+  color,
+  categoryName,
+}: ConceptCardProps) => {
+  const original = originalTerm(concept.title, concept.original);
   const accentStyle =
     color === undefined
       ? undefined
@@ -30,18 +39,20 @@ export const ConceptCard = ({ concept, color, categoryName }: ConceptCardProps) 
 
   return (
     <article className={css.card} style={accentStyle}>
-      <Link className={css.link} href={localePath(`/concept/${concept.id}`)}>
+      <Link className={css.link} href={localePath(`/concept/${concept.id}`, locale)}>
         <h3 className={css.title}>{concept.title}</h3>
       </Link>
 
-      <p className={css.original} lang="en">
-        {concept.original}
-      </p>
+      {original !== null && (
+        <p className={css.original} lang="en">
+          {original}
+        </p>
+      )}
 
       <p className={css.definition}>{truncate(concept.definition, 150)}</p>
 
       <footer className={css.footer}>
-        <EvidenceBadge level={concept.evidence} size="sm" />
+        <EvidenceBadge level={concept.evidence} messages={messages} size="sm" />
         {categoryName !== undefined && (
           <span className={css.category}>{categoryName}</span>
         )}

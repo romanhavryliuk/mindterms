@@ -1,0 +1,1830 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "updated": "2026-09",
+    "locale": "en",
+    "note": "An educational reference. It is not medical advice and is not intended for diagnosis."
+  },
+  "categories": [
+    {
+      "id": "traits",
+      "name": "Traits and temperament",
+      "sub": "What character is made of, and what in it is genuinely stable",
+      "intro": "Modern psychology describes personality through dimensions rather than types: a person is not “an introvert or an extravert” but somewhere on a scale. Typologies are more popular because they are simpler, and they pay for that with accuracy.",
+      "color": "trait"
+    },
+    {
+      "id": "attach",
+      "name": "Attachment styles",
+      "sub": "How a person behaves in close relationships when things get frightening",
+      "intro": "An attachment style is not character in general but a behavioural script specific to close relationships. It takes shape in childhood and shows up above all in moments of anxiety. It is not a sentence: it changes, though slowly.",
+      "color": "attach"
+    },
+    {
+      "id": "dark",
+      "name": "The dark triad",
+      "sub": "Traits through which a person systematically uses others",
+      "intro": "These are traits, not diagnoses. Everyone has them to some degree, and they are measured on a scale rather than by presence or absence. A clinical disorder is a separate story, and only a specialist can diagnose one.",
+      "color": "dark"
+    },
+    {
+      "id": "bias",
+      "name": "Cognitive biases",
+      "sub": "Systematic failures of thinking, much the same in almost everyone",
+      "intro": "Biases are not the errors of unintelligent people. They are the price the brain pays for saving resources. Knowing about them does not save you automatically, but it gives you a moment in which you can stop.",
+      "color": "bias"
+    },
+    {
+      "id": "defense",
+      "name": "Defence mechanisms",
+      "sub": "Automatic ways of not feeling what would be unbearable to feel",
+      "intro": "Defences operate without the participation of consciousness, which is why they are not lies. They are not bad in themselves: some of them are mature and useful. The problem starts when the same defence switches on every time.",
+      "color": "def"
+    },
+    {
+      "id": "talk",
+      "name": "Communication styles",
+      "sub": "Four ways of behaving when your interests diverge",
+      "intro": "These are not character traits but learned strategies. They can be changed deliberately, and this is exactly where practice gives the fastest visible result.",
+      "color": "talk"
+    },
+    {
+      "id": "rel",
+      "name": "Relationship patterns",
+      "sub": "Recurring scripts that destroy closeness",
+      "intro": "These concepts currently suffer most from casual use: any unpleasant behaviour gets called by their names. What matters here is not a single episode but a system.",
+      "color": "rel"
+    },
+    {
+      "id": "emo",
+      "name": "Emotions and their regulation",
+      "sub": "How feelings are built, and what can actually be done with them",
+      "intro": "Emotions are not an obstacle to thinking — they are part of how the brain appraises a situation. The question is not how to get rid of them but which ways of handling them work and which only look as if they do.",
+      "color": "emo"
+    },
+    {
+      "id": "stress",
+      "name": "Anxiety, stress and trauma",
+      "sub": "What the body does when things turn dangerous, and why it drags on",
+      "intro": "Anxiety in itself is not a disorder — it is an early warning system. The trouble starts when it switches on without a threat, or when the ways of coping with it begin to sustain it.",
+      "color": "anx"
+    },
+    {
+      "id": "mind",
+      "name": "Memory, attention, thinking",
+      "sub": "How the brain processes information, and where it fails systematically",
+      "intro": "Memory is not a recording, and attention is not a spotlight you can widen at will. Most everyday beliefs about these processes are wrong, and that is exactly why they cost so much.",
+      "color": "cog"
+    },
+    {
+      "id": "motiv",
+      "name": "Motivation and will",
+      "sub": "Why we start, why we quit, and what actually works",
+      "intro": "Most advice about motivation rests on the assumption that what is missing is desire. Research points elsewhere: more often what is missing is not desire but a clear structure and a way of coping with the unpleasant feelings the task itself provokes.",
+      "color": "mot"
+    },
+    {
+      "id": "social",
+      "name": "People in groups",
+      "sub": "What the presence of other people does to a person",
+      "intro": "The strongest findings in social psychology concern the situation, not character. They show that behaviour is predicted well not by the question “what kind of person is this” but by the question “how is the room arranged”.",
+      "color": "soc"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "introext",
+      "category": "traits",
+      "title": "Extraversion and introversion",
+      "original": "Extraversion / Introversion",
+      "evidence": 3,
+      "definition": "Not about shyness, but about where energy comes from and how much external stimulation a nervous system needs.",
+      "manifestations": [
+        "An extravert recovers in contact with people, an introvert recovers alone",
+        "An introvert can be an excellent speaker: that is a skill, not a temperament",
+        "Shyness is a separate thing: it is a fear of being judged, and it occurs in both",
+        "Most people sit in the middle of the scale; pure poles are rare"
+      ],
+      "example": "After a day of meetings the extravert goes to the bar with colleagues and comes back energised. The introvert goes home and stays silent for an hour — not out of resentment, but because that is how they recharge.",
+      "commonMistake": "“An introvert is someone who doesn’t like people.” In fact introverts often have deep relationships, just fewer and more selectively chosen. Confusing this with social anxiety is the most frequent error around the concept.",
+      "figures": [
+        {
+          "value": "r≈0.70",
+          "label": "correlation of the MBTI E/I scale with Big Five extraversion"
+        }
+      ],
+      "evidenceNote": "The best-supported trait of them all. Stable over time, reproduced across cultures, with neurophysiological correlates.",
+      "related": ["bigfive", "hsp"],
+      "sources": [
+        {
+          "title": "Costa & McCrae (1992). Revised NEO Personality Inventory manual",
+          "url": "https://scholar.google.com/scholar?q=Costa+McCrae+1992+NEO+PI-R+professional+manual"
+        },
+        {
+          "title": "APA Dictionary: extraversion",
+          "url": "https://dictionary.apa.org/extraversion"
+        }
+      ]
+    },
+    {
+      "id": "bigfive",
+      "category": "traits",
+      "title": "The Big Five",
+      "original": "Big Five / OCEAN",
+      "evidence": 3,
+      "definition": "Five dimensions that most descriptions of character boil down to: openness, conscientiousness, extraversion, agreeableness, neuroticism.",
+      "manifestations": [
+        "Openness — curiosity about the new, about ideas, art, the unusual",
+        "Conscientiousness — organisation, reliability, the ability to see things through",
+        "Extraversion — the need for stimulation and social contact",
+        "Agreeableness — a tendency to trust, to yield, to cooperate",
+        "Neuroticism — how easily anxiety and negative emotions switch on"
+      ],
+      "example": "Two people “don’t like change”. One is low in openness — the new simply doesn’t interest them. The other is high in neuroticism — uncertainty makes them anxious. The behaviour looks the same, the cause differs, and the two need different approaches.",
+      "commonMistake": "“It’s just another test like MBTI.” No: the Big Five grew not out of a theory but out of an analysis of language — researchers took every word people use to describe one another and looked at how many clusters they form. Five came out.",
+      "figures": [
+        {
+          "value": "0.80–0.90",
+          "label": "repeatability of the result after several weeks"
+        },
+        {
+          "value": "r=0.31",
+          "label": "conscientiousness as a predictor of job performance"
+        }
+      ],
+      "evidenceNote": "The standard of academic personality psychology. The structure is reproduced across cultures and across decades.",
+      "related": ["introext", "mbti"],
+      "sources": [
+        {
+          "title": "Goldberg (1990). An alternative description of personality",
+          "url": "https://scholar.google.com/scholar?q=Goldberg+1990+alternative+description+of+personality+Big-Five+factor+structure"
+        },
+        {
+          "title": "Barrick & Mount (1991). The Big Five and job performance",
+          "url": "https://scholar.google.com/scholar?q=Barrick+Mount+1991+Big+Five+personality+dimensions+job+performance+meta-analysis"
+        }
+      ]
+    },
+    {
+      "id": "mbti",
+      "category": "traits",
+      "title": "MBTI and the 16 types",
+      "original": "Myers-Briggs Type Indicator",
+      "evidence": 1,
+      "definition": "A popular typology that sorts people into 16 types along four dichotomies. Convenient for talking about yourself, weak as a measuring instrument.",
+      "manifestations": [
+        "It splits continuous scales into either/or, although most people are in the middle",
+        "It gives descriptions that fit almost everyone — the Barnum effect",
+        "It does not predict job performance and is barely used in research",
+        "Its most reliable part is the E/I scale, because it nearly duplicates extraversion"
+      ],
+      "example": "Someone who scores 51% against 49% gets the same letter as someone who scores 90%. A month later they easily get the opposite one — and that is not a change of personality but an artefact of cutting a scale in half.",
+      "commonMistake": "The main trap is not MBTI itself but what people do with it: hiring, assigning roles, explaining conflicts. For decisions about a particular person it is not fit for purpose.",
+      "figures": [
+        {
+          "value": "~50%",
+          "label": "get a different type when they retake it"
+        },
+        {
+          "value": "1991",
+          "label": "the US National Academy of Sciences finds no grounds for career guidance use"
+        }
+      ],
+      "evidenceNote": "Weak test-retest reliability, an unconfirmed factor structure. As a prompt to think about yourself — fine. As grounds for decisions — no.",
+      "related": ["bigfive", "introext"],
+      "sources": [
+        {
+          "title": "Pittenger (2005). Cautionary comments regarding the MBTI",
+          "url": "https://scholar.google.com/scholar?q=Pittenger+2005+cautionary+comments+regarding+the+Myers-Briggs+Type+Indicator"
+        },
+        {
+          "title": "Druckman & Bjork (1991). In the Mind’s Eye. National Academy of Sciences",
+          "url": "https://scholar.google.com/scholar?q=Druckman+Bjork+1991+In+the+Mind+Eye+enhancing+human+performance"
+        }
+      ]
+    },
+    {
+      "id": "hsp",
+      "category": "traits",
+      "title": "High sensitivity",
+      "original": "Sensory Processing Sensitivity",
+      "evidence": 2,
+      "definition": "Heightened sensitivity of the nervous system to stimuli: sounds, light, other people’s emotions, changes in the environment.",
+      "manifestations": [
+        "Overload arrives sooner in loud and crowded places",
+        "Deeper processing of information, longer deliberation",
+        "A stronger reaction both to the unpleasant and to the beautiful",
+        "Noticeable in the need for a recovery pause after a full day"
+      ],
+      "example": "At a work party this person leaves after two hours — not because they are bored, but because the music, the lights and twenty parallel conversations drained their resources sooner than everyone else’s.",
+      "commonMistake": "It is neither a diagnosis nor a superpower. And it is not the same as introversion: roughly a third of highly sensitive people are extraverts.",
+      "figures": [
+        {
+          "value": "15–20%",
+          "label": "estimated prevalence in the population"
+        }
+      ],
+      "evidenceNote": "The construct has empirical support, but some researchers hold that it overlaps substantially with neuroticism and introversion.",
+      "related": ["introext", "bigfive"],
+      "sources": [
+        {
+          "title": "Aron & Aron (1997). Sensory-processing sensitivity",
+          "url": "https://scholar.google.com/scholar?q=Aron+Aron+1997+sensory-processing+sensitivity+and+its+relation+to+introversion+emotionality"
+        },
+        {
+          "title": "Greven et al. (2019). Sensory processing sensitivity: review",
+          "url": "https://scholar.google.com/scholar?q=Greven+2019+sensory+processing+sensitivity+review+of+research+and+agenda"
+        }
+      ]
+    },
+    {
+      "id": "secure",
+      "category": "attach",
+      "title": "Secure attachment",
+      "original": "Secure",
+      "evidence": 3,
+      "definition": "A baseline expectation that the person close to you will be there, and that if they move away they will come back. It allows both closeness and separateness.",
+      "manifestations": [
+        "Able to say directly what they need, without hints or tests",
+        "Conflict is not experienced as a threat to the relationship",
+        "Time apart is tolerated calmly",
+        "Trusts, but not blindly: notices when something is off"
+      ],
+      "example": "A partner doesn’t reply for three hours. A securely attached person thinks “busy, they’ll write”, gets on with their own day and builds no theories in the meantime.",
+      "commonMistake": "“It’s innate: you either have it or you don’t.” Attachment forms in relationships and changes in relationships — in therapy, for instance, or in a long dependable partnership.",
+      "figures": [
+        {
+          "value": "56–59%",
+          "label": "of adults in representative samples"
+        },
+        {
+          "value": "58%",
+          "label": "by the AAI clinical interview, over 10,000 cases"
+        }
+      ],
+      "evidenceNote": "One of the best-supported concepts in the psychology of relationships. The data from questionnaires and from interviews converge.",
+      "related": ["anxious", "avoidant"],
+      "sources": [
+        {
+          "title": "Hazan & Shaver (1987). Romantic love as an attachment process",
+          "url": "https://scholar.google.com/scholar?q=Hazan+Shaver+1987+romantic+love+conceptualized+as+an+attachment+process"
+        },
+        {
+          "title": "Mickelson, Kessler & Shaver (1997). Attachment in a national sample",
+          "url": "https://scholar.google.com/scholar?q=Mickelson+Kessler+Shaver+1997+adult+attachment+in+a+nationally+representative+sample"
+        }
+      ]
+    },
+    {
+      "id": "anxious",
+      "category": "attach",
+      "title": "Anxious attachment",
+      "original": "Anxious / Preoccupied",
+      "evidence": 3,
+      "definition": "A constant background fear that the person close to you will pull away, and a need for reassurance that is never quite enough.",
+      "manifestations": [
+        "A sharp reaction to a pause in replies, a shift in tone, a short message",
+        "A tendency to reread conversations looking for a hidden meaning",
+        "Protest behaviour: sulking, demonstrative silence, provoking a row",
+        "Rapid closeness at the start of a relationship"
+      ],
+      "example": "A partner writes “ok” instead of the usual “okay, see you tonight”. What follows is an hour of reconstruction: what did I say yesterday, is he offended, is this the end. When it turns out he was driving, the anxiety does not disappear — it is only postponed.",
+      "commonMistake": "“It comes from low self-esteem.” There is a link, but the mechanism is different: this is not about self-worth in general, it is about a specific expectation that closeness is unstable.",
+      "figures": [
+        {
+          "value": "11%",
+          "label": "in a US national sample"
+        },
+        {
+          "value": "19%",
+          "label": "by the AAI interview"
+        }
+      ],
+      "evidenceNote": "A well-supported pattern, consistently linked to difficulties with emotion regulation.",
+      "related": ["secure", "avoidant", "four"],
+      "sources": [
+        {
+          "title": "Mikulincer & Shaver (2007). Attachment in Adulthood",
+          "url": "https://scholar.google.com/scholar?q=Mikulincer+Shaver+attachment+in+adulthood+structure+dynamics+and+change"
+        },
+        {
+          "title": "APA Dictionary: attachment style",
+          "url": "https://dictionary.apa.org/attachment-style"
+        }
+      ]
+    },
+    {
+      "id": "avoidant",
+      "category": "attach",
+      "title": "Avoidant attachment",
+      "original": "Avoidant / Dismissive",
+      "evidence": 3,
+      "definition": "An automatic increase of distance once a relationship becomes too close. Independence as a way of staying safe.",
+      "manifestations": [
+        "Discomfort with talking about feelings, and with “serious conversations” in general",
+        "A need for time alone precisely when the partner needs closeness",
+        "Idealising past relationships or an imagined future partner",
+        "Outward calm during conflict, often covering high physiological arousal"
+      ],
+      "example": "After a particularly warm weekend the person suddenly turns cold and busy for a week. It is not a game and not manipulation — it is a reaction to closeness that crossed a comfortable threshold.",
+      "commonMistake": "“He simply doesn’t care.” Measurements show the opposite: during conflict an outwardly calm avoidant person often has a higher pulse and stress level than the one who is crying.",
+      "figures": [
+        {
+          "value": "23–25%",
+          "label": "of adults"
+        }
+      ],
+      "evidenceNote": "A stable pattern with well-described physiology: outward detachment alongside inner arousal.",
+      "related": ["anxious", "stonewall"],
+      "sources": [
+        {
+          "title": "Diamond, Hicks & Otter-Henderson (2006). Physiological evidence",
+          "url": "https://scholar.google.com/scholar?q=Diamond+Hicks+Otter-Henderson+2006+physiological+evidence+avoidant+attachment"
+        },
+        {
+          "title": "Bakermans-Kranenburg & van IJzendoorn (2009). AAI meta-analysis",
+          "url": "https://scholar.google.com/scholar?q=Bakermans-Kranenburg+van+IJzendoorn+2009+first+10000+Adult+Attachment+Interviews"
+        }
+      ]
+    },
+    {
+      "id": "disorg",
+      "category": "attach",
+      "title": "Disorganised attachment",
+      "original": "Disorganized / Fearful-avoidant",
+      "evidence": 2,
+      "definition": "A simultaneous need for closeness and fear of it. The person is pulled towards their partner and away from them by turns.",
+      "manifestations": [
+        "Abrupt swings: intense closeness one moment, complete distance the next",
+        "Relationships are experienced as both necessary and dangerous",
+        "Often connected with traumatic experience in early relationships",
+        "Of all the styles, the most strongly linked to difficulties with emotion regulation"
+      ],
+      "example": "Someone spends a month pursuing closeness, and the moment their partner reciprocates they start seeing flaws in them and looking for a reason to leave first.",
+      "commonMistake": "This style is often mistaken for a “difficult character” or assigned a diagnosis. It is a pattern of behaviour in relationships, not a personality disorder.",
+      "figures": [
+        {
+          "value": "5–8%",
+          "label": "by various estimates"
+        },
+        {
+          "value": "ρ=0.44",
+          "label": "link with PTSD — the strongest among the styles"
+        }
+      ],
+      "evidenceNote": "The category was added later than the three main ones and is measured less reliably, particularly in adults.",
+      "related": ["anxious", "avoidant"],
+      "sources": [
+        {
+          "title": "Main & Solomon (1990). Disorganized/disoriented attachment",
+          "url": "https://scholar.google.com/scholar?q=Main+Solomon+1990+procedures+for+identifying+infants+as+disorganized+disoriented"
+        },
+        {
+          "title": "Woodhouse et al. Attachment and PTSD meta-analysis",
+          "url": "https://scholar.google.com/scholar?q=attachment+style+PTSD+meta-analysis+disorganized+fearful+avoidant"
+        }
+      ]
+    },
+    {
+      "id": "narc",
+      "category": "dark",
+      "title": "Narcissism",
+      "original": "Narcissism",
+      "evidence": 3,
+      "definition": "A need for confirmation of one’s own significance that shapes behaviour more strongly than any real relationship with people does.",
+      "manifestations": [
+        "The grandiose type: display, a sense of special entitlement, dominance",
+        "The vulnerable type: the same self-focus, but through resentment and hypersensitivity to criticism",
+        "A reaction to criticism out of proportion to its content",
+        "Relationships are appraised by what they add to the image of the self"
+      ],
+      "example": "On a shared project a person sincerely remembers their contribution as larger than it was. That is not always a lie: memory really is rebuilt so as to support the image it needs.",
+      "commonMistake": "The most widespread mistake on the internet is calling everyone who acted selfishly or caused pain a narcissist. Selfishness, self-admiration and narcissistic personality disorder are three different things, with an enormous distance between them.",
+      "figures": [
+        {
+          "value": "1–2%",
+          "label": "prevalence of the disorder (NPD) in the general population"
+        },
+        {
+          "value": "2",
+          "label": "main types: grandiose and vulnerable"
+        }
+      ],
+      "evidenceNote": "The trait is measured well. The split into grandiose and vulnerable types is confirmed: at low levels they are independent, at high levels they merge.",
+      "related": ["mach", "psycho", "gaslight"],
+      "sources": [
+        {
+          "title": "Paulhus & Williams (2002). The Dark Triad of personality",
+          "url": "https://scholar.google.com/scholar?q=Paulhus+Williams+2002+dark+triad+of+personality+narcissism+Machiavellianism+psychopathy"
+        },
+        {
+          "title": "Miller et al. Grandiose and vulnerable narcissism",
+          "url": "https://scholar.google.com/scholar?q=Miller+grandiose+vulnerable+narcissism+nomological+network+comparison"
+        }
+      ]
+    },
+    {
+      "id": "mach",
+      "category": "dark",
+      "title": "Machiavellianism",
+      "original": "Machiavellianism",
+      "evidence": 3,
+      "definition": "A strategic treatment of people as a means: cold calculation and a readiness to manipulate for the sake of a goal.",
+      "manifestations": [
+        "Planning ahead, playing a long game, patience",
+        "A cynical view of others’ motives — “everyone does it”",
+        "Flexible morals: rules are applied selectively",
+        "Unlike narcissism, it does not need admiration — it needs a result"
+      ],
+      "example": "A colleague backs you in a meeting not because he agrees but because in a month he will need your vote. And he really does remember that a month later.",
+      "commonMistake": "This is not the same as being strategic or ambitious. The key difference is indifference to what others pay for it.",
+      "figures": [],
+      "evidenceNote": "A consistently measurable trait, the one in the triad most strongly linked to long-term planning of harm.",
+      "related": ["narc", "psycho"],
+      "sources": [
+        {
+          "title": "Christie & Geis (1970). Studies in Machiavellianism",
+          "url": "https://scholar.google.com/scholar?q=Christie+Geis+1970+studies+in+Machiavellianism"
+        },
+        {
+          "title": "APA Dictionary: Machiavellianism",
+          "url": "https://dictionary.apa.org/machiavellianism"
+        }
+      ]
+    },
+    {
+      "id": "psycho",
+      "category": "dark",
+      "title": "Subclinical psychopathy",
+      "original": "Psychopathy",
+      "evidence": 3,
+      "definition": "A combination of low empathy, impulsivity and a weak response to fear and to punishment.",
+      "manifestations": [
+        "Little anxiety in the face of risk and consequences",
+        "Superficial charm with no deep attachment behind it",
+        "Boredom arrives fast, along with a need for intense sensation",
+        "Remorse is expressed in words but does not change behaviour"
+      ],
+      "example": "A person apologises sincerely, sounds convincing — and two weeks later does the same thing again. The apology was not a lie: it simply did not carry the weight the listener assumed it had.",
+      "commonMistake": "Cinema turned the psychopath into a killer. The trait scale is about something else: most people who score high do not break the law — they work next to you.",
+      "figures": [],
+      "evidenceNote": "The core of the triad in terms of callousness and manipulativeness. A subclinical trait and a clinical diagnosis are different things.",
+      "related": ["narc", "mach"],
+      "sources": [
+        {
+          "title": "Hare (1991/2003). Psychopathy Checklist–Revised",
+          "url": "https://scholar.google.com/scholar?q=Hare+psychopathy+checklist+revised+PCL-R+manual"
+        },
+        {
+          "title": "Paulhus & Williams (2002). The Dark Triad of personality",
+          "url": "https://scholar.google.com/scholar?q=Paulhus+Williams+2002+dark+triad+of+personality"
+        }
+      ]
+    },
+    {
+      "id": "fae",
+      "category": "bias",
+      "title": "The fundamental attribution error",
+      "original": "Fundamental attribution error",
+      "evidence": 3,
+      "definition": "We explain other people’s behaviour by their character and our own by circumstances.",
+      "manifestations": [
+        "He was late — disorganised. I was late — there was traffic",
+        "Especially strong towards strangers",
+        "Weakens when we know the context of the other person’s life",
+        "Less pronounced in collectivist cultures"
+      ],
+      "example": "A shop assistant answered sharply — “rude”. The fact that she is twelve hours into her shift and has just been shouted at does not enter the explanation, because it cannot be seen.",
+      "commonMistake": "This is not about prejudice towards particular groups. It is a basic skew that operates towards anyone whose circumstances are invisible to us.",
+      "figures": [],
+      "evidenceNote": "One of the most stable effects in social psychology, with known cultural limits.",
+      "related": ["confirm", "proj"],
+      "sources": [
+        {
+          "title": "Ross (1977). The intuitive psychologist and his shortcomings",
+          "url": "https://scholar.google.com/scholar?q=Ross+1977+intuitive+psychologist+and+his+shortcomings+distortions+attribution"
+        },
+        {
+          "title": "Choi, Nisbett & Norenzayan (1999). Causal attribution across cultures",
+          "url": "https://scholar.google.com/scholar?q=Choi+Nisbett+Norenzayan+1999+causal+attribution+across+cultures+variation+universality"
+        }
+      ]
+    },
+    {
+      "id": "confirm",
+      "category": "bias",
+      "title": "Confirmation bias",
+      "original": "Confirmation bias",
+      "evidence": 3,
+      "definition": "We notice and remember what supports an opinion we already hold, and let what contradicts it slip past.",
+      "manifestations": [
+        "Selective reading: arguments for are studied, arguments against are skimmed",
+        "Ambiguous data are read in favour of the position already held",
+        "Memory fills in: mostly the confirming episodes come to mind",
+        "It grows stronger when the position is tied to identity"
+      ],
+      "example": "Having decided that a colleague dislikes you, you start noticing every restrained nod of his — and fail to notice that he greets everyone the same way.",
+      "commonMistake": "“I simply go by the facts.” The bias operates at the very stage of selecting facts, which is why from the inside it feels like objectivity.",
+      "figures": [],
+      "evidenceNote": "Reproduced many times across different tasks and domains.",
+      "related": ["fae", "dk"],
+      "sources": [
+        {
+          "title": "Nickerson (1998). Confirmation bias: a ubiquitous phenomenon",
+          "url": "https://scholar.google.com/scholar?q=Nickerson+1998+confirmation+bias+ubiquitous+phenomenon+in+many+guises"
+        },
+        {
+          "title": "APA Dictionary: confirmation bias",
+          "url": "https://dictionary.apa.org/confirmation-bias"
+        }
+      ]
+    },
+    {
+      "id": "dk",
+      "category": "bias",
+      "title": "The Dunning–Kruger effect",
+      "original": "Dunning–Kruger effect",
+      "evidence": 2,
+      "definition": "People with low competence lack precisely the knowledge required to see their own incompetence.",
+      "manifestations": [
+        "The largest gap between self-assessment and performance is at the bottom of the scale",
+        "Competent people often underrate themselves slightly, because they see the limits of their own knowledge",
+        "The effect disappears once a person gets feedback and learns"
+      ],
+      "example": "After two weeks of a course, a person is sure they have the subject figured out. A year of practice later they speak more carefully — not because they know less, but because they can now see what they don’t know.",
+      "commonMistake": "It is most often used as an insult — “that’s Dunning–Kruger for you”. In fact the effect describes everyone at the start of anything new, including whoever is quoting it.",
+      "figures": [],
+      "evidenceNote": "The effect is real, but part of the original picture is explained by statistical artefacts. Present-day estimates are more modest than the popular retellings.",
+      "related": ["confirm", "fae"],
+      "sources": [
+        {
+          "title": "Kruger & Dunning (1999). Unskilled and unaware of it",
+          "url": "https://scholar.google.com/scholar?q=Kruger+Dunning+1999+unskilled+and+unaware+of+it+difficulties+recognizing+incompetence"
+        },
+        {
+          "title": "Nuhfer et al. (2017). Critique of the Dunning-Kruger effect",
+          "url": "https://scholar.google.com/scholar?q=Nuhfer+2017+random+number+simulations+reveal+Dunning-Kruger+effect+critique"
+        }
+      ]
+    },
+    {
+      "id": "sunk",
+      "category": "bias",
+      "title": "The sunk cost fallacy",
+      "original": "Sunk cost fallacy",
+      "evidence": 3,
+      "definition": "We keep investing in something hopeless because we have already invested so much — even though what was spent cannot be recovered.",
+      "manifestations": [
+        "“A shame to drop it, so much time went into this”",
+        "The more that has been invested, the harder it is to leave",
+        "It works the same way on money, on time and on relationships",
+        "It intensifies when the decision was made publicly"
+      ],
+      "example": "A fourth year in a profession that was not enjoyable from the first. The argument “but I studied so long for this” is about the past, while the decision is about the next forty years.",
+      "commonMistake": "Walking away from such a situation is often called weakness. In fact it is cutting your losses. The question that helps: if I arrived here for the first time today, would I choose this now?",
+      "figures": [],
+      "evidenceNote": "Reliably reproduced in economic and psychological experiments.",
+      "related": ["ration", "confirm"],
+      "sources": [
+        {
+          "title": "Arkes & Blumer (1985). The psychology of sunk cost",
+          "url": "https://scholar.google.com/scholar?q=Arkes+Blumer+1985+the+psychology+of+sunk+cost"
+        },
+        {
+          "title": "APA Dictionary: sunk cost fallacy",
+          "url": "https://dictionary.apa.org/sunk-cost-fallacy"
+        }
+      ]
+    },
+    {
+      "id": "denial",
+      "category": "defense",
+      "title": "Denial",
+      "original": "Denial",
+      "evidence": 2,
+      "definition": "A refusal to acknowledge a fact that has already happened, because acknowledging it would be unbearable.",
+      "manifestations": [
+        "“It’s not that serious”, “doctors exaggerate”",
+        "Often the first reaction to a loss or a diagnosis",
+        "In the short term it shields the psyche from overload",
+        "It does harm when it persists and blocks necessary action"
+      ],
+      "example": "A person puts off a repeat test for several months. They have not forgotten — each time they find a reason, and every reason sounds sensible.",
+      "commonMistake": "Denial is not stubbornness and not stupidity. It is an automatic reaction, and arguing with it using facts usually does not work.",
+      "figures": [],
+      "evidenceNote": "Clinically well described, but defences are hard to measure: by definition they are unconscious.",
+      "related": ["ration", "proj"],
+      "sources": [
+        {
+          "title": "Vaillant (1992). Ego Mechanisms of Defense",
+          "url": "https://scholar.google.com/scholar?q=Vaillant+1992+ego+mechanisms+of+defense+a+guide+for+clinicians+and+researchers"
+        },
+        {
+          "title": "APA Dictionary: denial",
+          "url": "https://dictionary.apa.org/denial"
+        }
+      ]
+    },
+    {
+      "id": "proj",
+      "category": "defense",
+      "title": "Projection",
+      "original": "Projection",
+      "evidence": 2,
+      "definition": "Attributing to others one’s own feelings or intentions, the ones that are unacceptable to acknowledge in oneself.",
+      "manifestations": [
+        "The person who is considering an affair suspects their partner the most",
+        "Irritation is transferred onto whoever is “being irritable”",
+        "Often recognisable by how disproportionate the reaction is"
+      ],
+      "example": "Someone who has grown tired of the relationship themselves suddenly starts asking their partner constantly whether they still love them.",
+      "commonMistake": "The word has become everyday and is used to dismiss someone else’s complaint: “you’re just projecting”. That is a handy move in an argument, but it has nothing to do with the mechanism itself.",
+      "figures": [],
+      "evidenceNote": "A concept from the psychoanalytic tradition. Experimental support exists but is weaker than for the cognitive effects.",
+      "related": ["denial", "fae"],
+      "sources": [
+        {
+          "title": "Baumeister, Dale & Sommer (1998). Freudian defense mechanisms",
+          "url": "https://scholar.google.com/scholar?q=Baumeister+Dale+Sommer+1998+freudian+defense+mechanisms+empirical+findings+social+psychology"
+        },
+        {
+          "title": "Newman, Duff & Baumeister (1997). Projection and suppression",
+          "url": "https://scholar.google.com/scholar?q=Newman+Duff+Baumeister+1997+new+look+at+defensive+projection"
+        }
+      ]
+    },
+    {
+      "id": "ration",
+      "category": "defense",
+      "title": "Rationalisation",
+      "original": "Rationalization",
+      "evidence": 2,
+      "definition": "Constructing a reasonable explanation for an act whose real cause was emotional.",
+      "manifestations": [
+        "The explanation arrives after the act, not before it",
+        "The arguments are logical and convincing, including to the person themselves",
+        "Especially visible where the decision was impulsive"
+      ],
+      "example": "A person snaps and buys an expensive thing, then over the course of the day finds four convincing reasons why it was a good buy they had needed for ages.",
+      "commonMistake": "Rationalisation does not mean the arguments are wrong. They may be perfectly sound — they simply were not what decided the matter.",
+      "figures": [],
+      "evidenceNote": "Consistent with research showing that people often explain their own decisions after the fact.",
+      "related": ["sunk", "denial"],
+      "sources": [
+        {
+          "title": "Nisbett & Wilson (1977). Telling more than we can know",
+          "url": "https://scholar.google.com/scholar?q=Nisbett+Wilson+1977+telling+more+than+we+can+know+verbal+reports+on+mental+processes"
+        },
+        {
+          "title": "APA Dictionary: rationalization",
+          "url": "https://dictionary.apa.org/rationalization"
+        }
+      ]
+    },
+    {
+      "id": "subl",
+      "category": "defense",
+      "title": "Sublimation",
+      "original": "Sublimation",
+      "evidence": 2,
+      "definition": "Redirecting a powerful impulse into a socially acceptable and productive action.",
+      "manifestations": [
+        "Aggression — into sport or competitive work",
+        "Anxiety — into thoroughness and craft",
+        "Pain — into creative work",
+        "Considered the most mature of the defences"
+      ],
+      "example": "After a hard break-up a person starts running every morning, and six months later runs a marathon. The feelings have not gone anywhere — they have been given a form.",
+      "commonMistake": "This is not “just distracting yourself”. The difference is that the energy is actually spent rather than postponed.",
+      "figures": [],
+      "evidenceNote": "Clinically described as a mature defence; direct experimental data are limited.",
+      "related": ["ration", "denial"],
+      "sources": [
+        {
+          "title": "Vaillant (1992). Ego Mechanisms of Defense",
+          "url": "https://scholar.google.com/scholar?q=Vaillant+ego+mechanisms+of+defense+mature+defenses+sublimation"
+        },
+        {
+          "title": "APA Dictionary: sublimation",
+          "url": "https://dictionary.apa.org/sublimation"
+        }
+      ]
+    },
+    {
+      "id": "assert",
+      "category": "talk",
+      "title": "Assertive",
+      "original": "Assertive",
+      "evidence": 3,
+      "definition": "Saying what you need directly without violating anyone else’s boundaries. The most effective style, and the rarest.",
+      "manifestations": [
+        "Speaks from the self: “this matters to me”, not “you always”",
+        "Names specific behaviour rather than the person’s character",
+        "Holds the pause and the other person’s displeasure without retreating or attacking",
+        "Allows “no” as an answer"
+      ],
+      "example": "“When you move a meeting an hour before it starts, I can’t rearrange my day in time. I need at least a day’s notice.” No accusation, and no apology for making the request.",
+      "commonMistake": "Assertiveness is often confused with pushiness or harshness. The key sign is the opposite: it leaves the other person the right to refuse.",
+      "figures": [],
+      "evidenceNote": "Assertiveness training is one of the best-tested behavioural methods.",
+      "related": ["passive", "aggr"],
+      "sources": [
+        {
+          "title": "Alberti & Emmons. Your Perfect Right (assertiveness training)",
+          "url": "https://scholar.google.com/scholar?q=Alberti+Emmons+your+perfect+right+assertiveness+training+effectiveness"
+        },
+        {
+          "title": "Speed, Goldstein & Goldfried (2018). Assertiveness training review",
+          "url": "https://scholar.google.com/scholar?q=Speed+Goldstein+Goldfried+2018+assertiveness+training+forgotten+evidence-based+treatment"
+        }
+      ]
+    },
+    {
+      "id": "passive",
+      "category": "talk",
+      "title": "Passive",
+      "original": "Passive",
+      "evidence": 3,
+      "definition": "Your own need is never voiced at all, in order to avoid conflict.",
+      "manifestations": [
+        "Agreement out loud while disagreeing inside",
+        "Hints instead of a direct request",
+        "Accumulated resentment that later erupts out of proportion",
+        "Often accompanied by apologies for making a request at all"
+      ],
+      "example": "For three months a person silently takes on someone else’s work, then resigns with the words “I’m not valued here” — never once having said so.",
+      "commonMistake": "This is not kindness and not being easy to get along with. The conflict has not gone anywhere; it has simply been moved inside and postponed.",
+      "figures": [],
+      "evidenceNote": "Consistently associated with lower relationship satisfaction and higher levels of burnout.",
+      "related": ["assert", "pa"],
+      "sources": [
+        {
+          "title": "Speed, Goldstein & Goldfried (2018). Assertiveness training",
+          "url": "https://scholar.google.com/scholar?q=assertiveness+training+forgotten+evidence+based+treatment+passive+communication"
+        },
+        {
+          "title": "APA Dictionary: assertiveness training",
+          "url": "https://dictionary.apa.org/assertiveness-training"
+        }
+      ]
+    },
+    {
+      "id": "aggr",
+      "category": "talk",
+      "title": "Aggressive",
+      "original": "Aggressive",
+      "evidence": 3,
+      "definition": "Your own need is defended at the expense of other people’s boundaries.",
+      "manifestations": [
+        "Generalisations: “you never”, “you always”",
+        "Moving from the action to the person",
+        "Raising the volume or the pace as a way of forcing the point",
+        "Gives a fast result and destroys trust"
+      ],
+      "example": "“You’re irresponsible” instead of “you missed the deadline twice”. The first leaves the other person no move except defence.",
+      "commonMistake": "Aggression is not always loud. Cold sarcasm and public humiliation work the same way, and often hurt more.",
+      "figures": [],
+      "evidenceNote": "One of the best-documented predictors of relationship breakdown.",
+      "related": ["assert", "four"],
+      "sources": [
+        {
+          "title": "Gottman & Levenson (1992). Marital processes predictive of dissolution",
+          "url": "https://scholar.google.com/scholar?q=Gottman+Levenson+1992+marital+processes+predictive+of+later+dissolution"
+        },
+        {
+          "title": "APA Dictionary: verbal aggression",
+          "url": "https://dictionary.apa.org/verbal-aggression"
+        }
+      ]
+    },
+    {
+      "id": "pa",
+      "category": "talk",
+      "title": "Passive-aggressive",
+      "original": "Passive-aggressive",
+      "evidence": 3,
+      "definition": "Displeasure is expressed indirectly, keeping the option of disowning what was said at any moment.",
+      "manifestations": [
+        "Sarcasm followed by “I’m only joking”",
+        "Demonstrative silence, ignoring, forgetting what was agreed",
+        "Formal compliance arranged so that the result is guaranteed to be poor",
+        "A backhanded compliment"
+      ],
+      "example": "“Well, you’re the clever one here, you know best.” The grievance is expressed in full, yet formally nothing was said and there is nothing to take hold of.",
+      "commonMistake": "This is not a separate personality type. It is a strategy, and it usually arises where direct displeasure is dangerous to express — in a rigid hierarchy, or in a relationship where conflict gets a sharp reaction.",
+      "figures": [],
+      "evidenceNote": "As a behaviour pattern it is reliably described; as a “personality type” it has been removed from the classifications.",
+      "related": ["passive", "aggr"],
+      "sources": [
+        {
+          "title": "Wetzler & Jose. Passive-aggressive personality: history and status",
+          "url": "https://scholar.google.com/scholar?q=Wetzler+passive+aggressive+personality+disorder+history+controversy"
+        },
+        {
+          "title": "APA Dictionary: passive-aggressive",
+          "url": "https://dictionary.apa.org/passive-aggressive-personality-disorder"
+        }
+      ]
+    },
+    {
+      "id": "gaslight",
+      "category": "rel",
+      "title": "Gaslighting",
+      "original": "Gaslighting",
+      "evidence": 2,
+      "definition": "Systematically persuading a person that their perception of reality is wrong, until they stop trusting themselves.",
+      "manifestations": [
+        "Denying what was said: “I never said that”, “you made it up”",
+        "Dismissing the reaction: “you’re too sensitive”, “you dramatise everything”",
+        "Reversing roles: the one complaining becomes the one at fault",
+        "The main sign is doubt about one’s own memory accumulating over time"
+      ],
+      "example": "After every argument the person cannot remember how it started, and begins keeping notes — not as evidence, but to check themselves.",
+      "commonMistake": "This is not any disagreement with your version of events. People really do remember things differently, and an honest argument about facts is not gaslighting. The signs are the systematic nature of it and the outcome: a loss of trust in one’s own perception.",
+      "figures": [],
+      "evidenceNote": "The term is described clinically and sociologically, but it is not a diagnosis and is measured poorly.",
+      "related": ["narc", "lovebomb"],
+      "sources": [
+        {
+          "title": "Sweet (2019). The sociology of gaslighting",
+          "url": "https://scholar.google.com/scholar?q=Sweet+2019+the+sociology+of+gaslighting+American+Sociological+Review"
+        },
+        {
+          "title": "Stern (2007). The Gaslight Effect",
+          "url": "https://scholar.google.com/scholar?q=Stern+2007+the+gaslight+effect+how+to+spot+and+survive+manipulation"
+        }
+      ]
+    },
+    {
+      "id": "lovebomb",
+      "category": "rel",
+      "title": "Love bombing",
+      "original": "Love bombing",
+      "evidence": 2,
+      "definition": "Extraordinarily intense attention at the start of a relationship, which creates rapid dependence — after which the attention is abruptly withdrawn.",
+      "manifestations": [
+        "Very fast closeness: “you’re my destiny” within two weeks",
+        "Constant contact, gifts, plans for a shared future straight away",
+        "Isolation from other contacts, framed as wanting to be together",
+        "The key sign is the contrast: a sharp cooling after the peak"
+      ],
+      "example": "The first month — flowers daily and messages every hour. The second — replies every other day and a complaint that the partner has become demanding. The comparison is no longer with any norm but with that first month.",
+      "commonMistake": "Falling hard at the start is not love bombing. The difference is not the intensity but whether a sharp disappearance follows and whether the contrast is used as leverage.",
+      "figures": [],
+      "evidenceNote": "The phenomenon has been described but studied less than attachment. The term is often used far too broadly.",
+      "related": ["gaslight", "narc"],
+      "sources": [
+        {
+          "title": "Strutzenberg et al. (2017). Love-bombing: a narcissistic approach",
+          "url": "https://scholar.google.com/scholar?q=Strutzenberg+2017+love+bombing+narcissistic+approach+to+relationship+formation"
+        },
+        {
+          "title": "Archer-Kuhn & de Villiers. Love bombing in coercive control",
+          "url": "https://scholar.google.com/scholar?q=love+bombing+coercive+control+intimate+partner+research"
+        }
+      ]
+    },
+    {
+      "id": "four",
+      "category": "rel",
+      "title": "The Four Horsemen",
+      "original": "Four Horsemen (Gottman)",
+      "evidence": 3,
+      "definition": "Four ways of conducting a conflict that best predict the end of a relationship: criticism, contempt, defensiveness, withdrawal.",
+      "manifestations": [
+        "Criticism — attacking the person instead of complaining about the action",
+        "Contempt — sarcasm, eye-rolling, belittling; the strongest predictor",
+        "Defensiveness — counter-accusation instead of an answer",
+        "Withdrawal — leaving the contact, a stone wall"
+      ],
+      "example": "“You forgot again” grows into “you never think about anything”, then “well, what about you yesterday”, and it ends with one person silent over their phone and the other talking at a wall.",
+      "commonMistake": "Arguments in themselves do not destroy relationships. Gottman showed that the break-up is predicted not by the presence of conflict but by the way it is conducted — and above all by contempt.",
+      "figures": [
+        {
+          "value": "4",
+          "label": "patterns"
+        },
+        {
+          "value": "contempt",
+          "label": "the strongest predictor of the four"
+        }
+      ],
+      "evidenceNote": "Built on long observations of real couples. The accuracy of individual predictions has been criticised, but the set of patterns itself holds up.",
+      "related": ["stonewall", "aggr"],
+      "sources": [
+        {
+          "title": "Gottman & Levenson (1992). Marital processes predictive of dissolution",
+          "url": "https://scholar.google.com/scholar?q=Gottman+Levenson+1992+marital+processes+predictive+of+later+dissolution+behavior"
+        },
+        {
+          "title": "Gottman & Silver. The Seven Principles for Making Marriage Work",
+          "url": "https://scholar.google.com/scholar?q=Gottman+seven+principles+for+making+marriage+work+four+horsemen"
+        }
+      ]
+    },
+    {
+      "id": "stonewall",
+      "category": "rel",
+      "title": "Stonewalling",
+      "original": "Stonewalling",
+      "evidence": 3,
+      "definition": "A complete exit from interaction during a conflict: the person is physically present, but contact has ceased.",
+      "manifestations": [
+        "No response, an averted gaze, a stone face",
+        "Often a consequence of physiological overload rather than indifference",
+        "The partner usually increases the pressure, which makes the overload worse",
+        "What works best is agreeing on a pause in advance, with a time to return"
+      ],
+      "example": "In the middle of a conversation the person falls silent and looks at the floor. From the inside it is not stubbornness: their pulse is over a hundred, and no sentence will assemble itself.",
+      "commonMistake": "It is not always the silent treatment. Deliberate ignoring and overload look identical from the outside but call for opposite responses.",
+      "figures": [],
+      "evidenceNote": "One of Gottman’s four patterns, with a described physiological basis.",
+      "related": ["four", "avoidant"],
+      "sources": [
+        {
+          "title": "Gottman & Levenson (1992). Physiological arousal and withdrawal",
+          "url": "https://scholar.google.com/scholar?q=Gottman+Levenson+physiological+arousal+stonewalling+marital+conflict+flooding"
+        },
+        {
+          "title": "Eldridge & Christensen. Demand-withdraw communication",
+          "url": "https://scholar.google.com/scholar?q=Eldridge+Christensen+demand+withdraw+communication+during+couple+conflict+review"
+        }
+      ]
+    },
+    {
+      "id": "regul",
+      "category": "emo",
+      "title": "Reappraisal and suppression",
+      "original": "Reappraisal / Suppression",
+      "evidence": 3,
+      "definition": "The two main strategies for handling an emotion: change how you interpret the situation, or hide its outward expression. Their consequences are opposite.",
+      "manifestations": [
+        "Reappraisal changes the emotion itself: a different interpretation, a different feeling",
+        "Suppression removes the expression but not the experience",
+        "Suppression raises the physiological load and impairs memory for the event",
+        "Reappraisal works better when applied early, before the emotion peaks"
+      ],
+      "example": "Before a talk you can tell yourself “I’m calm” and clench your jaw — that is suppression, and your pulse will not drop. Or you can reinterpret the same arousal as readiness, and then your body does the same work, but for you.",
+      "commonMistake": "“You should simply not show emotion — that’s self-control.” Research shows the opposite: people who routinely suppress expression spend more resources, remember conversations worse, and are perceived by others as less warm.",
+      "figures": [],
+      "evidenceNote": "James Gross’s model is one of the best-tested in the psychology of emotion, with physiological and behavioural support.",
+      "related": ["alexi", "burnout", "avoidance"],
+      "sources": [
+        {
+          "title": "Gross (1998, 2015). Emotion regulation: process model",
+          "url": "https://scholar.google.com/scholar?q=Gross+2015+emotion+regulation+current+status+and+future+prospects+process+model"
+        },
+        {
+          "title": "Gross & John (2003). Individual differences in emotion regulation",
+          "url": "https://scholar.google.com/scholar?q=Gross+John+2003+individual+differences+in+two+emotion+regulation+processes"
+        }
+      ]
+    },
+    {
+      "id": "shame",
+      "category": "emo",
+      "title": "Shame and guilt",
+      "original": "Shame / Guilt",
+      "evidence": 3,
+      "definition": "Two emotions that look alike from the outside and have opposite consequences: guilt is about the act, shame is about the self.",
+      "manifestations": [
+        "Guilt: “I did a bad thing” — leads to putting it right",
+        "Shame: “I am a bad person” — leads to flight, concealment, defence",
+        "Shame is more strongly linked to aggression in response to criticism",
+        "Guilt presupposes empathy; shame more often blocks it"
+      ],
+      "example": "A child who has broken a vase is told “you’re clumsy” instead of “the vase is broken, let’s clear it up”. The first builds shame and a wish to hide the next mistake. The second leaves room to put it right.",
+      "commonMistake": "Shame is often thought of as a useful tool for upbringing and self-discipline. The data say otherwise: it barely changes behaviour for the better, while reliably teaching concealment.",
+      "figures": [],
+      "evidenceNote": "The distinction is supported by a large body of research by June Tangney and colleagues.",
+      "related": ["regul", "narc"],
+      "sources": [
+        {
+          "title": "Tangney & Dearing (2002). Shame and Guilt",
+          "url": "https://scholar.google.com/scholar?q=Tangney+Dearing+2002+shame+and+guilt+emotions+and+social+behavior"
+        },
+        {
+          "title": "Tangney, Stuewig & Mashek (2007). Moral emotions and behavior",
+          "url": "https://scholar.google.com/scholar?q=Tangney+Stuewig+Mashek+2007+moral+emotions+and+moral+behavior+annual+review"
+        }
+      ]
+    },
+    {
+      "id": "alexi",
+      "category": "emo",
+      "title": "Alexithymia",
+      "original": "Alexithymia",
+      "evidence": 2,
+      "definition": "Difficulty recognising and naming one’s own emotions — not an absence of them.",
+      "manifestations": [
+        "The question “what are you feeling right now” produces bewilderment",
+        "Emotions are noticed through the body: heaviness, tension, shortness of breath",
+        "A sparse imagination and literalness when talking about feelings",
+        "Often accompanies anxiety disorders and the aftermath of trauma"
+      ],
+      "example": "A person is irritated by trifles all day and only in the evening realises they have been afraid of tomorrow’s conversation since morning. The emotion was there the whole time; it had no name.",
+      "commonMistake": "This is not “coldness” and not indifference. A person with alexithymia often feels intensely — they simply have no access to the name, and without a name an emotion cannot be managed.",
+      "figures": [
+        {
+          "value": "~10%",
+          "label": "estimated prevalence of pronounced presentations"
+        }
+      ],
+      "evidenceNote": "The construct is measured by questionnaires with good psychometric properties, but its boundaries are blurred.",
+      "related": ["regul", "shame"],
+      "sources": [
+        {
+          "title": "Taylor, Bagby & Parker. Toronto Alexithymia Scale",
+          "url": "https://scholar.google.com/scholar?q=Taylor+Bagby+Parker+twenty-item+Toronto+Alexithymia+Scale+validity"
+        },
+        {
+          "title": "APA Dictionary: alexithymia",
+          "url": "https://dictionary.apa.org/alexithymia"
+        }
+      ]
+    },
+    {
+      "id": "basic",
+      "category": "emo",
+      "title": "Basic emotions",
+      "original": "Basic emotions",
+      "evidence": 2,
+      "definition": "The idea that there exists a small set of innate universal emotions with recognisable facial expressions.",
+      "manifestations": [
+        "The classic set: joy, sadness, anger, fear, disgust, surprise",
+        "The idea underpinned training in “reading faces” and emotion-detection systems",
+        "The modern criticism: facial expression depends heavily on context and culture",
+        "The alternative is the theory of constructed emotion: an emotion is assembled by the brain from sensations and concepts"
+      ],
+      "example": "A face with wide-open eyes is read as fear. The same face in a shot where the person is winning a match reads as elation. Without context an expression means far less than is commonly assumed.",
+      "commonMistake": "“You can tell an emotion from a face.” A major 2019 review showed that the link between expression and experience is much weaker than emotion-recognition systems assume.",
+      "figures": [
+        {
+          "value": "6",
+          "label": "emotions in the classic set"
+        }
+      ],
+      "evidenceNote": "A historically influential model that modern data have substantially weakened. The argument between it and the theory of constructed emotion continues.",
+      "related": ["regul", "alexi"],
+      "sources": [
+        {
+          "title": "Ekman (1992). An argument for basic emotions",
+          "url": "https://scholar.google.com/scholar?q=Ekman+1992+an+argument+for+basic+emotions"
+        },
+        {
+          "title": "Barrett et al. (2019). Emotional expressions reconsidered",
+          "url": "https://scholar.google.com/scholar?q=Barrett+2019+emotional+expressions+reconsidered+challenges+to+inferring+emotion+from+human+facial+movements"
+        }
+      ]
+    },
+    {
+      "id": "fff",
+      "category": "stress",
+      "title": "Fight, flight, freeze",
+      "original": "Fight / Flight / Freeze",
+      "evidence": 3,
+      "definition": "An automatic bodily response to threat, triggered faster than thinking can intervene.",
+      "manifestations": [
+        "The sympathetic system delivers a faster pulse, muscle tension, narrowed attention",
+        "Freezing is a full response too, not “doing nothing”",
+        "Speech and complex thinking work worse at that moment",
+        "Returning to baseline takes time, not a decision to calm down"
+      ],
+      "example": "During a sharp argument a person cannot formulate what they formulated perfectly well yesterday. This is not a loss of arguments: resources have been redirected to the muscles and to watching for the threat.",
+      "commonMistake": "“You should have just pulled yourself together.” The response is triggered in fractions of a second and before any conscious decision. It can be influenced beforehand and afterwards, but not at the peak.",
+      "figures": [],
+      "evidenceNote": "One of the best-described physiological responses, with clear measurable indicators.",
+      "related": ["anxiety_fear", "stonewall", "ptsd"],
+      "sources": [
+        {
+          "title": "Cannon (1929). Bodily Changes in Pain, Hunger, Fear and Rage",
+          "url": "https://scholar.google.com/scholar?q=Cannon+1929+bodily+changes+in+pain+hunger+fear+and+rage"
+        },
+        {
+          "title": "Schauer & Elbert (2010). Dissociation following traumatic stress",
+          "url": "https://scholar.google.com/scholar?q=Schauer+Elbert+2010+dissociation+following+traumatic+stress+defense+cascade"
+        }
+      ]
+    },
+    {
+      "id": "anxiety_fear",
+      "category": "stress",
+      "title": "Anxiety and fear",
+      "original": "Anxiety / Fear",
+      "evidence": 3,
+      "definition": "Fear is a response to a specific present threat. Anxiety is a response to a possible future one.",
+      "manifestations": [
+        "Fear has an object; anxiety has a scenario",
+        "Fear passes when the threat is gone; anxiety can last for years",
+        "Anxiety feeds on uncertainty, so “what if” makes it stronger",
+        "Both engage the same physiology, which is why they feel similar"
+      ],
+      "example": "Seeing a snake on the path is fear, and it ends within a minute. Checking every evening whether a letter has arrived from work is anxiety, and it does not end, because the threat has not arrived yet.",
+      "commonMistake": "The words are used as synonyms, and because of this people try to fight anxiety with methods meant for fear — removing the source. There is no source, so the fight becomes endless.",
+      "figures": [],
+      "evidenceNote": "The distinction is embedded both in clinical classifications and in neurobiological research.",
+      "related": ["fff", "avoidance"],
+      "sources": [
+        {
+          "title": "Barlow (2002). Anxiety and Its Disorders",
+          "url": "https://scholar.google.com/scholar?q=Barlow+2002+anxiety+and+its+disorders+nature+and+treatment+of+anxiety+and+panic"
+        },
+        {
+          "title": "APA Dictionary: anxiety",
+          "url": "https://dictionary.apa.org/anxiety"
+        }
+      ]
+    },
+    {
+      "id": "avoidance",
+      "category": "stress",
+      "title": "Avoidance as a trap",
+      "original": "Avoidance / Negative reinforcement",
+      "evidence": 3,
+      "definition": "Avoiding a frightening situation lowers anxiety instantly — and by that very fact makes it stronger next time.",
+      "manifestations": [
+        "The relief arrives within seconds, so the behaviour is reinforced firmly",
+        "Every avoidance confirms the belief that the situation is unbearable",
+        "The circle narrows: first a talk is avoided, then meetings, then work",
+        "Breaking the circle requires the opposite — gradual approach"
+      ],
+      "example": "A person cancels a meeting and feels relief that same evening. A month later cancelling a second one is easier, and going to it is harder than it was at the start.",
+      "commonMistake": "Avoidance looks like self-care and is often presented that way. The two are easy to tell apart: rest restores you afterwards, while avoidance leaves the relief together with the very same fear.",
+      "figures": [],
+      "evidenceNote": "The negative-reinforcement mechanism is the foundation of behavioural therapy for anxiety disorders, confirmed by decades of practice.",
+      "related": ["anxiety_fear", "sunk", "passive"],
+      "sources": [
+        {
+          "title": "Mowrer (1960). Two-factor theory of avoidance learning",
+          "url": "https://scholar.google.com/scholar?q=Mowrer+two+factor+theory+avoidance+learning+negative+reinforcement+anxiety"
+        },
+        {
+          "title": "Craske et al. (2014). Maximizing exposure therapy",
+          "url": "https://scholar.google.com/scholar?q=Craske+2014+maximizing+exposure+therapy+an+inhibitory+learning+approach"
+        }
+      ]
+    },
+    {
+      "id": "burnout",
+      "category": "stress",
+      "title": "Burnout",
+      "original": "Burnout",
+      "evidence": 3,
+      "definition": "A state of exhaustion from chronic workplace stress, made of three components: fatigue, cynicism, a sense of ineffectiveness.",
+      "manifestations": [
+        "Exhaustion that does not pass after a weekend",
+        "Distancing: people and tasks become irritating or a matter of indifference",
+        "A falling sense of one’s own competence while the results stay the same",
+        "The WHO defines it as an occupational phenomenon, not a medical diagnosis"
+      ],
+      "example": "A person does the same work as a year ago, with the same result, but is convinced every time that they did it badly. And catches themselves irritated by a message from a colleague they used to enjoy working with.",
+      "commonMistake": "“Burnout is just tiredness.” Tiredness passes after rest. Burnout returns within a week of a holiday, because the cause is not the number of hours but workload combined with an absence of control and of meaning.",
+      "figures": [
+        {
+          "value": "3",
+          "label": "components in the Maslach model"
+        }
+      ],
+      "evidenceNote": "Measured with a validated instrument (the MBI) and included in ICD-11 as an occupational phenomenon.",
+      "related": ["regul", "avoidance", "learned"],
+      "sources": [
+        {
+          "title": "Maslach & Leiter (2016). Understanding the burnout experience",
+          "url": "https://scholar.google.com/scholar?q=Maslach+Leiter+2016+understanding+the+burnout+experience+recent+research+implications+for+psychiatry"
+        },
+        {
+          "title": "WHO: burn-out in ICD-11",
+          "url": "https://www.who.int/news/item/28-05-2019-burn-out-an-occupational-phenomenon-international-classification-of-diseases"
+        }
+      ]
+    },
+    {
+      "id": "ptsd",
+      "category": "stress",
+      "title": "Trauma and post-traumatic growth",
+      "original": "PTSD / Post-traumatic growth",
+      "evidence": 2,
+      "definition": "A response to an event that exceeded the psyche’s capacity to process it, and the contested phenomenon of positive change afterwards.",
+      "manifestations": [
+        "Intrusive memories, avoidance of reminders, heightened vigilance",
+        "Memory of the event is fragmentary: vivid details with no sequence",
+        "Most people do not develop PTSD after a severe event — recovery is what is typical",
+        "Post-traumatic growth is described often but measured problematically"
+      ],
+      "example": "A person cannot recall the sequence of that evening, yet remembers a smell and a sound with an accuracy that frightens them. This is not invention and not repression — it is how memory encodes under high stress.",
+      "commonMistake": "“What doesn’t kill you makes you stronger.” Research on growth after trauma rests largely on self-reports about how much a person has changed, and those match poorly with actual measurements of change.",
+      "figures": [],
+      "evidenceNote": "PTSD is described and measured reliably. Post-traumatic growth as a construct is considerably weaker: the self-report methodology draws well-founded criticism.",
+      "related": ["fff", "disorg"],
+      "sources": [
+        {
+          "title": "Bonanno (2004). Loss, trauma, and human resilience",
+          "url": "https://scholar.google.com/scholar?q=Bonanno+2004+loss+trauma+and+human+resilience+underestimated+capacity+to+thrive"
+        },
+        {
+          "title": "Frazier et al. (2009). Does self-reported posttraumatic growth reflect real change?",
+          "url": "https://scholar.google.com/scholar?q=Frazier+2009+does+self-reported+posttraumatic+growth+reflect+genuine+positive+change"
+        }
+      ]
+    },
+    {
+      "id": "recon",
+      "category": "mind",
+      "title": "Reconstructive memory",
+      "original": "Reconstructive memory",
+      "evidence": 3,
+      "definition": "A memory is not read back but assembled anew each time — and each assembly changes it slightly.",
+      "manifestations": [
+        "Every act of recall can change the memory itself",
+        "Gaps are filled with the plausible, and it does not feel like filling in",
+        "Confidence in a memory is only weakly related to its accuracy",
+        "Emotionally vivid memories feel more reliable but are subject to the same distortions"
+      ],
+      "example": "Two people confidently remember the same argument differently, and neither is lying. Each kept their own version, and after ten retellings it has only grown sharper.",
+      "commonMistake": "“I remember it exactly, I was there.” Confidence is built by how often you recall something, not by how accurate it is. Someone who has told a story twenty times is more confident — and at the same time further from the original.",
+      "figures": [],
+      "evidenceNote": "Confirmed many times over, including in research on eyewitness testimony.",
+      "related": ["confirm", "falsemem"],
+      "sources": [
+        {
+          "title": "Bartlett (1932). Remembering: A Study in Experimental Psychology",
+          "url": "https://scholar.google.com/scholar?q=Bartlett+1932+remembering+a+study+in+experimental+and+social+psychology"
+        },
+        {
+          "title": "Loftus & Palmer (1974). Reconstruction of automobile destruction",
+          "url": "https://scholar.google.com/scholar?q=Loftus+Palmer+1974+reconstruction+of+automobile+destruction+eyewitness"
+        }
+      ]
+    },
+    {
+      "id": "falsemem",
+      "category": "mind",
+      "title": "False memories",
+      "original": "False memories",
+      "evidence": 3,
+      "definition": "Memories of events that never happened, experienced as genuine.",
+      "manifestations": [
+        "They form through leading questions and repeated discussion",
+        "Imagining an event becomes indistinguishable from remembering it over time",
+        "They come with details and emotions, just as real ones do",
+        "A person has no internal way of telling them apart from real ones"
+      ],
+      "example": "In experiments, some participants recalled after a few conversations how they had got lost in a shopping centre as a child. It never happened: the episode was invented by the researchers.",
+      "commonMistake": "“You couldn’t make that up.” You can, and without any ill intent. That is exactly why leading phrasing is avoided in work with witnesses and in therapy.",
+      "figures": [],
+      "evidenceNote": "Elizabeth Loftus’s classic experiments have been reproduced many times.",
+      "related": ["recon", "confirm"],
+      "sources": [
+        {
+          "title": "Loftus (1997). Creating false memories",
+          "url": "https://scholar.google.com/scholar?q=Loftus+1997+creating+false+memories+scientific+american"
+        },
+        {
+          "title": "Loftus & Pickrell (1995). The formation of false memories",
+          "url": "https://scholar.google.com/scholar?q=Loftus+Pickrell+1995+the+formation+of+false+memories+lost+in+the+mall"
+        }
+      ]
+    },
+    {
+      "id": "wm",
+      "category": "mind",
+      "title": "Working memory",
+      "original": "Working memory",
+      "evidence": 3,
+      "definition": "The amount of information a person can hold and process right now. It is very small.",
+      "manifestations": [
+        "About four units are held, not seven as used to be written",
+        "Grouping into meaningful chunks increases the effective capacity",
+        "Anxiety occupies part of the capacity and therefore genuinely lowers performance",
+        "It is the single strongest correlate of general intelligence"
+      ],
+      "example": "A phone number read out to you stays in your head while you dial it. One question from the side and the number is gone. That is not inattention, that is capacity used up.",
+      "commonMistake": "“You need to train your memory with an app.” Working-memory trainers improve your score in the trainer and barely transfer to anything else.",
+      "figures": [
+        {
+          "value": "≈4",
+          "label": "units in present-day estimates of capacity"
+        }
+      ],
+      "evidenceNote": "One of the best-measured cognitive constructs.",
+      "related": ["multitask", "recon"],
+      "sources": [
+        {
+          "title": "Cowan (2001). The magical number four in short-term memory",
+          "url": "https://scholar.google.com/scholar?q=Cowan+2001+the+magical+number+4+in+short-term+memory+reconsideration+mental+storage+capacity"
+        },
+        {
+          "title": "Melby-Lervåg & Hulme (2013). Working memory training meta-analysis",
+          "url": "https://scholar.google.com/scholar?q=Melby-Lervag+Hulme+2013+is+working+memory+training+effective+meta-analytic+review"
+        }
+      ]
+    },
+    {
+      "id": "multitask",
+      "category": "mind",
+      "title": "Multitasking",
+      "original": "Multitasking / Task switching",
+      "evidence": 3,
+      "definition": "Performing several conscious tasks at once is impossible: the brain switches quickly, and every switch has a price.",
+      "manifestations": [
+        "Time is lost reloading the context",
+        "Errors increase while subjective confidence stays the same",
+        "Those who consider themselves good at multitasking usually do worse",
+        "Automatic actions combine fine: you can walk and talk"
+      ],
+      "example": "Working with a messaging app open looks efficient, but every return to the text costs time spent remembering where you stopped. Over a day that adds up to hours.",
+      "commonMistake": "“It works for me.” The subjective feeling of productivity rises when you switch, while objective productivity falls — one of the most stable findings on the topic.",
+      "figures": [],
+      "evidenceNote": "The switching cost is measured directly and reproduces reliably.",
+      "related": ["wm", "procrast"],
+      "sources": [
+        {
+          "title": "Rubinstein, Meyer & Evans (2001). Executive control of task switching",
+          "url": "https://scholar.google.com/scholar?q=Rubinstein+Meyer+Evans+2001+executive+control+of+cognitive+processes+in+task+switching"
+        },
+        {
+          "title": "Ophir, Nass & Wagner (2009). Cognitive control in media multitaskers",
+          "url": "https://scholar.google.com/scholar?q=Ophir+Nass+Wagner+2009+cognitive+control+in+media+multitaskers"
+        }
+      ]
+    },
+    {
+      "id": "intr",
+      "category": "motiv",
+      "title": "Intrinsic and extrinsic motivation",
+      "original": "Intrinsic / Extrinsic motivation",
+      "evidence": 3,
+      "definition": "Doing something for the sake of the activity itself, or for an external reward. Under certain conditions the second crowds out the first.",
+      "manifestations": [
+        "Three supports of intrinsic motivation: autonomy, competence, relatedness",
+        "A reward for something already enjoyed can lower interest in it",
+        "The effect is strongest when the reward is expected and tied to the mere fact of acting",
+        "External incentives work well for dull tasks and badly for creative ones"
+      ],
+      "example": "A child draws for pleasure. Then they start being paid for each drawing. When the payments stop, the drawing stops too — the activity has been recoded as work.",
+      "commonMistake": "“The main thing is to motivate people with the right reward.” For routine that works. For something a person does out of interest, an external reward is the fastest way to spoil the interest.",
+      "figures": [
+        {
+          "value": "3",
+          "label": "basic needs in self-determination theory"
+        }
+      ],
+      "evidenceNote": "Deci and Ryan’s self-determination theory has a large evidence base in education, work and sport.",
+      "related": ["learned", "procrast"],
+      "sources": [
+        {
+          "title": "Deci & Ryan (2000). Self-determination theory",
+          "url": "https://scholar.google.com/scholar?q=Deci+Ryan+2000+the+what+and+why+of+goal+pursuits+human+needs+self-determination"
+        },
+        {
+          "title": "Deci, Koestner & Ryan (1999). Undermining effect meta-analysis",
+          "url": "https://scholar.google.com/scholar?q=Deci+Koestner+Ryan+1999+meta-analytic+review+of+experiments+examining+effects+of+extrinsic+rewards"
+        }
+      ]
+    },
+    {
+      "id": "learned",
+      "category": "motiv",
+      "title": "Learned helplessness",
+      "original": "Learned helplessness",
+      "evidence": 3,
+      "definition": "After a series of situations where actions had no effect on the outcome, a person stops acting even once influence becomes possible.",
+      "manifestations": [
+        "Attempts cease despite the circumstances having changed",
+        "A generalisation forms: “nothing here depends on me”",
+        "Closely connected with depressive states",
+        "A modern refinement: passivity is the default response, and what is learned is control"
+      ],
+      "example": "An employee spent a year making proposals that were ignored. A new manager arrives and sincerely asks for ideas — and there are none. Not because they aren’t thinking, but because they have already checked: it doesn’t work.",
+      "commonMistake": "“It’s just laziness and lack of initiative.” The difference is the history: laziness has no preceding series of fruitless attempts, and helplessness does not arise without one.",
+      "figures": [],
+      "evidenceNote": "A classic effect, confirmed and reinterpreted by its own authors in 2016 in the light of neurobiological data.",
+      "related": ["intr", "burnout", "fff"],
+      "sources": [
+        {
+          "title": "Maier & Seligman (2016). Learned helplessness at fifty",
+          "url": "https://scholar.google.com/scholar?q=Maier+Seligman+2016+learned+helplessness+at+fifty+insights+from+neuroscience"
+        },
+        {
+          "title": "APA Dictionary: learned helplessness",
+          "url": "https://dictionary.apa.org/learned-helplessness"
+        }
+      ]
+    },
+    {
+      "id": "procrast",
+      "category": "motiv",
+      "title": "Procrastination",
+      "original": "Procrastination",
+      "evidence": 3,
+      "definition": "Putting things off not from lack of time or discipline, but as an attempt to escape an unpleasant feeling attached to the task.",
+      "manifestations": [
+        "What gets postponed is exactly what provokes anxiety, boredom or fear of failure",
+        "The relief is immediate, so the behaviour is reinforced",
+        "Linked to perfectionism: better not to start than to do it imperfectly",
+        "What works best is lowering the emotional cost of the first step, not raising the pressure"
+      ],
+      "example": "A person leaves a client’s email unopened for three days. When they finally open it, it turns out to be a thank-you note. What was postponed was not the email but the expectation of something bad.",
+      "commonMistake": "“It’s a time-management problem.” Plans and timers fail precisely because the cause is not the organisation of time. Self-criticism makes it worse, while self-compassion makes it better.",
+      "figures": [],
+      "evidenceNote": "Understanding procrastination as emotion regulation has solid support in current research.",
+      "related": ["avoidance", "multitask", "intr"],
+      "sources": [
+        {
+          "title": "Sirois & Pychyl (2013). Procrastination and mood repair",
+          "url": "https://scholar.google.com/scholar?q=Sirois+Pychyl+2013+procrastination+and+the+priority+of+short-term+mood+regulation"
+        },
+        {
+          "title": "Steel (2007). The nature of procrastination",
+          "url": "https://scholar.google.com/scholar?q=Steel+2007+the+nature+of+procrastination+meta-analytic+and+theoretical+review"
+        }
+      ]
+    },
+    {
+      "id": "growth",
+      "category": "motiv",
+      "title": "Growth mindset",
+      "original": "Growth mindset",
+      "evidence": 1,
+      "definition": "The belief that abilities can be developed, as opposed to the conviction that they are fixed. A popular idea with far more modest real effects.",
+      "manifestations": [
+        "The idea underpinned school programmes and corporate training worldwide",
+        "A correlation with attainment exists, but a very small one",
+        "The effect of interventions is close to zero once publication bias is corrected for",
+        "A possible exception is at-risk students and those of low socioeconomic status"
+      ],
+      "example": "A school introduces a programme about the power of “not yet”. A year later average results are unchanged. That does not mean the idea is harmful — it means it does far less than was promised.",
+      "commonMistake": "The most widespread distortion is blaming a person for “thinking the wrong way”. It shifts systemic problems of education onto their beliefs, which the theory itself never proposed.",
+      "figures": [
+        {
+          "value": "r≈0.10",
+          "label": "correlation with attainment, about 1% of the variance"
+        },
+        {
+          "value": "d≈0.05",
+          "label": "effect of interventions, non-significant after correction"
+        }
+      ],
+      "evidenceNote": "A textbook case of the replication crisis. The effect exists, but is roughly ten times smaller than the popular version, and the argument between research groups continues.",
+      "related": ["learned", "intr"],
+      "sources": [
+        {
+          "title": "Sisk et al. (2018). Growth mind-sets: two meta-analyses",
+          "url": "https://scholar.google.com/scholar?q=Sisk+2018+to+what+extent+and+under+which+circumstances+are+growth+mindsets+important+to+academic+achievement"
+        },
+        {
+          "title": "Macnamara & Burgoyne (2023). Growth mindset interventions meta-analysis",
+          "url": "https://scholar.google.com/scholar?q=Macnamara+Burgoyne+do+growth+mindset+interventions+impact+students+academic+achievement+systematic+review"
+        }
+      ]
+    },
+    {
+      "id": "conform",
+      "category": "social",
+      "title": "Conformity",
+      "original": "Conformity (Asch)",
+      "evidence": 3,
+      "definition": "A readiness to repeat a group’s plainly wrong answer, if the group is unanimous and the answer has to be given out loud.",
+      "manifestations": [
+        "About 37% of answers on critical trials matched the mistaken majority",
+        "Around 75% went along at least once; 25% never did",
+        "A single dissenter in the group collapses the effect to about 5%",
+        "With written answers conformity falls almost to zero"
+      ],
+      "example": "A participant can see that the line is shorter. The seven people before him say it is longer. He says the same — and afterwards cannot always explain why.",
+      "commonMistake": "“People always follow the crowd.” The finding is conditional: it rests on the answer being public and the group being unanimous, and it disappears the moment either condition is removed.",
+      "figures": [
+        {
+          "value": "37%",
+          "label": "of answers were conforming"
+        },
+        {
+          "value": "5%",
+          "label": "with one ally present"
+        }
+      ],
+      "evidenceNote": "A classic result, confirmed by a meta-analysis of 133 studies across 17 countries.",
+      "related": ["obed", "bystand", "groupthink"],
+      "sources": [
+        {
+          "title": "Asch (1955). Opinions and social pressure",
+          "url": "https://scholar.google.com/scholar?q=Asch+1955+opinions+and+social+pressure+scientific+american"
+        },
+        {
+          "title": "Bond & Smith (1996). Culture and conformity meta-analysis",
+          "url": "https://scholar.google.com/scholar?q=Bond+Smith+1996+culture+and+conformity+meta-analysis+of+studies+using+Asch+line+judgment+task"
+        }
+      ]
+    },
+    {
+      "id": "obed",
+      "category": "social",
+      "title": "Obedience to authority",
+      "original": "Obedience (Milgram)",
+      "evidence": 3,
+      "definition": "A readiness to carry out harmful instructions when they come from someone perceived as a legitimate authority.",
+      "manifestations": [
+        "The question “is this right” is replaced by “am I doing it correctly”",
+        "The figure changes sharply with the configuration of the situation, not with character",
+        "Distance from the authority cuts obedience threefold",
+        "The presence of two defiant participants nearby lowers it the most"
+      ],
+      "example": "Participants sweated, laughed from the tension, asked to stop — and continued. None of them wanted to cause harm; almost none had a way of stepping out of the role.",
+      "commonMistake": "“I would never have done that.” Before the experiment, psychiatrists predicted that about one percent would go to the end. 65% did. The error in that prediction is the main result of the study.",
+      "figures": [
+        {
+          "value": "65%",
+          "label": "went to the maximum shock"
+        },
+        {
+          "value": "~1%",
+          "label": "psychiatrists’ prediction before the experiment"
+        },
+        {
+          "value": "20.5%",
+          "label": "when instructions were given by telephone"
+        }
+      ],
+      "evidenceNote": "The methodology and the ethics were fairly criticised, but modern replications across cultures yield obedience rates of 65 to 90 percent.",
+      "related": ["conform", "groupthink", "fae"],
+      "sources": [
+        {
+          "title": "Milgram (1963). Behavioral study of obedience",
+          "url": "https://scholar.google.com/scholar?q=Milgram+1963+behavioral+study+of+obedience+journal+abnormal+social+psychology"
+        },
+        {
+          "title": "Perry (2013). Behind the Shock Machine",
+          "url": "https://scholar.google.com/scholar?q=Perry+2013+behind+the+shock+machine+untold+story+of+notorious+Milgram+psychology+experiments"
+        }
+      ]
+    },
+    {
+      "id": "bystand",
+      "category": "social",
+      "title": "The bystander effect",
+      "original": "Bystander effect",
+      "evidence": 3,
+      "definition": "The more witnesses there are, the lower the probability that any particular person will help.",
+      "manifestations": [
+        "Responsibility is divided among those present and too little falls to each",
+        "Pluralistic ignorance: other people’s calm is read as proof that all is well",
+        "What works best is addressing one specific person rather than everyone",
+        "In real street conflicts someone intervenes far more often than in the laboratory"
+      ],
+      "example": "Alone, 85% of participants reported the assault. The same people, believing four others could hear it too — only 31%.",
+      "commonMistake": "The story of the 38 witnesses to Kitty Genovese’s murder, which launched the whole field, turned out to have been greatly exaggerated by a newspaper. The experiments built on it, however, turned out to be solid.",
+      "figures": [
+        {
+          "value": "85%",
+          "label": "helped when alone"
+        },
+        {
+          "value": "31%",
+          "label": "with four imagined witnesses"
+        },
+        {
+          "value": "~9 in 10",
+          "label": "real conflicts on camera in which someone intervenes"
+        }
+      ],
+      "evidenceNote": "The effect is confirmed by a meta-analysis of over 7,700 participants, but is moderate in size, and field data introduce a substantial correction.",
+      "related": ["conform", "obed"],
+      "sources": [
+        {
+          "title": "Darley & Latané (1968). Bystander intervention in emergencies",
+          "url": "https://scholar.google.com/scholar?q=Darley+Latane+1968+bystander+intervention+in+emergencies+diffusion+of+responsibility"
+        },
+        {
+          "title": "Philpot et al. (2020). CCTV evidence of bystander intervention",
+          "url": "https://scholar.google.com/scholar?q=Philpot+2020+would+I+be+helped+cross-national+CCTV+footage+shows+bystander+intervention"
+        }
+      ]
+    },
+    {
+      "id": "groupthink",
+      "category": "social",
+      "title": "Groupthink",
+      "original": "Groupthink",
+      "evidence": 2,
+      "definition": "A cohesive group starts valuing agreement above the quality of the decision and cuts off inconvenient objections by itself.",
+      "manifestations": [
+        "The illusion of unanimity: silence is read as agreement",
+        "Self-censorship: doubts go unvoiced so as not to spoil the mood",
+        "Informal “guards” emerge to keep out inconvenient information",
+        "An illusion of invulnerability and excessive optimism about the plan"
+      ],
+      "example": "At the meeting everyone nods. After the meeting two people quietly tell each other that the plan is bad. Both stayed silent because each thought they were the only one with doubts.",
+      "commonMistake": "The concept became fashionable and gets applied to any bad group decision. The original model requires specific conditions: high cohesion, isolation, a directive leader, stress.",
+      "figures": [],
+      "evidenceNote": "Irving Janis’s model is influential and useful descriptively, but experimental tests give contradictory results.",
+      "related": ["conform", "confirm", "obed"],
+      "sources": [
+        {
+          "title": "Janis (1972). Victims of Groupthink",
+          "url": "https://scholar.google.com/scholar?q=Janis+1972+victims+of+groupthink+psychological+study+of+foreign+policy+decisions"
+        },
+        {
+          "title": "Esser (1998). Alive and well after 25 years: review of groupthink research",
+          "url": "https://scholar.google.com/scholar?q=Esser+1998+alive+and+well+after+25+years+review+of+groupthink+research"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "id": "relationships",
+      "title": "Relationships are hard for me",
+      "description": "Why closeness can be frightening, and what predicts a break-up",
+      "concepts": ["anxious", "avoidant", "four", "stonewall", "gaslight", "lovebomb"]
+    },
+    {
+      "id": "reactions",
+      "title": "I don’t understand my own reaction",
+      "description": "Why I acted the way I did and explained it the way I did",
+      "concepts": ["ration", "proj", "denial", "sunk", "fae", "shame"]
+    },
+    {
+      "id": "identity",
+      "title": "Who am I, anyway",
+      "description": "What in character is stable and what is a popular invention",
+      "concepts": ["bigfive", "introext", "hsp", "mbti"]
+    },
+    {
+      "id": "difficult-people",
+      "title": "There is a difficult person beside me",
+      "description": "How to tell a trait from a diagnosis without pinning a label on anyone",
+      "concepts": ["narc", "mach", "psycho", "pa", "gaslight"]
+    },
+    {
+      "id": "anxiety",
+      "title": "Anxious and out of strength",
+      "description": "What the body does under stress, and why it drags on",
+      "concepts": ["fff", "anxiety_fear", "avoidance", "burnout", "regul"]
+    },
+    {
+      "id": "motivation",
+      "title": "I can’t get started",
+      "description": "Motivation, procrastination, and what works on them",
+      "concepts": ["procrast", "intr", "learned", "multitask", "growth"]
+    }
+  ],
+  "confusions": [
+    {
+      "a": "Anxiety",
+      "b": "Fear",
+      "paragraphs": [
+        "<b>Fear</b> has an object: it is here, now, and it passes together with the threat.",
+        "<b>Anxiety</b> has a scenario: the threat has not arrived yet, so there is nothing for it to end with, and it can last for years.",
+        "The practical difference: fear is dealt with by removing its source. With anxiety that does not work — there is no source, so the fight becomes endless."
+      ],
+      "concepts": ["anxiety_fear", "fff"]
+    },
+    {
+      "a": "Sadness",
+      "b": "Depression",
+      "paragraphs": [
+        "<b>Sadness</b> has a cause, shifts over the course of the day, and does not take away the capacity to enjoy anything else.",
+        "<b>Depression</b> is a persistent state lasting at least two weeks, with a lost capacity for pleasure, changes in sleep and appetite, and often no comprehensible external cause.",
+        "The difference is not in how strong the feeling is but in how long it lasts, and in the fact that the very ability to respond to good things disappears."
+      ],
+      "concepts": ["regul", "burnout"]
+    },
+    {
+      "a": "Introversion",
+      "b": "Social anxiety",
+      "paragraphs": [
+        "<b>Introversion</b> is about resources: company spends energy, solitude gives it back.",
+        "<b>Social anxiety</b> is about the fear of being judged: a person may badly want company and at the same time dread embarrassing themselves.",
+        "An introvert leaves a party content and tired. A person with social anxiety leaves a party replaying everything they said wrong."
+      ],
+      "concepts": ["introext", "anxiety_fear"]
+    },
+    {
+      "a": "Selfishness",
+      "b": "Narcissism",
+      "paragraphs": [
+        "<b>Selfishness</b> is behaviour: in a particular situation a person put their own interest above someone else’s.",
+        "<b>Narcissism</b> is a stable trait, while narcissistic personality disorder is a clinical diagnosis that 1–2% of people have.",
+        "Calling everyone who hurt you a narcissist is the most widespread mistake in popular psychology. Between a one-off piece of selfishness and a disorder lies an enormous distance."
+      ],
+      "concepts": ["narc", "fae"]
+    },
+    {
+      "a": "Disagreement",
+      "b": "Gaslighting",
+      "paragraphs": [
+        "<b>Differing memories</b> are normal: memory is reconstructive, and two honest people really do remember things differently.",
+        "<b>Gaslighting</b> is a system with an outcome: the person gradually stops trusting their own perception.",
+        "The sign is not a single argument about facts but the fact that over time you start checking yourself."
+      ],
+      "concepts": ["gaslight", "recon"]
+    },
+    {
+      "a": "A pause",
+      "b": "Stonewalling",
+      "paragraphs": [
+        "<b>A pause</b> is announced: “I need twenty minutes, then we’ll come back to it.”",
+        "<b>Stonewalling</b> is leaving without a word and without returning, after which the subject simply disappears.",
+        "Physiologically the two can look identical — the person is overwhelmed. The difference is whether there is an agreement to come back."
+      ],
+      "concepts": ["stonewall", "avoidant"]
+    },
+    {
+      "a": "Tiredness",
+      "b": "Burnout",
+      "paragraphs": [
+        "<b>Tiredness</b> passes after rest — that is its defining feature.",
+        "<b>Burnout</b> returns within a week of a holiday, because the cause is not the number of hours but workload combined with an absence of control and of meaning.",
+        "Something is added that tiredness does not have: cynicism towards the work and towards people, and a falling sense of one’s own competence while the results stay the same."
+      ],
+      "concepts": ["burnout", "learned"]
+    },
+    {
+      "a": "Empathy",
+      "b": "Compassion",
+      "paragraphs": [
+        "<b>Empathy</b> means feeling the same thing as the other person. It is draining, and it is precisely what burnout in the helping professions grows out of.",
+        "<b>Compassion</b> means caring about another without merging with their state. Studies show that it activates different brain networks and does not lead to exhaustion.",
+        "So the advice to “feel it with them more” is worth qualifying: the useful part is caring, not drowning alongside."
+      ],
+      "concepts": ["shame", "regul"]
+    },
+    {
+      "a": "Laziness",
+      "b": "Procrastination",
+      "paragraphs": [
+        "<b>Laziness</b> is the absence of any wish to act, and it comes without tension.",
+        "<b>Procrastination</b> is putting something off while the wish is there: the person wants to do it, knows it has to be done, and feels bad about not doing it.",
+        "Plans and timers fail precisely because the cause is not the organisation of time but an attempt to escape an unpleasant feeling the task provokes."
+      ],
+      "concepts": ["procrast", "learned"]
+    }
+  ],
+  "helpCards": [
+    {
+      "title": "When it is worth seeking help",
+      "points": [
+        "The state has lasted longer than two weeks and does not change with rest",
+        "Everyday functioning suffers: work, sleep, food, relationships",
+        "Ways of coping on your own have been tried already and do not work",
+        "People close to you notice the changes before you do",
+        "You are avoiding an ever-widening circle of situations"
+      ]
+    },
+    {
+      "title": "Whom exactly to see",
+      "points": [
+        "<b>A psychologist or psychotherapist</b> — work through conversation, on your state and your behaviour",
+        "<b>A psychiatrist</b> — a medical doctor who makes diagnoses and prescribes medication",
+        "<b>A neurologist or GP</b> — when there are bodily symptoms that have to be ruled out first",
+        "A psychologist and a psychiatrist are not competitors: they often work together"
+      ]
+    },
+    {
+      "title": "What makes therapy work",
+      "points": [
+        "A method with an evidence base that fits your request",
+        "A working alliance: disagreeing with your specialist has to be possible",
+        "Clear goals and noticeable progress within a few months",
+        "The right to change specialists if it is not working — that is normal, not a betrayal"
+      ]
+    },
+    {
+      "title": "Warning signs in the help itself",
+      "points": [
+        "Promises of a fast and guaranteed result",
+        "Diagnoses after a single meeting or from a social media post",
+        "Pressure, guilt, dismissal of the client’s doubts",
+        "A ban on discussing the process or on consulting other specialists"
+      ]
+    }
+  ],
+  "bibliography": [
+    "Costa, P. & McCrae, R. (1992). NEO PI-R Professional Manual",
+    "Goldberg, L. (1990). An alternative description of personality: the Big-Five factor structure",
+    "Pittenger, D. (2005). Cautionary comments regarding the Myers-Briggs Type Indicator",
+    "Druckman, D. & Bjork, R. (1991). In the Mind’s Eye. National Academy of Sciences",
+    "Hazan, C. & Shaver, P. (1987). Romantic love conceptualized as an attachment process",
+    "Mickelson, K., Kessler, R. & Shaver, P. (1997). Adult attachment in a nationally representative sample",
+    "Bakermans-Kranenburg, M. & van IJzendoorn, M. (2009). Meta-analysis of over 10,000 AAI interviews",
+    "Paulhus, D. & Williams, K. (2002). The Dark Triad of personality",
+    "Gottman, J. & Levenson, R. (1992). Marital processes predictive of later dissolution",
+    "Ross, L. (1977). The intuitive psychologist and his shortcomings",
+    "Nickerson, R. (1998). Confirmation bias: a ubiquitous phenomenon in many guises",
+    "Aron, E. & Aron, A. (1997). Sensory-processing sensitivity",
+    "Gross, J. (1998, 2015). Emotion regulation: process model and its extensions",
+    "Tangney, J. & Dearing, R. (2002). Shame and Guilt",
+    "Barrett, L. F. et al. (2019). Emotional expressions reconsidered",
+    "Maslach, C. & Leiter, M. (2016). Understanding the burnout experience",
+    "Loftus, E. (1997). Creating false memories",
+    "Cowan, N. (2001). The magical number four in short-term memory",
+    "Deci, E. & Ryan, R. (2000). Self-determination theory",
+    "Maier, S. & Seligman, M. (2016). Learned helplessness at fifty",
+    "Sirois, F. & Pychyl, T. (2013). Procrastination and priority of short-term mood repair",
+    "Sisk, V. et al. (2018); Macnamara, B. & Burgoyne, A. (2023). Meta-analyses of growth mindset",
+    "Asch, S. (1955); Bond, R. & Smith, P. (1996)",
+    "Milgram, S. (1963, 1974); Perry, G. (2013)",
+    "Darley, J. & Latané, B. (1968); Manning, R. et al. (2007); Philpot, R. et al. (2020)",
+    "Janis, I. (1972). Victims of Groupthink"
+  ]
+}

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+import { format, type Messages } from '@/i18n';
 import { MIN_QUERY_LENGTH } from '@/services/searchService';
 
 import css from './SearchBox.module.css';
@@ -9,11 +10,17 @@ import css from './SearchBox.module.css';
 type SearchBoxProps = {
   /** Значення з URL — воно ж початкове для поля */
   value: string;
+  messages: Messages;
   onSubmit: (query: string) => void;
   autoFocus?: boolean;
 };
 
-export const SearchBox = ({ value, onSubmit, autoFocus = false }: SearchBoxProps) => {
+export const SearchBox = ({
+  value,
+  messages,
+  onSubmit,
+  autoFocus = false,
+}: SearchBoxProps) => {
   const [draft, setDraft] = useState(value);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -39,8 +46,8 @@ export const SearchBox = ({ value, onSubmit, autoFocus = false }: SearchBoxProps
         ref={inputRef}
         type="search"
         className={css.input}
-        placeholder="Шукати: прив&#8217;язаність, нарцис, вигорання…"
-        aria-label="Пошук по довіднику"
+        placeholder={messages.search.placeholder}
+        aria-label={messages.search.inputLabel}
         value={draft}
         onChange={(event) => setDraft(event.target.value)}
         onKeyDown={(event) => {
@@ -52,12 +59,11 @@ export const SearchBox = ({ value, onSubmit, autoFocus = false }: SearchBoxProps
       />
 
       <button type="submit" className={css.submit}>
-        Знайти
+        {messages.search.submit}
       </button>
 
       <p className={css.hint}>
-        Пошук іде по назвах, визначеннях і тексту статей. Мінімум {MIN_QUERY_LENGTH}{' '}
-        символи, Esc — очистити.
+        {format(messages.search.hint, { min: MIN_QUERY_LENGTH })}
       </p>
     </form>
   );

@@ -1,55 +1,66 @@
 import clsx from 'clsx';
+import { Fragment } from 'react';
 import Link from 'next/link';
 
 import { CategoryCard } from '@/components/CategoryCard';
 import { CollectionCard } from '@/components/CollectionCard';
 import { ConfusionCard } from '@/components/ConfusionCard';
+import { format, localePath, plural, type Locale, type Messages } from '@/i18n';
 import {
   getAllCollections,
   getAllConcepts,
   getAllConfusions,
   getCategoriesWithCounts,
 } from '@/services/contentService';
-import { EVIDENCE_LEVELS, EVIDENCE_META, localePath } from '@/utils/constants';
-import { CATEGORY_FORMS, CONCEPT_FORMS, PAIR_FORMS, plural } from '@/utils/formatters';
+import { EVIDENCE_LEVELS } from '@/utils/constants';
 
 import css from './HomePage.module.css';
 
 /** Скільки пар показати на головній, решта — у розділі «Плутанина» */
 const CONFUSION_PREVIEW = 4;
 
-export const HomePage = () => {
-  const concepts = getAllConcepts();
-  const categories = getCategoriesWithCounts();
-  const collections = getAllCollections();
-  const confusions = getAllConfusions();
+type HomePageProps = {
+  locale: Locale;
+  messages: Messages;
+};
+
+export const HomePage = ({ locale, messages }: HomePageProps) => {
+  const concepts = getAllConcepts(locale);
+  const categories = getCategoriesWithCounts(locale);
+  const collections = getAllCollections(locale);
+  const confusions = getAllConfusions(locale);
 
   const stats = [
-    { value: String(concepts.length), label: plural(concepts.length, CONCEPT_FORMS) },
+    {
+      value: String(concepts.length),
+      label: plural(concepts.length, messages.plural.concept, locale),
+    },
     {
       value: String(categories.length),
-      label: plural(categories.length, CATEGORY_FORMS),
+      label: plural(categories.length, messages.plural.category, locale),
     },
     {
       value: String(confusions.length),
-      label: `${plural(confusions.length, PAIR_FORMS)}, які плутають`,
+      label: `${plural(confusions.length, messages.plural.pair, locale)}, ${messages.home.statsPairs}`,
     },
-    { value: '3', label: 'рівні доказовості' },
+    { value: '3', label: messages.home.statsEvidence },
   ];
 
   return (
     <div className={css.page}>
       <section className={css.hero}>
         <h1 className={css.title}>
-          Що насправді стоїть за словами <em>інтроверт</em>, <em>вигорання</em> і{' '}
-          <em>прив&#8217;язаність</em>
+          {messages.home.titleLead}{' '}
+          {messages.home.titleTerms.map((term, index) => (
+            <Fragment key={term}>
+              {index > 0 && ', '}
+              <em>{term}</em>
+            </Fragment>
+          ))}
         </h1>
 
         <p className={css.lead}>
-          Довідник з психології українською. {concepts.length} понять про характер,
-          емоції, тривогу, пам&#8217;ять, мотивацію та поведінку в групах — кожне з
-          визначенням, прикладом із життя, найчастішою помилкою у вживанні та чесною
-          позначкою про те, наскільки міцна за ним наука.
+          {format(messages.home.lead, { concepts: concepts.length })}
         </p>
 
         <dl className={css.stats}>
@@ -62,11 +73,11 @@ export const HomePage = () => {
         </dl>
 
         <div className={css.actions}>
-          <Link className={css.primaryAction} href={localePath('/catalog')}>
-            Відкрити каталог
+          <Link className={css.primaryAction} href={localePath('/catalog', locale)}>
+            {messages.home.openCatalog}
           </Link>
-          <Link className={css.secondaryAction} href={localePath('/index')}>
-            Покажчик за абеткою
+          <Link className={css.secondaryAction} href={localePath('/index', locale)}>
+            {messages.home.openIndex}
           </Link>
         </div>
       </section>
@@ -74,18 +85,19 @@ export const HomePage = () => {
       <section className={css.section} aria-labelledby="collections-title">
         <header className={css.sectionHeader}>
           <h2 id="collections-title" className={css.sectionTitle}>
-            З чого почати
+            {messages.home.collectionsTitle}
           </h2>
-          <p className={css.sectionSub}>
-            Шість входів за життєвою ситуацією — якщо не знаєте, з чого почати, заходьте з
-            того, що зараз турбує.
-          </p>
+          <p className={css.sectionSub}>{messages.home.collectionsSub}</p>
         </header>
 
         <ul className={css.collectionsGrid}>
           {collections.map((collection) => (
             <li key={collection.id}>
-              <CollectionCard collection={collection} />
+              <CollectionCard
+                collection={collection}
+                locale={locale}
+                messages={messages}
+              />
             </li>
           ))}
         </ul>
@@ -94,18 +106,20 @@ export const HomePage = () => {
       <section className={css.section} aria-labelledby="categories-title">
         <header className={css.sectionHeader}>
           <h2 id="categories-title" className={css.sectionTitle}>
-            Усі теми
+            {messages.home.categoriesTitle}
           </h2>
           <p className={css.sectionSub}>
-            {concepts.length} понять у {categories.length} темах, від рис характеру до
-            соціальних явищ.
+            {format(messages.home.categoriesSub, {
+              concepts: concepts.length,
+              categories: categories.length,
+            })}
           </p>
         </header>
 
         <ul className={css.categoriesGrid}>
           {categories.map((category) => (
             <li key={category.id}>
-              <CategoryCard category={category} />
+              <CategoryCard category={category} locale={locale} messages={messages} />
             </li>
           ))}
         </ul>
@@ -114,37 +128,33 @@ export const HomePage = () => {
       <section className={css.section} aria-labelledby="confusions-title">
         <header className={css.sectionHeader}>
           <h2 id="confusions-title" className={css.sectionTitle}>
-            Легко переплутати
+            {messages.home.confusionsTitle}
           </h2>
-          <p className={css.sectionSub}>
-            Більшість шкоди від популярної психології походить не з незнання термінів, а
-            зі впевненого вживання їх не за призначенням.
-          </p>
+          <p className={css.sectionSub}>{messages.home.confusionsSub}</p>
         </header>
 
         <ul className={css.confusionsGrid}>
           {confusions.slice(0, CONFUSION_PREVIEW).map((confusion) => (
             <li key={`${confusion.a}-${confusion.b}`}>
-              <ConfusionCard confusion={confusion} />
+              <ConfusionCard confusion={confusion} locale={locale} messages={messages} />
             </li>
           ))}
         </ul>
 
-        <Link className={css.moreLink} href={localePath('/confuse')}>
-          Усі {confusions.length} {plural(confusions.length, PAIR_FORMS)}
+        <Link className={css.moreLink} href={localePath('/confuse', locale)}>
+          {format(messages.home.confusionsMore, {
+            count: confusions.length,
+            pairs: plural(confusions.length, messages.plural.pair, locale),
+          })}
         </Link>
       </section>
 
       <section className={css.section} aria-labelledby="evidence-title">
         <header className={css.sectionHeader}>
           <h2 id="evidence-title" className={css.sectionTitle}>
-            Чому тут є оцінка
+            {messages.home.evidenceTitle}
           </h2>
-          <p className={css.sectionSub}>
-            У популярній психології Велика п&#8217;ятірка й соціоніка лежать на одній
-            полиці, хоч за однією стоять десятиліття вимірювань, а за другою — нічого.
-            Кожне поняття тут має позначку доказовості.
-          </p>
+          <p className={css.sectionSub}>{messages.home.evidenceSub}</p>
         </header>
 
         <ul className={css.evidenceGrid}>
@@ -156,10 +166,16 @@ export const HomePage = () => {
                   <span className={css.evidenceDot} />
                   <span className={css.evidenceDot} />
                 </span>
-                <span className={css.evidenceScale}>{level} з 3</span>
+                <span className={css.evidenceScale}>
+                  {level} {messages.common.evidenceScale}
+                </span>
               </p>
-              <h3 className={css.evidenceName}>{EVIDENCE_META[level].label}</h3>
-              <p className={css.evidenceText}>{EVIDENCE_META[level].description}</p>
+              <h3 className={css.evidenceName}>
+                {messages.evidence.levels[level].label}
+              </h3>
+              <p className={css.evidenceText}>
+                {messages.evidence.levels[level].description}
+              </p>
             </li>
           ))}
         </ul>

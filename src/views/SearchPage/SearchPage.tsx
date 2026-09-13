@@ -1,27 +1,34 @@
 import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { localePath, type Locale, type Messages } from '@/i18n';
 import { getSearchIndex } from '@/services/contentService';
-import { localePath } from '@/utils/constants';
 
 import { SearchBrowser } from './SearchBrowser';
 import css from './SearchPage.module.css';
 
-export const SearchPage = () => {
-  const index = getSearchIndex();
+type SearchPageProps = {
+  locale: Locale;
+  messages: Messages;
+};
+
+export const SearchPage = ({ locale, messages }: SearchPageProps) => {
+  const index = getSearchIndex(locale);
 
   return (
     <div className={css.page}>
       <Breadcrumbs
-        items={[{ label: 'Головна', href: localePath('/') }, { label: 'Пошук' }]}
+        messages={messages}
+        items={[
+          { label: messages.common.home, href: localePath('/', locale) },
+          { label: messages.search.title },
+        ]}
       />
 
       <header className={css.header}>
-        <h1 className={css.title}>Пошук</h1>
-        <p className={css.lead}>
-          Шукає по назвах, оригінальних термінах, визначеннях і тексту статей.
-        </p>
+        <h1 className={css.title}>{messages.search.title}</h1>
+        <p className={css.lead}>{messages.search.lead}</p>
       </header>
 
-      <SearchBrowser index={index} />
+      <SearchBrowser index={index} locale={locale} messages={messages} />
     </div>
   );
 };

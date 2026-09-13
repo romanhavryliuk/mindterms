@@ -2,89 +2,23 @@ import type { CategoryColor, EvidenceLevel } from '@/types';
 
 export const SITE_NAME = 'mindterms';
 export const SITE_URL = 'https://mindterms.vercel.app';
-export const SITE_DESCRIPTION =
-  'Довідник з психології українською: 48 понять із визначенням, прикладом, ' +
-  'поширеною помилкою та позначкою доказовості.';
 
-/** Поки що одна мова. next-intl додамо, коли зʼявиться en і pl. */
-export const LOCALES = ['uk'] as const;
-
-export type Locale = (typeof LOCALES)[number];
-
-export const DEFAULT_LOCALE: Locale = 'uk';
-
-/** Абсолютний шлях у межах локалі: localePath('/catalog') → '/uk/catalog' */
-export function localePath(path: string, locale: Locale = DEFAULT_LOCALE): string {
-  return path === '/' ? `/${locale}` : `/${locale}${path}`;
-}
-
-export type NavLink = {
+/** Підписи беруться з каталогу повідомлень за ключем */
+export type NavItem = {
   href: string;
-  label: string;
+  key: 'catalog' | 'index' | 'confuse' | 'help' | 'about';
 };
 
-export const NAV_LINKS: NavLink[] = [
-  { href: '/catalog', label: 'Каталог' },
-  { href: '/index', label: 'Покажчик' },
-  { href: '/confuse', label: 'Плутанина' },
-  { href: '/help', label: 'Допомога' },
-  { href: '/about', label: 'Про проєкт' },
+export const NAV_ITEMS: NavItem[] = [
+  { href: '/catalog', key: 'catalog' },
+  { href: '/index', key: 'index' },
+  { href: '/confuse', key: 'confuse' },
+  { href: '/help', key: 'help' },
+  { href: '/about', key: 'about' },
 ];
 
-/** Пошук у мапі сайту окремо: у шапці він кнопкою, а не пунктом меню */
+/** Пошук у шапці кнопкою, а не пунктом меню */
 export const SEARCH_PATH = '/search';
-
-/** Українські лінії підтримки для розділу «Допомога» */
-export type Hotline = {
-  name: string;
-  phone: string;
-  tel: string;
-  note: string;
-};
-
-export const HOTLINES: Hotline[] = [
-  {
-    name: 'Лінія запобігання самогубствам «Lifeline Ukraine»',
-    phone: '7333',
-    tel: 'tel:7333',
-    note: 'Цілодобово, безкоштовно з мобільних операторів України',
-  },
-  {
-    name: 'Національна гаряча лінія з попередження домашнього насильства',
-    phone: '0 800 100 102',
-    tel: 'tel:0800100102',
-    note: 'Цілодобово, безкоштовно зі стаціонарних і мобільних',
-  },
-];
-
-type EvidenceMeta = {
-  /** Коротка назва рівня для бейджа */
-  label: string;
-  /** Розгорнуте пояснення, що цей рівень означає */
-  description: string;
-};
-
-/** Рівні доказовості — головна відмінність проєкту, тому опис один на весь сайт */
-export const EVIDENCE_META: Record<EvidenceLevel, EvidenceMeta> = {
-  3: {
-    label: 'Міцна основа',
-    description:
-      'Ефект багато разів відтворений у незалежних дослідженнях і має ' +
-      'узгоджені метааналізи. Сперечаються про деталі, не про існування.',
-  },
-  2: {
-    label: 'Частково підтверджено',
-    description:
-      'Дані є, але вони неоднорідні: частина досліджень підтверджує ефект, ' +
-      'частина — ні. Межі явища ще уточнюють.',
-  },
-  1: {
-    label: 'Слабка основа',
-    description:
-      'Поняття популярне, але суворих підтверджень мало або вони не ' +
-      'відтворюються. Користуватись ним варто обережно.',
-  },
-};
 
 export const EVIDENCE_LEVELS: EvidenceLevel[] = [3, 2, 1];
 

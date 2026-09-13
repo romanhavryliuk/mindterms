@@ -1,35 +1,47 @@
+import type { CSSProperties } from 'react';
 import Link from 'next/link';
 
 import { AlphabetNav } from '@/components/AlphabetNav';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { EvidenceBadge } from '@/components/EvidenceBadge';
-import { getAlphabetGroups, getAllCategories } from '@/services/contentService';
-import { localePath } from '@/utils/constants';
-import { CONCEPT_FORMS, formatCount } from '@/utils/formatters';
+import { format, formatCount, localePath, type Locale, type Messages } from '@/i18n';
+import { getAllCategories, getAlphabetGroups } from '@/services/contentService';
+import { originalTerm } from '@/utils/formatters';
 
 import css from './IndexPage.module.css';
 
-export const IndexPage = () => {
-  const groups = getAlphabetGroups();
-  const categories = getAllCategories();
-  const categoryById = new Map(categories.map((category) => [category.id, category]));
+type IndexPageProps = {
+  locale: Locale;
+  messages: Messages;
+};
+
+export const IndexPage = ({ locale, messages }: IndexPageProps) => {
+  const groups = getAlphabetGroups(locale);
+  const categoryById = new Map(
+    getAllCategories(locale).map((category) => [category.id, category])
+  );
   const total = groups.reduce((sum, group) => sum + group.concepts.length, 0);
 
   return (
     <div className={css.page}>
       <Breadcrumbs
-        items={[{ label: 'Головна', href: localePath('/') }, { label: 'Покажчик' }]}
+        messages={messages}
+        items={[
+          { label: messages.common.home, href: localePath('/', locale) },
+          { label: messages.nav.index },
+        ]}
       />
 
       <header className={css.header}>
-        <h1 className={css.title}>Покажчик за абеткою</h1>
+        <h1 className={css.title}>{messages.index.title}</h1>
         <p className={css.lead}>
-          Усі {formatCount(total, CONCEPT_FORMS)} за назвою. Якщо знаєте, що шукаєте, — це
-          найкоротший шлях.
+          {format(messages.index.lead, {
+            count: formatCount(total, messages.plural.concept, locale),
+          })}
         </p>
       </header>
 
-      <AlphabetNav letters={groups.map((group) => group.letter)} />
+      <AlphabetNav letters={groups.map((group) => group.letter)} messages={messages} />
 
       <div className={css.groups}>
         {groups.map((group) => (
@@ -55,12 +67,14 @@ export const IndexPage = () => {
                   <li key={concept.id} className={css.item}>
                     <Link
                       className={css.link}
-                      href={localePath(`/concept/${concept.id}`)}
+                      href={localePath(`/concept/${concept.id}`, locale)}
                     >
                       <span className={css.name}>{concept.title}</span>
-                      <span className={css.original} lang="en">
-                        {concept.original}
-                      </span>
+                      {originalTerm(concept.title, concept.original) !== null && (
+                        <span className={css.original} lang="en">
+                          {concept.original}
+                        </span>
+                      )}
                     </Link>
 
                     <span className={css.aside}>
@@ -70,13 +84,17 @@ export const IndexPage = () => {
                           style={
                             {
                               '--accent': `var(--c-${category.color})`,
-                            } as React.CSSProperties
+                            } as CSSProperties
                           }
                         >
                           {category.name}
                         </span>
                       )}
-                      <EvidenceBadge level={concept.evidence} size="sm" />
+                      <EvidenceBadge
+                        level={concept.evidence}
+                        messages={messages}
+                        size="sm"
+                      />
                     </span>
                   </li>
                 );

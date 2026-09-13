@@ -1,29 +1,40 @@
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { CatalogBrowser } from '@/components/CatalogBrowser';
+import { localePath, type Locale, type Messages } from '@/i18n';
 import { getCategoriesWithCounts, getConceptSummaries } from '@/services/contentService';
-import { localePath } from '@/utils/constants';
 
 import css from './CatalogPage.module.css';
 
-export const CatalogPage = () => {
-  const categories = getCategoriesWithCounts();
-  const concepts = getConceptSummaries();
+type CatalogPageProps = {
+  locale: Locale;
+  messages: Messages;
+};
+
+export const CatalogPage = ({ locale, messages }: CatalogPageProps) => {
+  const categories = getCategoriesWithCounts(locale);
+  const concepts = getConceptSummaries(locale);
 
   return (
     <div className={css.page}>
       <Breadcrumbs
-        items={[{ label: 'Головна', href: localePath('/') }, { label: 'Каталог' }]}
+        messages={messages}
+        items={[
+          { label: messages.common.home, href: localePath('/', locale) },
+          { label: messages.nav.catalog },
+        ]}
       />
 
       <header className={css.header}>
-        <h1 className={css.title}>Каталог понять</h1>
-        <p className={css.lead}>
-          Усі поняття довідника. Фільтруйте за темою й рівнем доказовості — вибір
-          лишається в адресі сторінки, тож посиланням можна поділитись.
-        </p>
+        <h1 className={css.title}>{messages.catalog.title}</h1>
+        <p className={css.lead}>{messages.catalog.lead}</p>
       </header>
 
-      <CatalogBrowser categories={categories} concepts={concepts} />
+      <CatalogBrowser
+        categories={categories}
+        concepts={concepts}
+        locale={locale}
+        messages={messages}
+      />
     </div>
   );
 };

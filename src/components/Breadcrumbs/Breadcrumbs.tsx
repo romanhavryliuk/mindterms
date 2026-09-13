@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+import type { Messages } from '@/i18n';
 import { SITE_URL } from '@/utils/constants';
 
 import css from './Breadcrumbs.module.css';
@@ -12,6 +13,7 @@ export type Crumb = {
 
 type BreadcrumbsProps = {
   items: Crumb[];
+  messages: Messages;
 };
 
 /** Schema.org BreadcrumbList — щоб пошук показував шлях під посиланням */
@@ -28,8 +30,8 @@ function buildJsonLd(items: Crumb[]): string {
   });
 }
 
-export const Breadcrumbs = ({ items }: BreadcrumbsProps) => (
-  <nav className={css.nav} aria-label="Хлібні крихти">
+export const Breadcrumbs = ({ items, messages }: BreadcrumbsProps) => (
+  <nav className={css.nav} aria-label={messages.common.breadcrumbsLabel}>
     <ol className={css.list}>
       {items.map((item, index) => {
         const isLast = index === items.length - 1;

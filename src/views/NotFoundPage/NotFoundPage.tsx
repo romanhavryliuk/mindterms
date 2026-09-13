@@ -1,24 +1,26 @@
 import Link from 'next/link';
 
-import { localePath } from '@/utils/constants';
+import { localePath, type Locale, type Messages } from '@/i18n';
 
 import css from './NotFoundPage.module.css';
 
-export const NotFoundPage = () => (
+type NotFoundPageProps = {
+  locale: Locale;
+  messages: Messages;
+};
+
+export const NotFoundPage = ({ locale, messages }: NotFoundPageProps) => (
   <div className={css.page}>
     <p className={css.code}>404</p>
-    <h1 className={css.title}>Такої сторінки немає</h1>
-    <p className={css.lead}>
-      Можливо, посилання застаріло або в адресі одрук. Поняття нікуди не зникли — їх можна
-      знайти через каталог або покажчик.
-    </p>
+    <h1 className={css.title}>{messages.notFound.title}</h1>
+    <p className={css.lead}>{messages.notFound.lead}</p>
 
     <div className={css.actions}>
-      <Link className={css.primaryAction} href={localePath('/catalog')}>
-        Відкрити каталог
+      <Link className={css.primaryAction} href={localePath('/catalog', locale)}>
+        {messages.notFound.openCatalog}
       </Link>
-      <Link className={css.secondaryAction} href={localePath('/search')}>
-        Пошук по довіднику
+      <Link className={css.secondaryAction} href={localePath('/search', locale)}>
+        {messages.notFound.openSearch}
       </Link>
     </div>
   </div>

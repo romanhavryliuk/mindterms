@@ -1,12 +1,31 @@
 import type { Metadata } from 'next';
 
+import {
+  DEFAULT_LOCALE,
+  getMessages,
+  isLocale,
+  localeAlternates,
+  type Locale,
+} from '@/i18n';
 import { CatalogPage } from '@/views/CatalogPage';
 
-export const metadata: Metadata = {
-  title: 'Каталог понять',
-  description: 'Усі 48 понять довідника з фільтрами за темою та рівнем доказовості.',
-};
+type PageProps = { params: Promise<{ locale: string }> };
 
-export default function Page() {
-  return <CatalogPage />;
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale: raw } = await params;
+  const locale: Locale = isLocale(raw) ? raw : DEFAULT_LOCALE;
+  const messages = getMessages(locale);
+
+  return {
+    title: messages.catalog.title,
+    description: messages.metadata.catalog,
+    alternates: localeAlternates('/catalog', locale),
+  };
+}
+
+export default async function Page({ params }: PageProps) {
+  const { locale: raw } = await params;
+  const locale: Locale = isLocale(raw) ? raw : DEFAULT_LOCALE;
+
+  return <CatalogPage locale={locale} messages={getMessages(locale)} />;
 }

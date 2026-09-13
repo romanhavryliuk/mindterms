@@ -1,11 +1,11 @@
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { ConceptCard } from '@/components/ConceptCard';
+import { localePath, type Locale, type Messages } from '@/i18n';
 import {
   getAllCategories,
   getAllHelpCards,
   getConceptsByIds,
 } from '@/services/contentService';
-import { HOTLINES, localePath } from '@/utils/constants';
 import { renderInlineMarkup } from '@/utils/richText';
 
 import css from './HelpPage.module.css';
@@ -20,60 +20,84 @@ const RELATED_CONCEPT_IDS = [
   'fff',
 ];
 
-export const HelpPage = () => {
-  const cards = getAllHelpCards();
-  const related = getConceptsByIds(RELATED_CONCEPT_IDS);
+type HelpPageProps = {
+  locale: Locale;
+  messages: Messages;
+};
+
+/**
+ * Підставляє номери екстрених служб у шаблон, виділяючи їх напівжирним.
+ * Якщо в мові номерів немає — англійська версія не прив'язана до країни —
+ * шаблон просто не містить підстановок, і речення виводиться як є.
+ */
+function renderEmergency(template: string, numbers: Record<string, string>) {
+  return template.split(/(\{\w+\})/).map((part, index) => {
+    const key = part.match(/^\{(\w+)\}$/)?.[1];
+
+    if (key === undefined) return part;
+    return <strong key={`${key}-${index}`}>{numbers[key]}</strong>;
+  });
+}
+
+export const HelpPage = ({ locale, messages }: HelpPageProps) => {
+  const cards = getAllHelpCards(locale);
+  const related = getConceptsByIds(locale, RELATED_CONCEPT_IDS);
   const categoryById = new Map(
-    getAllCategories().map((category) => [category.id, category])
+    getAllCategories(locale).map((category) => [category.id, category])
   );
+
+  // Лінії підтримки прив'язані до країни, тож беруться цілком із каталогу мови.
+  // В англійській версії їх немає: читач може бути в будь-якій країні.
+  const { hotlines } = messages.help;
 
   return (
     <div className={css.page}>
       <Breadcrumbs
-        items={[{ label: 'Головна', href: localePath('/') }, { label: 'Допомога' }]}
+        messages={messages}
+        items={[
+          { label: messages.common.home, href: localePath('/', locale) },
+          { label: messages.nav.help },
+        ]}
       />
 
       <header className={css.header}>
-        <h1 className={css.title}>Коли потрібна допомога</h1>
-        <p className={css.lead}>
-          Довідник пояснює поняття, але не супроводжує. Тут — орієнтири, за якими
-          зрозуміло, що саморозбору вже недостатньо.
-        </p>
+        <h1 className={css.title}>{messages.help.title}</h1>
+        <p className={css.lead}>{messages.help.lead}</p>
       </header>
 
       {/* Блок про гострий стан іде першим: у кризі ніхто не гортає сторінку */}
       <section className={css.crisis} aria-labelledby="crisis-title">
-        <p className={css.crisisLabel}>Якщо стан гострий</p>
+        <p className={css.crisisLabel}>{messages.help.crisisLabel}</p>
         <h2 id="crisis-title" className={css.crisisTitle}>
-          Не залишайтесь із цим наодинці
+          {messages.help.crisisTitle}
         </h2>
-        <p className={css.crisisText}>
-          Якщо зараз є думки про самогубство, ви в небезпеці або поруч людина в такому
-          стані — телефонуйте. Це безкоштовно й анонімно, і це не «занадто дрібний
-          привід».
-        </p>
+        <p className={css.crisisText}>{messages.help.crisisText}</p>
 
-        <ul className={css.hotlines}>
-          {HOTLINES.map((hotline) => (
-            <li key={hotline.phone} className={css.hotline}>
-              <a className={css.phone} href={hotline.tel}>
-                {hotline.phone}
-              </a>
-              <p className={css.hotlineName}>{hotline.name}</p>
-              <p className={css.hotlineNote}>{hotline.note}</p>
-            </li>
-          ))}
-        </ul>
+        {hotlines.length > 0 && (
+          <ul className={css.hotlines}>
+            {hotlines.map((hotline) => (
+              <li key={hotline.phone} className={css.hotline}>
+                <a className={css.phone} href={hotline.href}>
+                  {hotline.phone}
+                </a>
+                <p className={css.hotlineName}>{hotline.name}</p>
+                <p className={css.hotlineNote}>{hotline.note}</p>
+              </li>
+            ))}
+          </ul>
+        )}
 
         <p className={css.emergency}>
-          Якщо є пряма загроза життю — <strong>103</strong> (швидка) або{' '}
-          <strong>112</strong>.
+          {renderEmergency(messages.help.emergency, {
+            ambulance: messages.help.emergencyAmbulance,
+            emergency: messages.help.emergencyGeneral,
+          })}
         </p>
       </section>
 
       <section className={css.section} aria-labelledby="cards-title">
         <h2 id="cards-title" className={css.sectionTitle}>
-          Орієнтири
+          {messages.help.cardsTitle}
         </h2>
 
         <ul className={css.cards}>
@@ -94,12 +118,9 @@ export const HelpPage = () => {
 
       <section className={css.section} aria-labelledby="related-title">
         <h2 id="related-title" className={css.sectionTitle}>
-          Поки що можна почитати
+          {messages.help.relatedTitle}
         </h2>
-        <p className={css.sectionLead}>
-          Поняття, які найчастіше стоять за такими станами. Це не заміна допомоги — радше
-          словник, щоб було чим назвати те, що відбувається.
-        </p>
+        <p className={css.sectionLead}>{messages.help.relatedLead}</p>
 
         <ul className={css.related}>
           {related.map((concept) => {
@@ -109,6 +130,8 @@ export const HelpPage = () => {
               <li key={concept.id}>
                 <ConceptCard
                   concept={concept}
+                  locale={locale}
+                  messages={messages}
                   color={category?.color}
                   categoryName={category?.name}
                 />

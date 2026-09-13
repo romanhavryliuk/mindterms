@@ -5,10 +5,10 @@ import type { CSSProperties } from 'react';
 
 import { ConceptCard } from '@/components/ConceptCard';
 import { EvidenceFilter } from '@/components/EvidenceFilter';
+import { formatCount, type Locale, type Messages } from '@/i18n';
 import type { CategoryWithCount, ConceptSummary } from '@/services/contentService';
 import type { EvidenceLevel } from '@/types';
 import { FILTER_PARAM_CATEGORY, FILTER_PARAM_EVIDENCE } from '@/utils/constants';
-import { CONCEPT_FORMS, formatCount } from '@/utils/formatters';
 
 import { CatalogParamsSync, type CatalogFilters } from './CatalogParamsSync';
 import css from './CatalogBrowser.module.css';
@@ -16,11 +16,18 @@ import css from './CatalogBrowser.module.css';
 type CatalogBrowserProps = {
   categories: CategoryWithCount[];
   concepts: ConceptSummary[];
+  locale: Locale;
+  messages: Messages;
 };
 
 const NO_FILTERS: CatalogFilters = { category: null, evidence: null };
 
-export const CatalogBrowser = ({ categories, concepts }: CatalogBrowserProps) => {
+export const CatalogBrowser = ({
+  categories,
+  concepts,
+  locale,
+  messages,
+}: CatalogBrowserProps) => {
   // Початковий стан порожній, тому в статичному HTML лежать усі поняття.
   // Фільтри з адреси підхоплює CatalogParamsSync одразу після монтування.
   const [filters, setFilters] = useState<CatalogFilters>(NO_FILTERS);
@@ -92,8 +99,8 @@ export const CatalogBrowser = ({ categories, concepts }: CatalogBrowserProps) =>
         <CatalogParamsSync onChange={handleSync} />
       </Suspense>
 
-      <aside className={css.sidebar} aria-label="Теми">
-        <h2 className={css.sidebarTitle}>Теми</h2>
+      <aside className={css.sidebar} aria-label={messages.catalog.themes}>
+        <h2 className={css.sidebarTitle}>{messages.catalog.themes}</h2>
 
         <ul className={css.categories}>
           <li>
@@ -103,7 +110,7 @@ export const CatalogBrowser = ({ categories, concepts }: CatalogBrowserProps) =>
               aria-pressed={filters.category === null}
               onClick={() => apply({ ...filters, category: null })}
             >
-              <span className={css.categoryName}>Усі теми</span>
+              <span className={css.categoryName}>{messages.catalog.allThemes}</span>
               <span className={css.categoryCount}>{concepts.length}</span>
             </button>
           </li>
@@ -148,12 +155,13 @@ export const CatalogBrowser = ({ categories, concepts }: CatalogBrowserProps) =>
             value={filters.evidence}
             counts={evidenceCounts}
             totalCount={inCategory.length}
+            messages={messages}
             onChange={(level) => apply({ ...filters, evidence: level })}
           />
 
           <div className={css.summary}>
             <p className={css.summaryCount} aria-live="polite">
-              {formatCount(visible.length, CONCEPT_FORMS)}
+              {formatCount(visible.length, messages.plural.concept, locale)}
             </p>
             {hasFilters && (
               <button
@@ -161,16 +169,14 @@ export const CatalogBrowser = ({ categories, concepts }: CatalogBrowserProps) =>
                 className={css.reset}
                 onClick={() => apply(NO_FILTERS)}
               >
-                Скинути фільтри
+                {messages.catalog.reset}
               </button>
             )}
           </div>
         </div>
 
         {visible.length === 0 ? (
-          <p className={css.empty}>
-            За цими фільтрами понять немає. Спробуйте інший рівень доказовості.
-          </p>
+          <p className={css.empty}>{messages.catalog.empty}</p>
         ) : (
           <ul className={css.grid}>
             {visible.map((concept) => {
@@ -180,6 +186,8 @@ export const CatalogBrowser = ({ categories, concepts }: CatalogBrowserProps) =>
                 <li key={concept.id}>
                   <ConceptCard
                     concept={concept}
+                    locale={locale}
+                    messages={messages}
                     color={category?.color}
                     categoryName={filters.category === null ? category?.name : undefined}
                   />

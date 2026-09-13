@@ -230,8 +230,11 @@
   gap: var(--space-3xs);
 }
 
+/* Бейдж доказовості нерозривний, тому на вузькому екрані пара
+   «назва + бейдж» розпирала бічну колонку. Даємо рядку перенестись. */
 .relatedLink {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--space-2xs);
   align-items: center;
   justify-content: space-between;

@@ -1,6 +1,10 @@
 .card {
   display: grid;
+  /* Текст розтягується, підвал лишається внизу — щоб картки в рядку
+     закінчувались на одній лінії незалежно від довжини абзаців */
+  grid-template-rows: auto 1fr auto;
   gap: var(--space-sm);
+  height: 100%;
   padding: var(--space-md);
   border: var(--border-width) solid var(--border);
   border-radius: var(--radius-lg);
@@ -68,8 +72,12 @@
   gap: var(--space-3xs);
 }
 
+/* Бейдж доказовості не переноситься всередині себе, тому на вузькому
+   екрані довгий підпис («Частково підтверджено») розпирав картку й давав
+   горизонтальну прокрутку. Дозволяємо рядку перенести бейдж під назву. */
 .link {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--space-2xs);
   align-items: center;
   justify-content: space-between;
@@ -92,6 +100,6 @@
   }
 
   .links {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
