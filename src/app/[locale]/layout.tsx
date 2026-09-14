@@ -4,14 +4,7 @@ import { Literata, Unbounded } from 'next/font/google';
 import { Disclaimer } from '@/components/Disclaimer';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
-import {
-  DEFAULT_LOCALE,
-  getMessages,
-  isLocale,
-  localeAlternates,
-  LOCALES,
-  type Locale,
-} from '@/i18n';
+import { getMessages, localeAlternates, LOCALES, toLocale } from '@/i18n';
 import { SITE_NAME, SITE_URL } from '@/utils/constants';
 
 import '@/styles/variables.css';
@@ -52,7 +45,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale: raw } = await params;
-  const locale: Locale = isLocale(raw) ? raw : DEFAULT_LOCALE;
+  const locale = toLocale(raw);
   const messages = getMessages(locale);
 
   return {
@@ -74,7 +67,7 @@ export async function generateMetadata({
 
 export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
   const { locale: raw } = await params;
-  const locale: Locale = isLocale(raw) ? raw : DEFAULT_LOCALE;
+  const locale = toLocale(raw);
   const messages = getMessages(locale);
 
   return (

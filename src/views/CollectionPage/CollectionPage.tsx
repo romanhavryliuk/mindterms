@@ -1,7 +1,7 @@
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { ConceptCard } from '@/components/ConceptCard';
 import { formatCount, localePath, type Locale, type Messages } from '@/i18n';
-import { getAllCategories, getConceptsByIds } from '@/services/contentService';
+import { getCategoryMap, getConceptsByIds } from '@/services/contentService';
 import type { Collection } from '@/types';
 
 import css from './CollectionPage.module.css';
@@ -14,9 +14,7 @@ type CollectionPageProps = {
 
 export const CollectionPage = ({ collection, locale, messages }: CollectionPageProps) => {
   const concepts = getConceptsByIds(locale, collection.concepts);
-  const categoryById = new Map(
-    getAllCategories(locale).map((category) => [category.id, category])
-  );
+  const categoryById = getCategoryMap(locale);
 
   return (
     <div className={css.page}>

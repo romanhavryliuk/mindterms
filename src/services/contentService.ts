@@ -162,10 +162,25 @@ export function getSearchIndex(locale: Locale): SearchEntry[] {
 export type CategoryWithCount = Category & { conceptCount: number };
 
 export function getCategoriesWithCounts(locale: Locale): CategoryWithCount[] {
+  // Один прохід по поняттях замість фільтрації всього списку для кожної теми
+  const counts = new Map<string, number>();
+
+  for (const concept of getAllConcepts(locale)) {
+    counts.set(concept.category, (counts.get(concept.category) ?? 0) + 1);
+  }
+
   return getAllCategories(locale).map((category) => ({
     ...category,
-    conceptCount: getConceptsByCategory(locale, category.id).length,
+    conceptCount: counts.get(category.id) ?? 0,
   }));
+}
+
+/**
+ * Теми за id — щоб картка поняття могла показати назву й колір своєї теми.
+ * Мапу будували три в'юшки однаково, тож вона живе тут.
+ */
+export function getCategoryMap(locale: Locale): Map<string, Category> {
+  return new Map(getAllCategories(locale).map((category) => [category.id, category]));
 }
 
 /** Сусіди поняття в межах його теми — для навігації попереднє/наступне */

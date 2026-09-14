@@ -22,6 +22,15 @@ export function getMessages(locale: string): Messages {
 
 export type { Messages };
 
+/**
+ * Звужує сегмент адреси до відомої локалі. Сегмент приходить із params як
+ * довільний рядок, тож правило запасного варіанту має жити в одному місці,
+ * а не повторюватись у кожному маршруті.
+ */
+export function toLocale(value: string): Locale {
+  return isLocale(value) ? value : DEFAULT_LOCALE;
+}
+
 /** Абсолютний шлях у межах локалі: localePath('/catalog', 'en') → '/en/catalog' */
 export function localePath(path: string, locale: Locale = DEFAULT_LOCALE): string {
   return path === '/' ? `/${locale}` : `/${locale}${path}`;

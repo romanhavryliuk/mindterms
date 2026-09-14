@@ -1,14 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-import {
-  DEFAULT_LOCALE,
-  getMessages,
-  isLocale,
-  localeAlternates,
-  LOCALES,
-  type Locale,
-} from '@/i18n';
+import { getMessages, localeAlternates, LOCALES, toLocale } from '@/i18n';
 import { getAllCollections, getCollectionById } from '@/services/contentService';
 import { CollectionPage } from '@/views/CollectionPage';
 
@@ -33,7 +26,7 @@ export async function generateMetadata({
   params,
 }: CollectionRouteProps): Promise<Metadata> {
   const { locale: raw, slug } = await params;
-  const locale: Locale = isLocale(raw) ? raw : DEFAULT_LOCALE;
+  const locale = toLocale(raw);
   const messages = getMessages(locale);
   const collection = getCollectionById(locale, slug);
 
@@ -56,7 +49,7 @@ export async function generateMetadata({
 
 export default async function Page({ params }: CollectionRouteProps) {
   const { locale: raw, slug } = await params;
-  const locale: Locale = isLocale(raw) ? raw : DEFAULT_LOCALE;
+  const locale = toLocale(raw);
   const collection = getCollectionById(locale, slug);
 
   if (collection === undefined) {

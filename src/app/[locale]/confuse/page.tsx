@@ -1,19 +1,13 @@
 import type { Metadata } from 'next';
 
-import {
-  DEFAULT_LOCALE,
-  getMessages,
-  isLocale,
-  localeAlternates,
-  type Locale,
-} from '@/i18n';
+import { getMessages, localeAlternates, toLocale } from '@/i18n';
 import { ConfusePage } from '@/views/ConfusePage';
 
 type PageProps = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale: raw } = await params;
-  const locale: Locale = isLocale(raw) ? raw : DEFAULT_LOCALE;
+  const locale = toLocale(raw);
   const messages = getMessages(locale);
 
   return {
@@ -25,7 +19,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function Page({ params }: PageProps) {
   const { locale: raw } = await params;
-  const locale: Locale = isLocale(raw) ? raw : DEFAULT_LOCALE;
+  const locale = toLocale(raw);
 
   return <ConfusePage locale={locale} messages={getMessages(locale)} />;
 }

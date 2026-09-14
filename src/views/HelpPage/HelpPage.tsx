@@ -2,8 +2,8 @@ import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { ConceptCard } from '@/components/ConceptCard';
 import { localePath, type Locale, type Messages } from '@/i18n';
 import {
-  getAllCategories,
   getAllHelpCards,
+  getCategoryMap,
   getConceptsByIds,
 } from '@/services/contentService';
 import { renderInlineMarkup } from '@/utils/richText';
@@ -42,9 +42,7 @@ function renderEmergency(template: string, numbers: Record<string, string>) {
 export const HelpPage = ({ locale, messages }: HelpPageProps) => {
   const cards = getAllHelpCards(locale);
   const related = getConceptsByIds(locale, RELATED_CONCEPT_IDS);
-  const categoryById = new Map(
-    getAllCategories(locale).map((category) => [category.id, category])
-  );
+  const categoryById = getCategoryMap(locale);
 
   // Лінії підтримки прив'язані до країни, тож беруться цілком із каталогу мови.
   // В англійській версії їх немає: читач може бути в будь-якій країні.

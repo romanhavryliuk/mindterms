@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { DEFAULT_LOCALE, getMessages, isLocale, type Locale } from '@/i18n';
+import { getMessages, toLocale } from '@/i18n';
 import { SearchPage } from '@/views/SearchPage';
 
 type PageProps = { params: Promise<{ locale: string }> };
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function Page({ params }: PageProps) {
   const { locale: raw } = await params;
-  const locale: Locale = isLocale(raw) ? raw : DEFAULT_LOCALE;
+  const locale = toLocale(raw);
 
   return <SearchPage locale={locale} messages={getMessages(locale)} />;
 }

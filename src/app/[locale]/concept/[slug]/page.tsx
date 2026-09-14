@@ -1,14 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-import {
-  DEFAULT_LOCALE,
-  getMessages,
-  isLocale,
-  localeAlternates,
-  LOCALES,
-  type Locale,
-} from '@/i18n';
+import { getMessages, localeAlternates, LOCALES, toLocale } from '@/i18n';
 import { getAllConcepts, getConceptBySlug } from '@/services/contentService';
 import { ConceptPage } from '@/views/ConceptPage';
 
@@ -32,7 +25,7 @@ export function generateStaticParams(): ConceptRouteParams[] {
 
 export async function generateMetadata({ params }: ConceptRouteProps): Promise<Metadata> {
   const { locale: raw, slug } = await params;
-  const locale: Locale = isLocale(raw) ? raw : DEFAULT_LOCALE;
+  const locale = toLocale(raw);
   const messages = getMessages(locale);
   const concept = getConceptBySlug(locale, slug);
 
@@ -67,7 +60,7 @@ export async function generateMetadata({ params }: ConceptRouteProps): Promise<M
 
 export default async function Page({ params }: ConceptRouteProps) {
   const { locale: raw, slug } = await params;
-  const locale: Locale = isLocale(raw) ? raw : DEFAULT_LOCALE;
+  const locale = toLocale(raw);
   const concept = getConceptBySlug(locale, slug);
 
   if (concept === undefined) {

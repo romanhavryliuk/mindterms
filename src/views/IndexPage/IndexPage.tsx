@@ -5,7 +5,7 @@ import { AlphabetNav } from '@/components/AlphabetNav';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { EvidenceBadge } from '@/components/EvidenceBadge';
 import { format, formatCount, localePath, type Locale, type Messages } from '@/i18n';
-import { getAllCategories, getAlphabetGroups } from '@/services/contentService';
+import { getAlphabetGroups, getCategoryMap } from '@/services/contentService';
 import { originalTerm } from '@/utils/formatters';
 
 import css from './IndexPage.module.css';
@@ -17,9 +17,7 @@ type IndexPageProps = {
 
 export const IndexPage = ({ locale, messages }: IndexPageProps) => {
   const groups = getAlphabetGroups(locale);
-  const categoryById = new Map(
-    getAllCategories(locale).map((category) => [category.id, category])
-  );
+  const categoryById = getCategoryMap(locale);
   const total = groups.reduce((sum, group) => sum + group.concepts.length, 0);
 
   return (
