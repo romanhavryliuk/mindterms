@@ -6,6 +6,7 @@ import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { getMessages, localeAlternates, LOCALES, toLocale } from '@/i18n';
 import { SITE_NAME, SITE_URL } from '@/utils/constants';
+import { siteImage } from '@/utils/ogImage';
 
 import '@/styles/variables.css';
 import '@/styles/globals.css';
@@ -60,7 +61,12 @@ export async function generateMetadata({
       siteName: SITE_NAME,
       locale,
       type: 'website',
+      // Типова картка сайту. Сторінки понять і добірок задають свою;
+      // решта — головна, каталог, покажчик, плутанина, допомога, про
+      // проєкт — успадковує цю.
+      images: [siteImage(locale)],
     },
+    twitter: { card: 'summary_large_image', images: [siteImage(locale)] },
     alternates: localeAlternates('/', locale),
   };
 }

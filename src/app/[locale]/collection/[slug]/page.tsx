@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation';
 
 import { getMessages, localeAlternates, LOCALES, toLocale } from '@/i18n';
 import { getAllCollections, getCollectionById } from '@/services/contentService';
+import { SITE_NAME } from '@/utils/constants';
+import { collectionImage } from '@/utils/ogImage';
 import { CollectionPage } from '@/views/CollectionPage';
 
 type CollectionRouteParams = {
@@ -34,16 +36,21 @@ export async function generateMetadata({
     return { title: messages.metadata.collectionNotFound };
   }
 
+  const image = collectionImage(locale, collection.id, collection.title);
+
   return {
     title: collection.title,
     description: collection.description,
     alternates: localeAlternates(`/collection/${collection.id}`, locale),
     openGraph: {
-      title: `${collection.title} — mindterms`,
+      siteName: SITE_NAME,
+      title: `${collection.title} — ${SITE_NAME}`,
       description: collection.description,
       type: 'article',
       locale,
+      images: [image],
     },
+    twitter: { card: 'summary_large_image', images: [image] },
   };
 }
 

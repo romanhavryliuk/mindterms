@@ -6,8 +6,10 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
-      allow: '/',
-      // Генератор картинок індексувати нема сенсу
+      // Генератор OG-картинок має лишатись відкритим: краулери Facebook і
+      // Twitter поважають robots.txt, і під забороною /api/ прев'ю посилань
+      // не підтягується взагалі
+      allow: ['/', '/api/og'],
       disallow: '/api/',
     },
     sitemap: `${SITE_URL}/sitemap.xml`,

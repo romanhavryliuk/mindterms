@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation';
 
 import { getMessages, localeAlternates, LOCALES, toLocale } from '@/i18n';
 import { getAllConcepts, getConceptBySlug } from '@/services/contentService';
+import { SITE_NAME } from '@/utils/constants';
+import { conceptImage } from '@/utils/ogImage';
 import { ConceptPage } from '@/views/ConceptPage';
 
 type ConceptRouteParams = {
@@ -33,19 +35,15 @@ export async function generateMetadata({ params }: ConceptRouteProps): Promise<M
     return { title: messages.metadata.conceptNotFound };
   }
 
-  const image = {
-    url: `/api/og?slug=${encodeURIComponent(concept.id)}&locale=${locale}`,
-    width: 1200,
-    height: 630,
-    alt: concept.title,
-  };
+  const image = conceptImage(locale, concept.id, concept.title);
 
   return {
     title: concept.title,
     description: concept.definition,
     alternates: localeAlternates(`/concept/${concept.id}`, locale),
     openGraph: {
-      title: `${concept.title} — mindterms`,
+      siteName: SITE_NAME,
+      title: `${concept.title} — ${SITE_NAME}`,
       description: concept.definition,
       type: 'article',
       locale,
