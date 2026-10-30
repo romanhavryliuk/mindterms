@@ -14,16 +14,19 @@ import '@/styles/globals.css';
 // Literata — весь основний текст, Unbounded — заголовки, мітки й бейджі.
 // Той самий набір оголошено в app/not-found.tsx: next/font кладе свій CSS
 // у чанк того сегмента, який його імпортує, а 404 живе поза цим layout.
+// Обидва шрифти змінні: один файл покриває всі ваги, тож жирний і курсив
+// справжні, а не домальовані браузером.
 const serif = Literata({
   subsets: ['latin', 'cyrillic'],
-  weight: ['400', '500', '600'],
+  weight: 'variable',
+  style: ['normal', 'italic'],
   variable: '--font-serif-face',
   display: 'swap',
 });
 
 const display = Unbounded({
   subsets: ['latin', 'cyrillic'],
-  weight: ['300', '400', '500'],
+  weight: 'variable',
   variable: '--font-display-face',
   display: 'swap',
 });

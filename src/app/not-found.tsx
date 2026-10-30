@@ -11,14 +11,15 @@ import '@/styles/not-found.css';
 // імпортує, і для 404 гарнітури просто не завантажились би.
 const serif = Literata({
   subsets: ['latin', 'cyrillic'],
-  weight: ['400', '500', '600'],
+  weight: 'variable',
+  style: ['normal', 'italic'],
   variable: '--font-serif-face',
   display: 'swap',
 });
 
 const display = Unbounded({
   subsets: ['latin', 'cyrillic'],
-  weight: ['300', '400', '500'],
+  weight: 'variable',
   variable: '--font-display-face',
   display: 'swap',
 });
