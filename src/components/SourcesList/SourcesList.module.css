@@ -23,16 +23,25 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* Підкреслення лишається завжди: це посилання всередині тексту, і без
+   лінії його не відрізнити від звичайних слів. На наведенні росте не
+   поява лінії, а її вага — товщає й підтягується ближче до літер. */
 .link {
   color: var(--text-body);
   font-family: var(--font-serif);
   font-size: var(--text-md);
   line-height: var(--leading-snug);
   text-decoration-color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  transition:
+    color var(--transition-fast),
+    text-decoration-thickness 200ms var(--ease-entrance);
 }
 
 .link:hover {
   color: var(--accent);
+  text-decoration-thickness: 2px;
 }
 
 .host {

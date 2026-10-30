@@ -159,10 +159,20 @@ export const ConceptPage = ({ concept, locale, messages }: ConceptPageProps) => 
               {messages.concept.evidence}
             </h2>
             <div className={css.evidenceHead}>
-              <EvidenceBadge level={concept.evidence} messages={messages} />
-              <span className={css.evidenceScale}>
-                {concept.evidence} {messages.common.evidenceScale}
-              </span>
+              {/* Оцінку вже озвучує бейдж нижче — тут вона лише для ока */}
+              <p
+                className={clsx(css.evidenceScale, css[`evidence${concept.evidence}`])}
+                aria-hidden="true"
+              >
+                <span className={css.evidenceNumber}>{concept.evidence}</span>{' '}
+                {messages.common.evidenceScale}
+              </p>
+              <EvidenceBadge
+                level={concept.evidence}
+                messages={messages}
+                size="lg"
+                animated
+              />
             </div>
             <p className={css.boxText}>{evidence.description}</p>
             <p className={css.evidenceNote}>{concept.evidenceNote}</p>

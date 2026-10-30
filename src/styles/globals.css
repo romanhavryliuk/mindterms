@@ -111,17 +111,44 @@ textarea {
   white-space: nowrap;
 }
 
-/* Поява секцій при переході між сторінками */
+/* Поява секцій при переході між сторінками.
+
+   Інтервали між блоками спадають: 70, 55, 45, 35, 25 мс. Рівний крок
+   читався б як метроном, а спадний — як хвиля, що наздоганяє саму себе
+   й осідає. Після шостого блоку затримку фіксуємо: нижче все одно
+   нижче згину, і далі чекати нема сенсу. */
 @media (prefers-reduced-motion: no-preference) {
-  main > * > * {
-    animation: appear 420ms var(--ease-spring) both;
+  /* script зі структурованими даними теж лежить у цьому потоці, і без
+     винятку він з'їдав би позицію в черзі, зсуваючи затримки видимих блоків */
+  main > * > *:not(script) {
+    animation: appear 500ms var(--ease-entrance) both;
+  }
+
+  main > * > *:not(script):nth-child(2) {
+    animation-delay: 70ms;
+  }
+
+  main > * > *:not(script):nth-child(3) {
+    animation-delay: 125ms;
+  }
+
+  main > * > *:not(script):nth-child(4) {
+    animation-delay: 170ms;
+  }
+
+  main > * > *:not(script):nth-child(5) {
+    animation-delay: 205ms;
+  }
+
+  main > * > *:not(script):nth-child(n + 6) {
+    animation-delay: 230ms;
   }
 }
 
 @keyframes appear {
   from {
     opacity: 0;
-    translate: 0 8px;
+    translate: 0 10px;
   }
 
   to {

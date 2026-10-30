@@ -21,6 +21,20 @@
   transform: translateY(-3px);
 }
 
+/* Як і в картці теми: підняте натиском повертається на поверхню */
+.card:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+  transition-duration: var(--transition-press);
+}
+
+/* На дотик картка не піднімається, тож натиск її втискає */
+@media (hover: none) {
+  .card:active {
+    transform: translateY(1px);
+  }
+}
+
 .card:focus-within {
   border-color: var(--accent);
 }

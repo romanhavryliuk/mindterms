@@ -21,6 +21,21 @@
   transform: translateY(-3px);
 }
 
+/* Наведення підняло картку — натиск кладе її назад на поверхню.
+   Логіка фізична: підняте можна притиснути, а не втиснути ще глибше. */
+.card:active {
+  transform: translateY(0);
+  transition-duration: var(--transition-press);
+}
+
+/* На сенсорному екрані наведення не буває, картка й так лежить на
+   поверхні — тож там натиск її втискає, інакше відгуку не видно зовсім */
+@media (hover: none) {
+  .card:active {
+    transform: translateY(1px);
+  }
+}
+
 .title {
   font-family: var(--font-serif);
   font-size: var(--text-md);

@@ -87,7 +87,14 @@
   text-decoration: none;
   transition:
     background-color var(--transition-fast),
-    color var(--transition-fast);
+    color var(--transition-fast),
+    translate var(--transition-base);
+}
+
+.primaryAction:active,
+.secondaryAction:active {
+  translate: 0 1px;
+  transition-duration: var(--transition-press);
 }
 
 .primaryAction {
