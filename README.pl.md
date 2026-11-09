@@ -1,4 +1,4 @@
-[English](README.md) · [Українська](README.uk.md) · **Polski**
+[English](README.md) · [Українська](README.ua.md) · **Polski**
 
 # mindterms
 

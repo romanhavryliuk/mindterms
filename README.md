@@ -1,4 +1,4 @@
-**English** · [Українська](README.uk.md) · [Polski](README.pl.md)
+**English** · [Українська](README.ua.md) · [Polski](README.pl.md)
 
 # mindterms
 
@@ -14,14 +14,14 @@ an evidence rating from 1 to 3, and the article says out loud where the data is 
 
 ## Contents
 
-| | |
-|---|---|
-| Concepts | 48 |
-| Topics | 12 |
-| Collections by life situation | 6 |
-| Commonly confused pairs | 9 |
-| Primary sources linked | 96 |
-| Languages | Ukrainian, English, Polish |
+|                               |                            |
+| ----------------------------- | -------------------------- |
+| Concepts                      | 48                         |
+| Topics                        | 12                         |
+| Collections by life situation | 6                          |
+| Commonly confused pairs       | 9                          |
+| Primary sources linked        | 96                         |
+| Languages                     | Ukrainian, English, Polish |
 
 Evidence ratings across the 48 concepts: **33** on solid ground, **13** partly
 supported, **2** on weak ground.
@@ -40,19 +40,29 @@ Runtime dependencies are `next`, `react`, `react-dom`, `zod` and `clsx`. Nothing
 
 ## Getting started
 
+Requires Node.js 22.18+ for native TypeScript support in the content checks.
+
 ```bash
 npm install
 npm run dev        # development server on http://localhost:3000
 ```
 
-| Script | What it does |
-|---|---|
-| `npm run dev` | development server |
-| `npm run build` | production build — 192 static pages |
-| `npm start` | serve the production build |
-| `npm run typecheck` | `tsc --noEmit` |
-| `npm run lint` | ESLint |
-| `npm run format` | Prettier |
+| Script                     | What it does                                       |
+| -------------------------- | -------------------------------------------------- |
+| `npm run dev`              | development server                                 |
+| `npm run build`            | validate content, then build 192 static pages      |
+| `npm start`                | serve the production build                         |
+| `npm run validate:content` | validate content structure, unique IDs and links   |
+| `npm test`                 | test valid content, broken links and duplicate IDs |
+| `npm run typecheck`        | `tsc --noEmit`                                     |
+| `npm run lint`             | ESLint                                             |
+| `npm run format`           | Prettier                                           |
+
+Content validation checks all three languages, including concept categories,
+related concepts, collection members and confusion references. IDs must be unique
+within each entity type. Errors stop the build before Next.js starts and report
+the file, JSON path and offending ID; relationship checks do not run on production
+requests.
 
 ## Content model
 
