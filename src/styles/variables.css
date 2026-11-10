@@ -58,9 +58,9 @@
   --measure: min(42em, 45rem);
   --content-width: 46rem;
   /* Широка сітка: каталог, головна, шапка й футер */
-  --wide-width: 1180px;
+  --wide-width: 1680px;
 
-  --page-padding: 20px;
+  --page-padding: clamp(20px, 3vw, 64px);
 
   /* Брейкпоінти. Медіазапити не читають var(), тож це довідкові значення:
      mobile-first база — 375, планшет — 768, десктоп — 1440 */

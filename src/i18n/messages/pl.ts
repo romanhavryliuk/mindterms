@@ -83,36 +83,35 @@ export const pl: Messages = {
   },
 
   home: {
-    titleLead: 'Co naprawdę kryje się za słowami',
+    eyebrow: 'mindterms / przewodnik po pojęciach psychologicznych',
+    titleLead: 'Zrozumieć słowa.',
+    titleAccent: 'Dostrzec różnicę.',
+    tryReading: 'Zacznij od:',
+    moreComparisons: 'Więcej często mylonych pojęć',
+    aboutRatings: 'O ocenach i ograniczeniach',
     titleTerms: ['introwertyk', 'wypalenie', 'przywiązanie'],
     lead:
-      'Przewodnik po psychologii prostym językiem. {concepts} pojęć o ' +
-      'charakterze, emocjach, lęku, pamięci, motywacji i zachowaniu w grupach — ' +
-      'każde z definicją, przykładem z życia, najczęstszym błędem w użyciu i ' +
-      'uczciwą informacją o tym, jak mocna nauka za nim stoi.',
+      '{concepts} pojęć dotyczących psychiki: co oznaczają, jak są używane ' +
+      'i na jakich badaniach opierają się wyjaśnienia.',
     statsEvidence: 'poziomy dowodów',
     statsPairs: 'które się myli',
     openCatalog: 'Otwórz katalog',
     openIndex: 'Indeks alfabetyczny',
     collectionsTitle: 'Od czego zacząć',
-    collectionsSub:
-      'Sześć wejść według sytuacji życiowej — jeśli nie wiesz, od czego zacząć, ' +
-      'zacznij od tego, co niepokoi cię teraz.',
+    collectionsSub: 'Zestawy do czytania według codziennych sytuacji.',
     categoriesTitle: 'Wszystkie tematy',
     categoriesSub:
-      '{concepts} pojęć w {categories} tematach, od cech charakteru po zjawiska ' +
-      'społeczne.',
+      '{concepts} pojęć w {categories} tematach. Wybierz temat, aby poznać jego pojęcia.',
     confusionsTitle: 'Łatwo pomylić',
     confusionsSub:
       'Większość szkód wyrządzanych przez psychologię popularną bierze się nie ' +
       'z nieznajomości terminów, lecz z używania ich z przekonaniem tam, gdzie ' +
       'nie pasują.',
     confusionsMore: 'Wszystkie {count} {pairs}',
-    evidenceTitle: 'Dlaczego jest tu ocena',
+    evidenceTitle: 'Co oznaczają trzy kropki',
     evidenceSub:
-      'W psychologii popularnej Wielka Piątka i socjonika leżą na tej samej ' +
-      'półce, choć za jedną stoją dziesięciolecia pomiarów, a za drugą nic. ' +
-      'Każde pojęcie ma tu ocenę siły dowodów.',
+      'To redakcyjna ocena dowodów naukowych. Każdy artykuł wyjaśnia ocenę ' +
+      'i zawiera odnośniki do źródeł. Materiały nie zostały jeszcze zrecenzowane przez wykwalifikowanego specjalistę.',
   },
 
   catalog: {

@@ -85,35 +85,34 @@ export const en: Messages = {
   },
 
   home: {
-    titleLead: 'What actually sits behind the words',
+    eyebrow: 'mindterms / a guide to psychology terms',
+    titleLead: 'Understand the words.',
+    titleAccent: 'Notice the difference.',
+    tryReading: 'Start with:',
+    moreComparisons: 'More commonly confused concepts',
+    aboutRatings: 'About the ratings and limitations',
     titleTerms: ['introvert', 'burnout', 'attachment'],
     lead:
-      'A psychology reference in plain language. {concepts} concepts about ' +
-      'character, emotion, anxiety, memory, motivation and behaviour in groups — ' +
-      'each with a definition, an example from life, the most common misuse and ' +
-      'an honest note on how solid the science behind it really is.',
+      '{concepts} concepts about the mind: what they mean, how they are used ' +
+      'and which studies the explanations draw on.',
     statsEvidence: 'evidence levels',
     statsPairs: 'commonly confused',
     openCatalog: 'Open the catalogue',
     openIndex: 'Alphabetical index',
     collectionsTitle: 'Where to start',
-    collectionsSub:
-      'Six ways in, by life situation — if you do not know where to begin, ' +
-      'start from whatever is troubling you right now.',
+    collectionsSub: 'Reading collections organised around everyday situations.',
     categoriesTitle: 'All topics',
     categoriesSub:
-      '{concepts} concepts across {categories} topics, from character traits to ' +
-      'social phenomena.',
+      '{concepts} concepts across {categories} topics. Choose a topic to explore its concepts.',
     confusionsTitle: 'Easily confused',
     confusionsSub:
       'Most of the harm popular psychology does comes not from not knowing the ' +
       'terms, but from using them confidently for the wrong thing.',
     confusionsMore: 'All {count} {pairs}',
-    evidenceTitle: 'Why there is a rating here',
+    evidenceTitle: 'What the three dots mean',
     evidenceSub:
-      'In popular psychology the Big Five and socionics sit on the same shelf, ' +
-      'even though one has decades of measurement behind it and the other has ' +
-      'nothing. Every concept here carries an evidence rating.',
+      'An editorial assessment of the supporting research. Each article explains ' +
+      'its rating and links to sources. The material has not yet been reviewed by a qualified specialist.',
   },
 
   catalog: {

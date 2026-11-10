@@ -58,9 +58,9 @@ export const ConceptPage = ({ concept, locale, messages }: ConceptPageProps) => 
   const { previous, next } = getAdjacentConcepts(locale, concept);
   const meta = getMeta(locale);
 
-  // Акцент категорії підмішується як локальна змінна на всю статтю
-  const accentStyle = {
-    '--accent': `var(--c-${category?.color ?? 'trait'})`,
+  // Колір теми йде лише в маркери; фіолетовий акцент лишається для взаємодії
+  const topicStyle = {
+    '--topic': `var(--c-${category?.color ?? 'trait'})`,
   } as CSSProperties;
 
   const categoryHref =
@@ -69,7 +69,7 @@ export const ConceptPage = ({ concept, locale, messages }: ConceptPageProps) => 
       : `${localePath('/catalog', locale)}?${FILTER_PARAM_CATEGORY}=${category.id}`;
 
   return (
-    <article className={css.page} style={accentStyle}>
+    <article className={css.page} style={topicStyle}>
       <Breadcrumbs
         messages={messages}
         items={[

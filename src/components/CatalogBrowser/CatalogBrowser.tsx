@@ -120,7 +120,7 @@ export const CatalogBrowser = ({
               <button
                 type="button"
                 className={css.category}
-                style={{ '--accent': `var(--c-${category.color})` } as CSSProperties}
+                style={{ '--topic': `var(--c-${category.color})` } as CSSProperties}
                 aria-pressed={filters.category === category.id}
                 onClick={() =>
                   apply({
@@ -143,7 +143,7 @@ export const CatalogBrowser = ({
         {activeCategory !== undefined && (
           <div
             className={css.intro}
-            style={{ '--accent': `var(--c-${activeCategory.color})` } as CSSProperties}
+            style={{ '--topic': `var(--c-${activeCategory.color})` } as CSSProperties}
           >
             <h2 className={css.introTitle}>{activeCategory.name}</h2>
             <p className={css.introText}>{activeCategory.intro}</p>

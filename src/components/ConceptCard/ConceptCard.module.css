@@ -73,17 +73,26 @@
   margin-top: var(--space-xs);
 }
 
-/* Мітка теми — рамка акцентним кольором, як бейдж у прототипі */
+/* Назва теми читається нейтрально; колір теми лише в маркері перед нею */
 .category {
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
   padding: 3px 6px;
-  border: var(--border-width) solid color-mix(in srgb, var(--accent) 40%, transparent);
+  border: var(--border-width) solid var(--border);
   border-radius: var(--radius-sm);
-  color: var(--accent);
+  color: var(--text-muted);
   font-family: var(--font-display);
-  font-size: 8px;
-  letter-spacing: 0.11em;
-  text-align: right;
-  text-transform: uppercase;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+}
+
+.category::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--topic, var(--text-faint));
 }
 
 @media (min-width: 768px) {

@@ -6,8 +6,7 @@
   color: var(--badgeColor);
   font-family: var(--font-display);
   font-weight: 400;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
   white-space: nowrap;
 }
 
@@ -24,11 +23,11 @@
 }
 
 .sm {
-  font-size: 8px;
+  font-size: var(--text-xs);
 }
 
 .md {
-  font-size: 9px;
+  font-size: var(--text-sm);
 }
 
 /* Велика шкала — там, де вона головна на екрані */
@@ -108,8 +107,10 @@
   }
 }
 
+/* Підпис може перенестись, а три крапки лишаються разом */
 .label {
   letter-spacing: inherit;
+  white-space: normal;
 }
 
 .visuallyHidden {

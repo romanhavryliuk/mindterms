@@ -14,11 +14,11 @@ type CategoryCardProps = {
 };
 
 export const CategoryCard = ({ category, locale, messages }: CategoryCardProps) => {
-  const accentStyle = { '--accent': `var(--c-${category.color})` } as CSSProperties;
+  const topicStyle = { '--topic': `var(--c-${category.color})` } as CSSProperties;
   const href = `${localePath('/catalog', locale)}?${FILTER_PARAM_CATEGORY}=${category.id}`;
 
   return (
-    <article className={css.card} style={accentStyle}>
+    <article className={css.card} style={topicStyle}>
       <h3 className={css.title}>
         <Link className={css.link} href={href}>
           {category.name}

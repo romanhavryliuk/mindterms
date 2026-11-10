@@ -18,7 +18,7 @@ type ConceptCardProps = {
   concept: ConceptCardData;
   locale: Locale;
   messages: Messages;
-  /** Акцент теми; якщо не передати, картка успадкує --accent від контейнера */
+  /** Колір теми (--topic) лише для маркера; без нього маркера не буде */
   color?: CategoryColor;
   /** Назва теми під заголовком — потрібна там, де картки різних тем поруч */
   categoryName?: string;
@@ -32,13 +32,13 @@ export const ConceptCard = ({
   categoryName,
 }: ConceptCardProps) => {
   const original = originalTerm(concept.title, concept.original);
-  const accentStyle =
+  const topicStyle =
     color === undefined
       ? undefined
-      : ({ '--accent': `var(--c-${color})` } as CSSProperties);
+      : ({ '--topic': `var(--c-${color})` } as CSSProperties);
 
   return (
-    <article className={css.card} style={accentStyle}>
+    <article className={css.card} style={topicStyle}>
       <Link className={css.link} href={localePath(`/concept/${concept.id}`, locale)}>
         <h3 className={css.title}>{concept.title}</h3>
       </Link>

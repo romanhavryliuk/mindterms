@@ -1,181 +1,192 @@
-import clsx from 'clsx';
-import { Fragment } from 'react';
-import Link from 'next/link';
+﻿import Link from 'next/link';
 
-import { CategoryCard } from '@/components/CategoryCard';
-import { CollectionCard } from '@/components/CollectionCard';
-import { ConfusionCard } from '@/components/ConfusionCard';
-import { format, localePath, plural, type Locale, type Messages } from '@/i18n';
+import { EvidenceBadge } from '@/components/EvidenceBadge';
+import { format, formatCount, localePath, type Locale, type Messages } from '@/i18n';
 import {
   getAllCollections,
   getAllConcepts,
   getAllConfusions,
   getCategoriesWithCounts,
+  getConceptsByIds,
 } from '@/services/contentService';
-import { EVIDENCE_LEVELS } from '@/utils/constants';
+import {
+  EVIDENCE_LEVELS,
+  FILTER_PARAM_CATEGORY,
+  FILTER_PARAM_EVIDENCE,
+} from '@/utils/constants';
+import { renderInlineMarkup } from '@/utils/richText';
 
 import css from './HomePage.module.css';
 
-/** Скільки пар показати на головній, решта — у розділі «Плутанина» */
-const CONFUSION_PREVIEW = 4;
-
-type HomePageProps = {
-  locale: Locale;
-  messages: Messages;
-};
+type HomePageProps = { locale: Locale; messages: Messages };
 
 export const HomePage = ({ locale, messages }: HomePageProps) => {
   const concepts = getAllConcepts(locale);
   const categories = getCategoriesWithCounts(locale);
   const collections = getAllCollections(locale);
-  const confusions = getAllConfusions(locale);
-
-  const stats = [
-    {
-      value: String(concepts.length),
-      label: plural(concepts.length, messages.plural.concept, locale),
-    },
-    {
-      value: String(categories.length),
-      label: plural(categories.length, messages.plural.category, locale),
-    },
-    {
-      value: String(confusions.length),
-      label: `${plural(confusions.length, messages.plural.pair, locale)}, ${messages.home.statsPairs}`,
-    },
-    { value: '3', label: messages.home.statsEvidence },
-  ];
+  const featured = getAllConfusions(locale).find((pair) =>
+    pair.concepts.includes('stonewall')
+  );
+  const suggestions = getConceptsByIds(locale, ['introext', 'burnout', 'procrast']);
 
   return (
     <div className={css.page}>
-      <section className={css.hero}>
-        <h1 className={css.title}>
-          {messages.home.titleLead}{' '}
-          {messages.home.titleTerms.map((term, index) => (
-            <Fragment key={term}>
-              {index > 0 && ', '}
-              <em>{term}</em>
-            </Fragment>
-          ))}
-        </h1>
-
-        <p className={css.lead}>
-          {format(messages.home.lead, { concepts: concepts.length })}
-        </p>
-
-        <dl className={css.stats}>
-          {stats.map((stat) => (
-            <div key={stat.label} className={css.stat}>
-              <dt className={css.statValue}>{stat.value}</dt>
-              <dd className={css.statLabel}>{stat.label}</dd>
-            </div>
-          ))}
-        </dl>
-
-        <div className={css.actions}>
-          <Link className={css.primaryAction} href={localePath('/catalog', locale)}>
-            {messages.home.openCatalog}
-          </Link>
-          <Link className={css.secondaryAction} href={localePath('/index', locale)}>
-            {messages.home.openIndex}
-          </Link>
-        </div>
-      </section>
-
-      <section className={css.section} aria-labelledby="collections-title">
-        <header className={css.sectionHeader}>
-          <h2 id="collections-title" className={css.sectionTitle}>
-            {messages.home.collectionsTitle}
-          </h2>
-          <p className={css.sectionSub}>{messages.home.collectionsSub}</p>
-        </header>
-
-        <ul className={css.collectionsGrid}>
-          {collections.map((collection) => (
-            <li key={collection.id}>
-              <CollectionCard
-                collection={collection}
-                locale={locale}
-                messages={messages}
-              />
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section className={css.section} aria-labelledby="categories-title">
-        <header className={css.sectionHeader}>
-          <h2 id="categories-title" className={css.sectionTitle}>
-            {messages.home.categoriesTitle}
-          </h2>
-          <p className={css.sectionSub}>
-            {format(messages.home.categoriesSub, {
-              concepts: concepts.length,
-              categories: categories.length,
-            })}
+      <section className={css.hero} aria-labelledby="home-title">
+        <div className={css.introduction}>
+          <p className={css.eyebrow}>{messages.home.eyebrow}</p>
+          <h1 id="home-title" className={css.title}>
+            {messages.home.titleLead}
+            <span>{messages.home.titleAccent}</span>
+          </h1>
+          <p className={css.lead}>
+            {format(messages.home.lead, { concepts: concepts.length })}
           </p>
-        </header>
-
-        <ul className={css.categoriesGrid}>
-          {categories.map((category) => (
-            <li key={category.id}>
-              <CategoryCard category={category} locale={locale} messages={messages} />
-            </li>
-          ))}
-        </ul>
+          <div className={css.suggestions}>
+            <span>{messages.home.tryReading}</span>
+            {suggestions.map((concept) => (
+              <Link key={concept.id} href={localePath(`/concept/${concept.id}`, locale)}>
+                {concept.title}
+              </Link>
+            ))}
+          </div>
+          <div className={css.browseLinks}>
+            <Link href={localePath('/catalog', locale)}>
+              {messages.home.openCatalog} <span aria-hidden="true">→</span>
+            </Link>
+            <Link href={localePath('/index', locale)}>{messages.home.openIndex}</Link>
+          </div>
+        </div>
+        {featured !== undefined && (
+          <aside className={css.feature} aria-labelledby="featured-title">
+            <p className={css.eyebrow}>{messages.home.confusionsTitle}</p>
+            <h2 id="featured-title" className={css.featureTitle}>
+              {featured.a}
+              <span className={css.pairDivider} aria-hidden="true">
+                {' '}
+                /{' '}
+              </span>
+              {featured.b}
+            </h2>
+            <div className={css.comparison}>
+              {featured.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{renderInlineMarkup(paragraph)}</p>
+              ))}
+            </div>
+            <div className={css.featureLinks}>
+              {getConceptsByIds(locale, featured.concepts).map((concept) => (
+                <Link
+                  key={concept.id}
+                  href={localePath(`/concept/${concept.id}`, locale)}
+                >
+                  {concept.title} <span aria-hidden="true">↗</span>
+                </Link>
+              ))}
+            </div>
+            <Link className={css.textLink} href={localePath('/confuse', locale)}>
+              {messages.home.moreComparisons} <span aria-hidden="true">→</span>
+            </Link>
+          </aside>
+        )}
       </section>
-
-      <section className={css.section} aria-labelledby="confusions-title">
+      <div className={css.directory}>
+        <section className={css.section} aria-labelledby="collections-title">
+          <header className={css.sectionHeader}>
+            <p className={css.sectionNumber} aria-hidden="true">
+              01
+            </p>
+            <h2 id="collections-title" className={css.sectionTitle}>
+              {messages.home.collectionsTitle}
+            </h2>
+            <p className={css.sectionSub}>{messages.home.collectionsSub}</p>
+          </header>
+          <ol className={css.collectionList}>
+            {collections.map((collection) => (
+              <li key={collection.id}>
+                <Link
+                  className={css.collectionLink}
+                  href={localePath(`/collection/${collection.id}`, locale)}
+                >
+                  <span className={css.collectionCopy}>
+                    <span className={css.collectionTitle}>{collection.title}</span>
+                    <span className={css.collectionDescription}>
+                      {collection.description}
+                    </span>
+                  </span>
+                  <span className={css.rowArrow} aria-hidden="true">
+                    ↗
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </section>
+        <section className={css.topics} aria-labelledby="categories-title">
+          <header className={css.sectionHeader}>
+            <p className={css.sectionNumber} aria-hidden="true">
+              02
+            </p>
+            <h2 id="categories-title" className={css.sectionTitle}>
+              {messages.home.categoriesTitle}
+            </h2>
+            <p className={css.sectionSub}>
+              {format(messages.home.categoriesSub, {
+                concepts: concepts.length,
+                categories: categories.length,
+              })}
+            </p>
+          </header>
+          <ul className={css.topicList}>
+            {categories.map((category) => (
+              <li key={category.id}>
+                <Link
+                  className={css.topicLink}
+                  href={`${localePath('/catalog', locale)}?${FILTER_PARAM_CATEGORY}=${encodeURIComponent(category.id)}`}
+                >
+                  <span>{category.name}</span>
+                  <span className={css.topicCount}>
+                    <span aria-hidden="true">
+                      {String(category.conceptCount).padStart(2, '0')}
+                    </span>
+                    <span className="visuallyHidden">
+                      {formatCount(
+                        category.conceptCount,
+                        messages.plural.concept,
+                        locale
+                      )}
+                    </span>
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </div>
+      <section className={css.evidence} aria-labelledby="evidence-title">
         <header className={css.sectionHeader}>
-          <h2 id="confusions-title" className={css.sectionTitle}>
-            {messages.home.confusionsTitle}
-          </h2>
-          <p className={css.sectionSub}>{messages.home.confusionsSub}</p>
-        </header>
-
-        <ul className={css.confusionsGrid}>
-          {confusions.slice(0, CONFUSION_PREVIEW).map((confusion) => (
-            <li key={`${confusion.a}-${confusion.b}`}>
-              <ConfusionCard confusion={confusion} locale={locale} messages={messages} />
-            </li>
-          ))}
-        </ul>
-
-        <Link className={css.moreLink} href={localePath('/confuse', locale)}>
-          {format(messages.home.confusionsMore, {
-            count: confusions.length,
-            pairs: plural(confusions.length, messages.plural.pair, locale),
-          })}
-        </Link>
-      </section>
-
-      <section className={css.section} aria-labelledby="evidence-title">
-        <header className={css.sectionHeader}>
+          <p className={css.sectionNumber} aria-hidden="true">
+            03
+          </p>
           <h2 id="evidence-title" className={css.sectionTitle}>
             {messages.home.evidenceTitle}
           </h2>
           <p className={css.sectionSub}>{messages.home.evidenceSub}</p>
+          <Link className={css.textLink} href={localePath('/about', locale)}>
+            {messages.home.aboutRatings} <span aria-hidden="true">→</span>
+          </Link>
         </header>
-
-        <ul className={css.evidenceGrid}>
+        <ul className={css.evidenceList}>
           {EVIDENCE_LEVELS.map((level) => (
-            <li key={level} className={clsx(css.evidenceCard, css[`level${level}`])}>
-              <p className={css.evidenceLevel}>
-                <span className={css.evidenceDots} aria-hidden="true">
-                  <span className={css.evidenceDot} />
-                  <span className={css.evidenceDot} />
-                  <span className={css.evidenceDot} />
+            <li key={level}>
+              <Link
+                href={`${localePath('/catalog', locale)}?${FILTER_PARAM_EVIDENCE}=${level}`}
+                className={css.evidenceLink}
+              >
+                <EvidenceBadge level={level} messages={messages} size="lg" />
+                <p>{messages.evidence.levels[level].description}</p>
+                <span className={css.rowArrow} aria-hidden="true">
+                  ↗
                 </span>
-                <span className={css.evidenceScale}>
-                  {level} {messages.common.evidenceScale}
-                </span>
-              </p>
-              <h3 className={css.evidenceName}>
-                {messages.evidence.levels[level].label}
-              </h3>
-              <p className={css.evidenceText}>
-                {messages.evidence.levels[level].description}
-              </p>
+              </Link>
             </li>
           ))}
         </ul>

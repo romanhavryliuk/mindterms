@@ -18,7 +18,7 @@
   display: inline-flex;
   gap: var(--space-2xs);
   align-items: center;
-  color: var(--accent);
+  color: var(--text-muted);
   font-family: var(--font-display);
   font-size: var(--text-xs);
   font-weight: 600;
@@ -40,7 +40,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: var(--accent);
+  background-color: var(--topic, var(--accent));
 }
 
 .title {
@@ -60,7 +60,7 @@
   max-width: var(--measure);
   margin-top: var(--space-2xs);
   padding-left: var(--space-sm);
-  border-left: var(--rule-width) solid var(--accent);
+  border-left: var(--rule-width) solid var(--topic, var(--accent));
   color: var(--text-strong);
   font-family: var(--font-serif);
   font-size: var(--text-xl);
@@ -117,7 +117,7 @@
   left: 0;
   width: var(--space-2xs);
   height: 2px;
-  background-color: var(--accent);
+  background-color: var(--topic, var(--accent));
 }
 
 /* --- Приклад і помилка --------------------------------------------- */
@@ -133,13 +133,14 @@
   line-height: var(--leading-relaxed);
 }
 
-/* Приклад позначений акцентом теми, помилка — приглушеним попередженням */
+/* Приклад позначений маркером теми. Помилка нейтральна: колір доказовості
+   означає оцінку, а не попередження */
 .example {
-  border-left: var(--rule-width) solid var(--accent);
+  border-left: var(--rule-width) solid var(--topic, var(--accent));
 }
 
 .mistake {
-  border-left: var(--rule-width) solid var(--ev-2);
+  border-left: var(--rule-width) solid var(--text-faint);
   background-color: var(--bg-inset);
 }
 
@@ -238,7 +239,7 @@
 }
 
 .figureValue {
-  color: var(--accent);
+  color: var(--text-strong);
   font-family: var(--font-display);
   font-size: var(--text-3xl);
   font-weight: 300;

@@ -7,7 +7,7 @@
   padding: 17px 16px;
   border: var(--border-width) solid var(--border);
   /* Кольорова смуга теми вгорі картки — як у прототипі */
-  border-top: var(--rule-width) solid var(--accent);
+  border-top: var(--rule-width) solid var(--topic, var(--accent));
   border-radius: var(--radius-lg);
   background-color: var(--bg-elevated);
   box-shadow: var(--shadow-sm);
@@ -63,9 +63,8 @@
 }
 
 .count {
-  color: var(--accent);
+  color: var(--text-faint);
   font-family: var(--font-display);
-  font-size: 9px;
-  letter-spacing: var(--tracking-wider);
-  text-transform: uppercase;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
 }

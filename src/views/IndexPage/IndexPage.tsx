@@ -81,7 +81,7 @@ export const IndexPage = ({ locale, messages }: IndexPageProps) => {
                           className={css.category}
                           style={
                             {
-                              '--accent': `var(--c-${category.color})`,
+                              '--topic': `var(--c-${category.color})`,
                             } as CSSProperties
                           }
                         >
