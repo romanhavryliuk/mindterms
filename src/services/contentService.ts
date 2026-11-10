@@ -135,9 +135,7 @@ export function getConceptSummaries(locale: Locale): ConceptSummary[] {
 
 /** Індекс для сторінки пошуку: тіло статті склеєне й переведене в нижній регістр */
 export function getSearchIndex(locale: Locale): SearchEntry[] {
-  const categoryNames = new Map(
-    getAllCategories(locale).map((category) => [category.id, category.name])
-  );
+  const categoryById = getCategoryMap(locale);
 
   return getAllConcepts(locale).map((concept) => ({
     id: concept.id,
@@ -146,7 +144,8 @@ export function getSearchIndex(locale: Locale): SearchEntry[] {
     definition: concept.definition,
     evidence: concept.evidence,
     categoryId: concept.category,
-    categoryName: categoryNames.get(concept.category) ?? '',
+    categoryName: categoryById.get(concept.category)?.name ?? '',
+    categoryColor: categoryById.get(concept.category)?.color ?? '',
     haystack: [
       concept.definition,
       ...concept.manifestations,

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import type { CSSProperties } from 'react';
 
 import { EvidenceBadge } from '@/components/EvidenceBadge';
 import { localePath, type Locale, type Messages } from '@/i18n';
@@ -56,7 +57,12 @@ export const SearchResults = ({
 
           <span className={css.footer}>
             <EvidenceBadge level={result.evidence} messages={messages} size="sm" />
-            <span className={css.category}>{result.categoryName}</span>
+            <span
+              className={css.category}
+              style={{ '--topic': `var(--c-${result.categoryColor})` } as CSSProperties}
+            >
+              {result.categoryName}
+            </span>
           </span>
         </Link>
       </li>

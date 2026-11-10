@@ -296,6 +296,28 @@
   }
 }
 
+/* Два пояснення поруч мають сенс лише тоді, коли кожна колонка дає
+   рядок для читання; на вужчих екранах вони йдуть одне під одним */
+@media (min-width: 1280px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  }
+
+  .comparison {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--space-md);
+  }
+
+  .comparison .comparisonSide {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .comparison .comparisonNote {
+    grid-column: 1 / -1;
+  }
+}
+
 @media (min-width: 1440px) {
   .topicList {
     grid-template-columns: repeat(4, minmax(0, 1fr));

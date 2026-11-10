@@ -99,6 +99,12 @@ export const ConceptPage = ({ concept, locale, messages }: ConceptPageProps) => 
           </p>
         )}
 
+        {/* На вузьких екранах бічна колонка стоїть після статті,
+            тож коротку оцінку показуємо одразу під назвою */}
+        <div className={css.headerEvidence}>
+          <EvidenceBadge level={concept.evidence} messages={messages} size="sm" />
+        </div>
+
         <p className={css.definition}>{concept.definition}</p>
       </header>
 

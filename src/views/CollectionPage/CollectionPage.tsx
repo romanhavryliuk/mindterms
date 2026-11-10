@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { ConceptCard } from '@/components/ConceptCard';
 import { formatCount, localePath, type Locale, type Messages } from '@/i18n';
@@ -12,9 +14,19 @@ type CollectionPageProps = {
   messages: Messages;
 };
 
+// Коротші добірки мають власні розкладки, щоб останній ряд не лишався порожнім
+const FOUR_CARDS = 4;
+const FIVE_CARDS = 5;
+
 export const CollectionPage = ({ collection, locale, messages }: CollectionPageProps) => {
   const concepts = getConceptsByIds(locale, collection.concepts);
   const categoryById = getCategoryMap(locale);
+  const gridLayout =
+    concepts.length === FOUR_CARDS
+      ? css.gridFour
+      : concepts.length === FIVE_CARDS
+        ? css.gridFive
+        : undefined;
 
   return (
     <div className={css.page}>
@@ -39,7 +51,7 @@ export const CollectionPage = ({ collection, locale, messages }: CollectionPageP
       {/* Картки понять мають h3, тож без цього рівня вийшов би стрибок h1 → h3 */}
       <h2 className="visuallyHidden">{messages.collection.conceptsHeading}</h2>
 
-      <ul className={css.grid}>
+      <ul className={clsx(css.grid, gridLayout)}>
         {concepts.map((concept) => {
           const category = categoryById.get(concept.category);
 

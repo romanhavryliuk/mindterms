@@ -26,9 +26,20 @@
   text-decoration: none;
 }
 
-/* Горизонтальна навігація зʼявляється з планшета */
+/* Лого й меню набрані різними шрифтами, тож вирівнюються за базовою лінією,
+   а не за центрами рамок: інакше літери меню стоять на ~4px нижче за лого */
+.brand {
+  display: flex;
+  flex: 1;
+  gap: var(--space-sm);
+  align-items: baseline;
+}
+
+/* Повна навігація з'являється, коли їй вистачає місця (медіазапит нижче),
+   і стоїть по центру вільного простору між лого й кнопками */
 .nav {
   display: none;
+  margin-inline: auto;
 }
 
 .navList {
@@ -40,6 +51,7 @@
   position: relative;
   color: var(--text-muted);
   font-size: var(--text-sm);
+  white-space: nowrap;
   text-decoration: none;
   transition: color var(--transition-fast);
 }
@@ -100,8 +112,15 @@
   color: var(--text-strong);
 }
 
+/* Текст кнопки пошуку лишається для читачів екрана на всіх ширинах,
+   а видно його тільки там, де він не тисне на навігацію */
 .iconLabel {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .visuallyHidden {
@@ -132,7 +151,32 @@
   text-decoration: none;
 }
 
-@media (min-width: 768px) {
+/* Лого, мови й дві кнопки потребують ~313px рядка. На найвужчих телефонах
+   (до 360px) їх лише 280, тож перемикач мов переїжджає в розгорнуте меню */
+.headerLocale {
+  display: none;
+}
+
+/* Flex, щоб перемикач мав власну ширину, а не тягнувся на весь рядок */
+.mobileLocale {
+  display: flex;
+  padding: 0 var(--page-padding) var(--space-sm);
+}
+
+@media (min-width: 360px) {
+  .headerLocale {
+    display: contents;
+  }
+
+  .mobileLocale {
+    display: none;
+  }
+}
+
+/* Повний рядок шапки (лого, п'ять пунктів, мови, пошук) в українській версії
+   потребує ~770px. Вужчі екрани, зокрема планшети в портреті, отримують
+   компактну шапку з меню, а не стиснутий рядок без повітря */
+@media (min-width: 900px) {
   .nav {
     display: block;
   }
@@ -144,8 +188,14 @@
   .mobileNav {
     display: none;
   }
+}
 
+@media (min-width: 1024px) {
   .iconLabel {
-    display: inline;
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip-path: none;
   }
 }

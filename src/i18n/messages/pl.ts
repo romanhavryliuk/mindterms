@@ -315,6 +315,7 @@ export const pl: Messages = {
     inputLabel: 'Szukaj w przewodniku',
     submit: 'Znajdź',
     hint: 'Przeszukuje nazwy, definicje i tekst artykułów. Minimum {min} znaki, Esc — wyczyść.',
+    tooShortError: 'Wpisz co najmniej dwa znaki.',
     tooShortBefore: 'Wpisz co najmniej dwa znaki. Jeśli nie wiesz, czego szukać, ',
     tooShortLink: 'indeks alfabetyczny',
     tooShortAfter: ' pokazuje wszystkie pojęcia naraz.',
@@ -352,8 +353,6 @@ export const pl: Messages = {
   },
 
   footer: {
-    themes: 'Tematy',
-    sections: 'Działy',
     meta: '{site} · dane zaktualizowano {updated} · wersja treści {version}',
   },
 

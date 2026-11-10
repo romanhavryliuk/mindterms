@@ -1,6 +1,7 @@
 'use client';
 
-import { Suspense, useCallback, useMemo, useState } from 'react';
+import clsx from 'clsx';
+import { Suspense, useCallback, useId, useMemo, useRef, useState } from 'react';
 import type { CSSProperties } from 'react';
 
 import { ConceptCard } from '@/components/ConceptCard';
@@ -31,6 +32,10 @@ export const CatalogBrowser = ({
   // Початковий стан порожній, тому в статичному HTML лежать усі поняття.
   // Фільтри з адреси підхоплює CatalogParamsSync одразу після монтування.
   const [filters, setFilters] = useState<CatalogFilters>(NO_FILTERS);
+  // На телефоні список тем згорнутий; на десктопі CSS показує його завжди
+  const [isThemesOpen, setThemesOpen] = useState(false);
+  const themesId = useId();
+  const themesToggleRef = useRef<HTMLButtonElement>(null);
 
   const handleSync = useCallback((next: CatalogFilters) => {
     setFilters((current) =>
@@ -93,6 +98,15 @@ export const CatalogBrowser = ({
   const activeCategory =
     filters.category === null ? undefined : categoryById.get(filters.category);
 
+  // Вибір теми згортає список на телефоні, щоб картки одразу були видні,
+  // і повертає фокус на перемикач, а не лишає його на прихованій кнопці.
+  // На десктопі перемикач прихований, focus() нічого не робить.
+  const selectCategory = (category: string | null) => {
+    apply({ ...filters, category });
+    setThemesOpen(false);
+    themesToggleRef.current?.focus();
+  };
+
   return (
     <div className={css.layout}>
       <Suspense fallback={null}>
@@ -102,13 +116,44 @@ export const CatalogBrowser = ({
       <aside className={css.sidebar} aria-label={messages.catalog.themes}>
         <h2 className={css.sidebarTitle}>{messages.catalog.themes}</h2>
 
-        <ul className={css.categories}>
+        <div className={css.themesBar}>
+          <button
+            ref={themesToggleRef}
+            type="button"
+            className={css.themesToggle}
+            aria-expanded={isThemesOpen}
+            aria-controls={themesId}
+            onClick={() => setThemesOpen((open) => !open)}
+          >
+            <span className={css.themesToggleValue}>
+              {activeCategory?.name ?? messages.catalog.allThemes}
+            </span>
+            <span className={css.categoryCount}>
+              {activeCategory?.conceptCount ?? concepts.length}
+            </span>
+            <span className={css.themesToggleChevron} aria-hidden="true" />
+          </button>
+          {hasFilters && (
+            <button
+              type="button"
+              className={css.resetButton}
+              onClick={() => apply(NO_FILTERS)}
+            >
+              {messages.catalog.reset}
+            </button>
+          )}
+        </div>
+
+        <ul
+          id={themesId}
+          className={clsx(css.categories, !isThemesOpen && css.categoriesCollapsed)}
+        >
           <li>
             <button
               type="button"
               className={css.category}
               aria-pressed={filters.category === null}
-              onClick={() => apply({ ...filters, category: null })}
+              onClick={() => selectCategory(null)}
             >
               <span className={css.categoryName}>{messages.catalog.allThemes}</span>
               <span className={css.categoryCount}>{concepts.length}</span>
@@ -123,10 +168,7 @@ export const CatalogBrowser = ({
                 style={{ '--topic': `var(--c-${category.color})` } as CSSProperties}
                 aria-pressed={filters.category === category.id}
                 onClick={() =>
-                  apply({
-                    ...filters,
-                    category: filters.category === category.id ? null : category.id,
-                  })
+                  selectCategory(filters.category === category.id ? null : category.id)
                 }
               >
                 <span className={css.categoryDot} aria-hidden="true" />

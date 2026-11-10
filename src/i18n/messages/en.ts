@@ -310,6 +310,7 @@ export const en: Messages = {
     inputLabel: 'Search the reference',
     submit: 'Search',
     hint: 'Searches names, definitions and article text. At least {min} characters, Esc to clear.',
+    tooShortError: 'Enter at least two characters.',
     tooShortBefore:
       'Enter at least two characters. If you do not know what to look for, the ',
     tooShortLink: 'alphabetical index',
@@ -350,8 +351,6 @@ export const en: Messages = {
   },
 
   footer: {
-    themes: 'Topics',
-    sections: 'Sections',
     meta: '{site} · data updated {updated} · content version {version}',
   },
 

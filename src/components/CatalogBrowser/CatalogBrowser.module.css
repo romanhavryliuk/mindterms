@@ -26,6 +26,78 @@
   gap: var(--space-3xs);
 }
 
+/* Панель над списком на телефоні: показує активну тему й розгортає список */
+.themesBar {
+  display: flex;
+  gap: var(--space-2xs);
+  align-items: stretch;
+}
+
+.themesToggle {
+  display: flex;
+  flex: 1;
+  gap: var(--space-2xs);
+  align-items: center;
+  min-width: 0;
+  min-height: 2.75rem;
+  padding: var(--space-3xs) var(--space-sm);
+  border: var(--border-width) solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-elevated);
+  color: var(--text-strong);
+  font-size: var(--text-sm);
+  text-align: left;
+  cursor: pointer;
+}
+
+.themesToggleValue {
+  flex: 1;
+  min-width: 0;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+/* Шеврон малюється рамкою: символи в кнопках уже прибрали з пошуку */
+.themesToggleChevron {
+  flex-shrink: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: var(--border-width) solid currentcolor;
+  border-bottom: var(--border-width) solid currentcolor;
+  transform: rotate(45deg);
+  transition: transform var(--transition-fast);
+}
+
+.themesToggle[aria-expanded='true'] .themesToggleChevron {
+  transform: rotate(-135deg);
+}
+
+.resetButton {
+  min-height: 2.75rem;
+  padding-inline: var(--space-2xs);
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font-size: var(--text-sm);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+
+.categoriesCollapsed {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .themesBar {
+    display: none;
+  }
+
+  .categoriesCollapsed {
+    display: flex;
+  }
+}
+
 .category {
   display: inline-flex;
   gap: var(--space-3xs);

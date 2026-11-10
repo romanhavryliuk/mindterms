@@ -18,6 +18,13 @@ import { renderInlineMarkup } from '@/utils/richText';
 
 import css from './HomePage.module.css';
 
+// Перші два абзаци пояснюють кожне поняття окремо, решта — спільне уточнення.
+// Якщо уточнення немає, пара лишається звичайним списком абзаців.
+const SIDE_BY_SIDE_PARAGRAPHS = 2;
+
+const isComparisonSide = (index: number, total: number) =>
+  total > SIDE_BY_SIDE_PARAGRAPHS && index < SIDE_BY_SIDE_PARAGRAPHS;
+
 type HomePageProps = { locale: Locale; messages: Messages };
 
 export const HomePage = ({ locale, messages }: HomePageProps) => {
@@ -68,8 +75,17 @@ export const HomePage = ({ locale, messages }: HomePageProps) => {
               {featured.b}
             </h2>
             <div className={css.comparison}>
-              {featured.paragraphs.map((paragraph) => (
-                <p key={paragraph}>{renderInlineMarkup(paragraph)}</p>
+              {featured.paragraphs.map((paragraph, index) => (
+                <p
+                  key={paragraph}
+                  className={
+                    isComparisonSide(index, featured.paragraphs.length)
+                      ? css.comparisonSide
+                      : css.comparisonNote
+                  }
+                >
+                  {renderInlineMarkup(paragraph)}
+                </p>
               ))}
             </div>
             <div className={css.featureLinks}>

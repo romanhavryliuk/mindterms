@@ -26,8 +26,9 @@
   font-size: var(--text-xs);
 }
 
+/* Кегль sm і md однаковий; lg вирізняється більшими крапками */
 .md {
-  font-size: var(--text-sm);
+  font-size: var(--text-xs);
 }
 
 /* Велика шкала — там, де вона головна на екрані */

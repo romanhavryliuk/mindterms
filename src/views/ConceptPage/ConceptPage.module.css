@@ -152,13 +152,12 @@
   align-content: start;
 }
 
+/* Довідкові блоки розділені лінією й відступом, без окремих коробок */
 .box {
   display: grid;
   gap: var(--space-2xs);
-  padding: var(--space-sm) var(--space-md);
-  border: var(--border-width) solid var(--border);
-  border-radius: var(--radius-md);
-  background-color: var(--bg-elevated);
+  padding-top: var(--space-sm);
+  border-top: var(--border-width) solid var(--border-strong);
 }
 
 .boxTitle {
@@ -326,9 +325,33 @@
 }
 
 @media (min-width: 1440px) {
+  /* Заголовок і бічна колонка починаються з однієї лінії: .body розкривається,
+     і його дочірні блоки стають частинами сітки статті. Хлібні крихти — на всю ширину */
   .page {
+    grid-template-columns: minmax(0, 1fr) 17rem;
+    column-gap: var(--space-2xl);
     gap: var(--space-xl);
     padding-top: var(--space-lg);
+  }
+
+  /* Усе, що не розміщено явно нижче (хлібні крихти, футер статті),
+     займає всю ширину, а не першу вільну клітинку сітки */
+  .page > * {
+    grid-column: 1 / -1;
+  }
+
+  .header {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .body {
+    display: contents;
+  }
+
+  .main {
+    grid-column: 1;
+    grid-row: 3;
   }
 
   /* Визначення — головна думка статті, тож виходить за межі текстової
@@ -337,15 +360,18 @@
     max-width: 52rem;
   }
 
-  .body {
-    grid-template-columns: minmax(0, 1fr) 17rem;
-    gap: var(--space-2xl);
+  /* Довідкові блоки стоять поруч із шапкою і лишаються на екрані під час
+     читання. Висоту колонки перевіряємо окремо: довша за вікно колонка
+     не має ховати свій низ */
+  /* Тут повна оцінка стоїть поруч у бічній колонці */
+  .headerEvidence {
+    display: none;
   }
 
-  /* Довідкові блоки лишаються на місці, поки гортаєш статтю.
-     Зсув униз прибирає відчуття таблиці з двома рівними шапками */
   .aside {
-    margin-top: var(--space-xl);
+    grid-column: 2;
+    grid-row: 2 / span 2;
+    align-self: start;
     position: sticky;
     top: calc(var(--header-height) + var(--space-md));
   }

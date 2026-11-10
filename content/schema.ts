@@ -73,6 +73,8 @@ export const collectionSchema = z.object({
 export const confusionSchema = z.object({
   a: nonEmpty,
   b: nonEmpty,
+  // Порядок важливий: перший абзац пояснює a, другий — b, далі спільне
+  // уточнення. На головній перші два стоять поруч
   paragraphs: z.array(nonEmpty).min(1),
   concepts: z.array(nonEmpty).min(1),
 });

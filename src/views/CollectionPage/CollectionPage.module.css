@@ -54,7 +54,21 @@
 }
 
 @media (min-width: 1440px) {
+  /* Шість колонок дають ряди по три картки; 4 і 5 карток розкладаються
+     так, щоб останній ряд заповнював ширину, а не лишав діру */
   .grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .grid > li {
+    grid-column: span 2;
+  }
+
+  .gridFour > li {
+    grid-column: span 3;
+  }
+
+  .gridFive > li:nth-child(n + 4) {
+    grid-column: span 3;
   }
 }

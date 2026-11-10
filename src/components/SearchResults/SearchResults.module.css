@@ -49,8 +49,20 @@
 }
 
 .category {
+  display: inline-flex;
+  gap: var(--space-3xs);
+  align-items: center;
   color: var(--text-faint);
   font-size: var(--text-xs);
+}
+
+/* Колір теми — лише маркер перед назвою, як на картках каталогу */
+.category::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--topic, var(--text-faint));
 }
 
 .mark {

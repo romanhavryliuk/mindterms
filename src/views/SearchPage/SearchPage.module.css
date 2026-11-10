@@ -1,9 +1,15 @@
 .page {
   display: grid;
   gap: var(--space-md);
-  max-width: var(--content-width);
+  max-width: var(--wide-width);
   margin-inline: auto;
   padding: var(--space-md) var(--page-padding) var(--space-xl);
+}
+
+/* Сторінка стоїть на спільній сітці й вирівняна з шапкою ліворуч,
+   а ширину тексту обмежують дочірні блоки */
+.page > * {
+  max-width: var(--content-width);
 }
 
 .header {

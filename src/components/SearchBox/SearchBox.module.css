@@ -18,6 +18,11 @@
   outline: none;
 }
 
+/* Після фокусу, щоб рамка помилки лишалась видимою, коли поле активне */
+.input[aria-invalid='true'] {
+  border-color: var(--text-danger);
+}
+
 .submit {
   padding: var(--space-2xs) var(--space-md);
   border: var(--border-width) solid var(--text-strong);
@@ -35,6 +40,13 @@
 .submit:hover {
   background-color: transparent;
   color: var(--text-strong);
+}
+
+.error {
+  grid-column: 1 / -1;
+  color: var(--text-danger);
+  font-size: var(--text-sm);
+  font-weight: 600;
 }
 
 .hint {

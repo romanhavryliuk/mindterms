@@ -11,6 +11,7 @@ import { localePath, type Locale, type Messages } from '@/i18n';
 import { NAV_ITEMS, SEARCH_PARAM_QUERY, SEARCH_PATH, SITE_NAME } from '@/utils/constants';
 
 import css from './Header.module.css';
+import { CloseIcon, MenuIcon, SearchIcon } from './HeaderIcons';
 
 type HeaderProps = {
   locale: Locale;
@@ -42,33 +43,37 @@ export const Header = ({ locale, messages }: HeaderProps) => {
   return (
     <header className={css.header}>
       <div className={css.bar}>
-        <Link className={css.logo} href={localePath('/', locale)}>
-          {SITE_NAME}
-        </Link>
+        <div className={css.brand}>
+          <Link className={css.logo} href={localePath('/', locale)}>
+            {SITE_NAME}
+          </Link>
 
-        <nav className={css.nav} aria-label={messages.nav.mainLabel}>
-          <ul className={css.navList}>
-            {NAV_ITEMS.map((item) => {
-              const href = localePath(item.href, locale);
-              const isActive = pathname === href;
+          <nav className={css.nav} aria-label={messages.nav.mainLabel}>
+            <ul className={css.navList}>
+              {NAV_ITEMS.map((item) => {
+                const href = localePath(item.href, locale);
+                const isActive = pathname === href;
 
-              return (
-                <li key={item.href}>
-                  <Link
-                    className={css.navLink}
-                    href={href}
-                    aria-current={isActive ? 'page' : undefined}
-                  >
-                    {messages.nav[item.key]}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
+                return (
+                  <li key={item.href}>
+                    <Link
+                      className={css.navLink}
+                      href={href}
+                      aria-current={isActive ? 'page' : undefined}
+                    >
+                      {messages.nav[item.key]}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+        </div>
 
         <div className={css.actions}>
-          <LocaleSwitcher locale={locale} label={messages.locale.switcherLabel} />
+          <div className={css.headerLocale}>
+            <LocaleSwitcher locale={locale} label={messages.locale.switcherLabel} />
+          </div>
 
           <button
             type="button"
@@ -77,7 +82,7 @@ export const Header = ({ locale, messages }: HeaderProps) => {
             aria-controls={searchId}
             onClick={() => setSearchOpen((open) => !open)}
           >
-            <span aria-hidden="true">⌕</span>
+            <SearchIcon />
             <span className={css.iconLabel}>{messages.nav.search}</span>
           </button>
 
@@ -87,7 +92,7 @@ export const Header = ({ locale, messages }: HeaderProps) => {
             aria-expanded={isMenuOpen}
             onClick={() => setMenuOpen((open) => !open)}
           >
-            <span aria-hidden="true">{isMenuOpen ? '✕' : '☰'}</span>
+            {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
             <span className={css.visuallyHidden}>
               {isMenuOpen ? messages.nav.closeMenu : messages.nav.openMenu}
             </span>
@@ -102,17 +107,22 @@ export const Header = ({ locale, messages }: HeaderProps) => {
       )}
 
       {isMenuOpen && (
-        <nav className={css.mobileNav} aria-label={messages.nav.mobileLabel}>
-          <ul>
-            {NAV_ITEMS.map((item) => (
-              <li key={item.href}>
-                <Link className={css.mobileLink} href={localePath(item.href, locale)}>
-                  {messages.nav[item.key]}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <>
+          <nav className={css.mobileNav} aria-label={messages.nav.mobileLabel}>
+            <ul>
+              {NAV_ITEMS.map((item) => (
+                <li key={item.href}>
+                  <Link className={css.mobileLink} href={localePath(item.href, locale)}>
+                    {messages.nav[item.key]}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div className={css.mobileLocale}>
+            <LocaleSwitcher locale={locale} label={messages.locale.switcherLabel} />
+          </div>
+        </>
       )}
     </header>
   );

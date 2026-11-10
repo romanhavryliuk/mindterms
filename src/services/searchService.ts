@@ -13,6 +13,8 @@ export type SearchEntry = {
   evidence: EvidenceLevel;
   categoryId: string;
   categoryName: string;
+  /** Ключ кольору теми для маркера; відповідає змінній --c-{color} */
+  categoryColor: string;
   /** Склеєний текст статті у нижньому регістрі — для пошуку по тілу */
   haystack: string;
 };
